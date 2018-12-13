@@ -1,0 +1,60 @@
+package backend.backbone;
+
+import backend.backbone.Member;
+
+import java.util.ArrayList;
+
+public class Task {
+    ArrayList<Member> listOfMembers;
+    private int startWeek;
+    private int endWeek;
+    private double cost;
+    private boolean isCompleted;
+
+    public Task(ArrayList<Member> members, int startWeek, int endWeek, double cost, boolean isCompleted){
+        listOfMembers = new ArrayList<Member>();
+        this.startWeek = startWeek;
+        this.endWeek = endWeek;
+        this.cost = cost;
+        this.isCompleted = isCompleted;
+    }
+    public void addMember(Member member){
+        listOfMembers.add(member);
+        member.addTask(this);
+    }
+    public void removeMember(Member member){
+        listOfMembers.remove(member);
+    }
+
+    public int getStartWeek() {
+        return startWeek;
+    }
+
+    public void setStartWeek(int startWeek) {
+        this.startWeek = startWeek;
+    }
+
+    public int getEndWeek() {
+        return endWeek;
+    }
+
+    public void setEndWeek(int endWeek) {
+        this.endWeek = endWeek;
+    }
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
+}
