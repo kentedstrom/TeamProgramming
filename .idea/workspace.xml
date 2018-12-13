@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/backbone/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/backbone/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/backbone/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/backbone/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java" afterDir="false" />
@@ -75,29 +78,29 @@
         <counts>
           <entry key="fxml" value="16" />
           <entry key="iml" value="4" />
-          <entry key="java" value="43" />
-          <entry key="json" value="1" />
+          <entry key="java" value="48" />
+          <entry key="json" value="2" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="4" />
-          <entry key="JAVA" value="43" />
-          <entry key="JSON" value="1" />
+          <entry key="JAVA" value="48" />
+          <entry key="JSON" value="2" />
           <entry key="XML" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="20" />
-          <entry key="java" value="609" />
+          <entry key="java" value="1110" />
           <entry key="xml" value="99" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="609" />
+          <entry key="JAVA" value="1110" />
           <entry key="XML" value="119" />
         </counts>
       </usages-collector>
@@ -111,10 +114,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
+                <element signature="e#299#300#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,35 +128,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="225">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <folding>
+                <element signature="e#2153#2154#0" expanded="true" />
+                <element signature="e#2180#2181#0" expanded="true" />
+                <element signature="e#2220#2221#0" expanded="true" />
+                <element signature="e#2252#2253#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Task.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#233#234#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#1576#1577#0" expanded="true" />
-                <element signature="e#1604#1605#0" expanded="true" />
-                <element signature="e#1655#1656#0" expanded="true" />
-                <element signature="e#1689#1690#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Member.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -180,11 +194,9 @@
         <option value="$PROJECT_DIR$/src/main/java/backend/main/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Factory.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/calculations/RiskMatrix.java" />
-        <option value="$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/screens/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/screens/AddMemberController.java" />
         <option value="$PROJECT_DIR$/src/main/java/screens/AddTaskController.java" />
@@ -199,9 +211,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/optionMenu.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ProjectOverview.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/screens/StartScreenController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Member.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" />
       </list>
     </option>
   </component>
@@ -332,7 +347,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544733482253" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544735022340" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Programs/javafx-sdk-11.0.1/lib" />
     <property name="project.structure.last.edited" value="Project" />
@@ -363,7 +378,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JSONReader">
+  <component name="RunManager" selected="Application.Controller">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -483,9 +498,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Controller" />
         <item itemvalue="Application.JSONReader" />
         <item itemvalue="Application.TeamProgramming" />
-        <item itemvalue="Application.Controller" />
       </list>
     </recent_temporary>
   </component>
@@ -508,12 +523,12 @@
       <workItem from="1544704965303" duration="1899000" />
       <workItem from="1544708671665" duration="2236000" />
       <workItem from="1544712396263" duration="370000" />
-      <workItem from="1544727551464" duration="2322000" />
+      <workItem from="1544727551464" duration="3856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16502000" />
+    <option name="totallyTimeSpent" value="18036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
@@ -528,7 +543,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32756758" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32684824" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -583,13 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/Controller.java" />
@@ -598,20 +606,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/backend/Factory.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/screens/Member.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/screens/Project.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/screens/Risk.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/screens/RiskMatrix.java" />
@@ -737,33 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/testProject.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -777,6 +744,65 @@
             <element signature="e#1655#1656#0" expanded="true" />
             <element signature="e#1689#1690#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/testProject.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#2153#2154#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2220#2221#0" expanded="true" />
+            <element signature="e#2252#2253#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
         </state>
       </provider>
     </entry>

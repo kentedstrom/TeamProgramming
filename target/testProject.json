@@ -1,1 +1,1 @@
-{"members":[{"name":"Ben","salary":200.0,"tasks":[],"id":"11"},{"name":"John","salary":200.0,"tasks":[],"id":"10"}],"tasks":[{"startWeek":12,"endWeek":20,"cost":2000.0,"completed":false}],"risks":[],"schedule"
+{"name":"","members":[{"name":"Ben","salary":200.0,"tasks":[],"id":"11"},{"name":"John","salary":200.0,"tasks":[],"id":"10"}],"tasks":[{"startWeek":12,"endWeek":20,"cost":2000.0,"completed":false}],"risks":[],"schedule":{"tasks":[{"startWeek":12,"endWeek":20,"cost":2000.0,"completed":false}]},"budget":90000.0}

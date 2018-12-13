@@ -8,9 +8,15 @@ public class Member {
     private double salary;
     private ArrayList<Task> tasks;
 
+    public Member(){
+        this.ID = "";
+        this.name = "";
+        this.salary = 0.0;
+        this.tasks = new ArrayList<>();
+    }
 
     public Member (String name, String ID, double salary){
-    this.name =name;
+    this.name = name;
     this.ID = ID;
     this.salary = salary;
     this.tasks = new ArrayList<>();

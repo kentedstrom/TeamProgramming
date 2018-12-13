@@ -32,7 +32,7 @@ public class Schedule {
         return completedCost - unCompletedCost;
     }
 
-    
+
     public double earnedValueCalc(double budget){
         int numOfTasks = 0;
         int completedTasks = 0;

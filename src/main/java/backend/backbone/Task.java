@@ -11,6 +11,14 @@ public class Task {
     private double cost;
     private boolean isCompleted;
 
+    public Task(){
+        this.listOfMembers = new ArrayList<Member>();
+        this.startWeek = 0;
+        this.endWeek = 0;
+        this.cost = 0;
+        this.isCompleted = false;
+    }
+
     public Task(ArrayList<Member> members, int startWeek, int endWeek, double cost, boolean isCompleted){
         listOfMembers = members;
         this.startWeek = startWeek;

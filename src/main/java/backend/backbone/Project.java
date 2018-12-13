@@ -15,12 +15,13 @@ public class Project {
     private double budget;
 
     public Project(){
+        this.name = "";
+        this.budget = 0;
     	this.members = new ArrayList<>();
     	this.tasks = new ArrayList<>();
     	this.risks = new ArrayList<>();
     	this.schedule = new Schedule(tasks);
     	this.factory = new Factory();
-    	this.budget = 0;
     }
 
     public Project(String name, double budget){
@@ -55,7 +56,7 @@ public class Project {
         tasks.add(factory.createTask(startWeek, endWeek, cost, completed));
     }
 
-    public void createTask(ArrayList<Member> members, int startWeek, int endWeek, double cost, Boolean completed){
+    public void createTask(ArrayList<Member> members, int startWeek, int endWeek, double cost, boolean completed){
         tasks.add(factory.createTask(members, startWeek, endWeek, cost, completed));
     }
 
@@ -70,6 +71,14 @@ public class Project {
             }
         }
         return null;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public ArrayList<Member> getMembers() {
