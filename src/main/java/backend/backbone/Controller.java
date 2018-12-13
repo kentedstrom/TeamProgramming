@@ -7,6 +7,16 @@ import java.util.ArrayList;
 
 public class Controller {
 
+    private static ArrayList<Project> projects;
+
+    public Controller(){
+        projects = new ArrayList<Project>();
+    }
+
+    public static void createNewProject(String name, double budget){
+        Project newProject = new Project(name,budget);
+        projects.add(newProject);
+    }
 
     public static void main(String[] args) throws IOException {
 

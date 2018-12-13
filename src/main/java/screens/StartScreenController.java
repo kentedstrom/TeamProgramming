@@ -1,6 +1,5 @@
 package screens;
 
-import backend.backbone.Project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class StartScreenController {
-    public Project project;
 
     @FXML
     private Button newBtn;
@@ -19,7 +17,7 @@ public class StartScreenController {
     //When button is clicked instantiate a Project and open the Project overview Scene
     @FXML
     void newBtnClicked(ActionEvent event) throws Exception {
-        //initializing project
+        // project initialization should happen when the user entered the inputs and made sure they want to create a project
 
         ////////change window to ProjectOverview//////
 
@@ -28,7 +26,6 @@ public class StartScreenController {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(projectOverviewScene);
         window.show();
-
 
     }
 
