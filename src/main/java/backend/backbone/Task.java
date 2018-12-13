@@ -12,7 +12,7 @@ public class Task {
     private boolean isCompleted;
 
     public Task(ArrayList<Member> members, int startWeek, int endWeek, double cost, boolean isCompleted){
-        listOfMembers = new ArrayList<Member>();
+        listOfMembers = members;
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;

@@ -9,16 +9,19 @@ public class Schedule {
 
     private ArrayList<Task> tasks;
 
+    public Schedule(){
+
+    }
 
     public Schedule(ArrayList<Task> tasks) {
         this.tasks = tasks;
     }
 
 
-    public double ScheduleVariance(Project project){
+    public double ScheduleVariance(){
         double completedCost = 0;
         double unCompletedCost =0;
-        for (Task task : project.getTasks()){
+        for (Task task : tasks){
             if (task.isCompleted()){
                 completedCost=+ task.getCost();
             }
@@ -28,12 +31,13 @@ public class Schedule {
         }
         return completedCost - unCompletedCost;
     }
-    //change from Project project to list of tasks
-    public double earnedValueCalc(Project project){
+
+    
+    public double earnedValueCalc(double budget){
         int numOfTasks = 0;
         int completedTasks = 0;
         double percentageWorkDone;
-        for (Task task : project.getTasks()){
+        for (Task task : tasks){
             if (task.isCompleted()){
                 completedTasks++;
             }
@@ -44,18 +48,25 @@ public class Schedule {
             percentageWorkDone = completedTasks / numOfTasks;
         }
         catch (ArithmeticException exception){
-            System.out.println("Error, no registered tasks");
+            System.out.println("Error: no registered tasks");
              percentageWorkDone = 0;
         }
         try {
-            return percentageWorkDone * project.getBudget();
+            return percentageWorkDone * budget;
 
         }
         catch(ArithmeticException exception) {
-            System.out.println("Error, no work was done or the project does not have a budget");
+            System.out.println("Error: no work was done or the project does not have a budget");
 
         }
         return 0;
     }
 
+    public ArrayList<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(ArrayList<Task> tasks) {
+        this.tasks = tasks;
+    }
 }

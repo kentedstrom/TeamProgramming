@@ -22,7 +22,7 @@ public class Project {
     	this.factory = new Factory();
     	this.budget = 0;
     }
-    
+
     public Project(String name, double budget){
         this.budget = budget;
         this.name = name;

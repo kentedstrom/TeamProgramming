@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/backbone/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/backbone/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,7 +75,7 @@
         <counts>
           <entry key="fxml" value="16" />
           <entry key="iml" value="4" />
-          <entry key="java" value="42" />
+          <entry key="java" value="43" />
           <entry key="json" value="1" />
           <entry key="xml" value="2" />
         </counts>
@@ -81,7 +83,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="4" />
-          <entry key="JAVA" value="42" />
+          <entry key="JAVA" value="43" />
           <entry key="JSON" value="1" />
           <entry key="XML" value="18" />
         </counts>
@@ -89,13 +91,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="20" />
-          <entry key="java" value="533" />
+          <entry key="java" value="609" />
           <entry key="xml" value="99" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="533" />
+          <entry key="JAVA" value="609" />
           <entry key="XML" value="119" />
         </counts>
       </usages-collector>
@@ -118,24 +120,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="315">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Task.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+            <state relative-caret-position="510">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#233#234#0" expanded="true" />
                 <element signature="e#266#267#0" expanded="true" />
+                <element signature="e#1576#1577#0" expanded="true" />
+                <element signature="e#1604#1605#0" expanded="true" />
+                <element signature="e#1655#1656#0" expanded="true" />
+                <element signature="e#1689#1690#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,8 +199,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/optionMenu.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ProjectOverview.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/screens/StartScreenController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java" />
       </list>
     </option>
   </component>
@@ -316,7 +332,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544712691960" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544733482253" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Programs/javafx-sdk-11.0.1/lib" />
     <property name="project.structure.last.edited" value="Project" />
@@ -492,12 +508,12 @@
       <workItem from="1544704965303" duration="1899000" />
       <workItem from="1544708671665" duration="2236000" />
       <workItem from="1544712396263" duration="370000" />
-      <workItem from="1544727551464" duration="1762000" />
+      <workItem from="1544727551464" duration="2322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15942000" />
+    <option name="totallyTimeSpent" value="16502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
@@ -577,13 +593,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compiler.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -680,18 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TeamProgramming.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -755,8 +752,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="315">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/backbone/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/calculations/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1604#1605#0" expanded="true" />
+            <element signature="e#1655#1656#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
