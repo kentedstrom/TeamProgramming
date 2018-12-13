@@ -18,19 +18,21 @@ public class Project {
     	this.members = new ArrayList<>();
     	this.tasks = new ArrayList<>();
     	this.risks = new ArrayList<>();
-    	this.schedule = new Schedule();
+    	this.schedule = new Schedule(tasks);
     	this.factory = new Factory();
     	this.budget = 0;
     }
-// should avoid this constructor unless its for testing
-    public Project(ArrayList<Member> members, ArrayList<Task> tasks, ArrayList<Risk> risks, Schedule schedule, double budget){
-        this.members = members;
-        this.tasks = tasks;
-        this.risks = risks;
-        this.schedule = schedule;
+    
+    public Project(String name, double budget){
         this.budget = budget;
+        this.name = name;
+        this.members = new ArrayList<>();
+        this.tasks = new ArrayList<>();
+        this.risks = new ArrayList<>();
+        this.schedule = new Schedule(tasks);
         this.factory = new Factory();
     }
+
 // searches for a member and returns their work done
     public ArrayList<Task> workOfMember(String id){
         Member member = searchMember(id);
