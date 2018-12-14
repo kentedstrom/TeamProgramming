@@ -1,7 +1,6 @@
-package backend.calculations;
+package backend;
 
-import backend.backbone.Task;
-import backend.backbone.Project;
+import backend.Task;
 
 import java.util.ArrayList;
 

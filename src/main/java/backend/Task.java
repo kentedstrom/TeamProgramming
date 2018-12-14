@@ -1,6 +1,4 @@
-package backend.backbone;
-
-import backend.backbone.Member;
+package backend;
 
 import java.util.ArrayList;
 

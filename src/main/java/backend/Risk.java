@@ -1,4 +1,4 @@
-package backend.calculations;
+package backend;
 
 public class Risk {
     private String name;

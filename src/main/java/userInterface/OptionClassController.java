@@ -1,4 +1,4 @@
-package screens;
+package userInterface;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

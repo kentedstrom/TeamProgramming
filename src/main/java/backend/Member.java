@@ -1,4 +1,4 @@
-package backend.backbone;
+package backend;
 
 import java.util.ArrayList;
 
