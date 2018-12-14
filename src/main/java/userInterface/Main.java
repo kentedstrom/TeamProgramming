@@ -1,4 +1,4 @@
-package screens;
+package userInterface;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

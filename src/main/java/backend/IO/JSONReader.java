@@ -1,6 +1,6 @@
 package backend.IO;
 
-import backend.backbone.Project;
+import backend.Project;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
