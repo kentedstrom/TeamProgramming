@@ -70,6 +70,10 @@ public class Project {
         return null;
     }
 
+    public void createRisk(String name, double probability, double impact){
+        risks.add(factory.createRisk(name,probability,impact));
+    }
+
     public String getName() {
         return name;
     }

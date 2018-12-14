@@ -30,11 +30,10 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane prefHeight="375.0" prefWidth="600.0">
+        <AnchorPane>
             <children>
                 <Button fx:id="addRiskBtn" layoutX="50.0" layoutY="142.0" mnemonicParsing="false" onAction="#addRisk" prefHeight="29.0" prefWidth="128.0" text="Add risk" />
                 <Button fx:id="addTaskBtn" layoutX="53.0" layoutY="82.0" mnemonicParsing="false" onAction="#addTask" prefHeight="29.0" prefWidth="122.0" text="Add task" />
-                <Button fx:id="addMemberBtn" layoutX="53.0" layoutY="29.0" mnemonicParsing="false" onAction="#addMemberClicked" prefHeight="29.0" prefWidth="122.0" text="Add member" />
                 <Text layoutX="53.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the budget: " />
                 <TextField fx:id="budgetTextfield" layoutX="181.0" layoutY="204.0" />
                 <Button fx:id="enterBtn" layoutX="362.0" layoutY="204.0" mnemonicParsing="false" onAction="#enterBtnClicked" text="Enter" />
@@ -55,6 +54,11 @@
             <Button fx:id="removeMemberBtn" layoutX="377.0" layoutY="257.0" mnemonicParsing="false" onAction="#removeMemberConfirm" text="Confirm" />
             <Button fx:id="removeTaskBtn" layoutX="377.0" layoutY="300.0" mnemonicParsing="false" onAction="#removeTaskConfirm" text="Confirm" />
             <Button fx:id="backBtn" layoutX="452.0" layoutY="326.0" mnemonicParsing="false" onAction="#backBtnClicked" text="Back to Overview" />
+            <Label layoutX="237.0" layoutY="26.0" prefHeight="31.0" prefWidth="108.0" text="-Edit Project-">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

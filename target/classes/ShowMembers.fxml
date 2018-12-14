@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.AddMemberController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="table">
+        <columns>
+          <TableColumn fx:id="IDColumn" prefWidth="84.0" text="ID" />
+          <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="257.0" text="Name" />
+            <TableColumn fx:id="salaryColumn" prefWidth="256.0" text="Salary" />
+        </columns>
+      </TableView>
+      <AnchorPane prefHeight="65.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="backBtn" layoutX="511.0" layoutY="5.0" mnemonicParsing="false" onAction="#backBtnClicked" text="Go back" />
+            <TextField fx:id="IDInput" layoutX="12.0" layoutY="5.0" prefHeight="31.0" prefWidth="69.0" promptText="ID">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="nameInput" layoutX="84.0" layoutY="5.0" prefHeight="31.0" prefWidth="170.0" promptText="Name">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="salaryInput" layoutX="256.0" layoutY="5.0" prefHeight="31.0" prefWidth="111.0" promptText="Salary">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </TextField>
+            <Button fx:id="addBtn" layoutX="379.0" layoutY="5.0" mnemonicParsing="false" onAction="#addMember" text="Add" />
+            <Button fx:id="deleteBtn" layoutX="436.0" layoutY="5.0" mnemonicParsing="false" onAction="#deleteMember" text="Delete" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </AnchorPane>
+   </children>
+</VBox>

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screens.AddRiskController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.AddRiskController">
    <children>
       <MenuBar>
         <menus>
@@ -32,12 +32,12 @@
          <children>
             <Text layoutX="22.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the following information about the risk: " />
             <Text layoutX="22.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type of risk: " />
-            <TextField id="enterRisk" layoutX="120.0" layoutY="69.0" />
+            <TextField id="enterRisk" fx:id="riskName" layoutX="120.0" layoutY="69.0" />
             <Text layoutX="22.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Probability of risk:" />
-            <TextField id="enterProbability" layoutX="151.0" layoutY="116.0" prefHeight="27.0" prefWidth="27.0" />
+            <TextField id="enterProbability" fx:id="riskProb" layoutX="151.0" layoutY="116.0" prefHeight="27.0" prefWidth="27.0" />
             <Text layoutX="185.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/ 10" />
             <Text layoutX="22.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description of the impact of the risk: " />
-            <TextField id="describeImpact" layoutX="22.0" layoutY="201.0" prefHeight="59.0" prefWidth="228.0" />
+            <TextField id="describeImpact" fx:id="riskImpact" layoutX="22.0" layoutY="201.0" prefHeight="59.0" prefWidth="228.0" />
             <Button id="backButton" fx:id="backBtn" layoutX="453.0" layoutY="312.0" mnemonicParsing="false" onAction="#backBtnClicked" text="Back to Options" />
             <Button fx:id="addRiskBtn" layoutX="22.0" layoutY="281.0" mnemonicParsing="false" onAction="#addRiskClicked" text="Add Risk" />
          </children>

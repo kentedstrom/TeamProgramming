@@ -72,7 +72,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TaskManagement/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/TaskManagement/userInterface.Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="91">
               <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
@@ -138,7 +138,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/sample/userInterface.Main.java" />
         <option value="$PROJECT_DIR$/src/userInterface/Controller.java" />
         <option value="$PROJECT_DIR$/src/userInterface/StartScreen.fxml" />
         <option value="$PROJECT_DIR$/src/userInterface/ProjectOverview.fxml" />
@@ -152,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/userInterface/controller/AddMemberController.java" />
         <option value="$PROJECT_DIR$/src/userInterface/view/addMember.fxml" />
         <option value="$PROJECT_DIR$/src/userInterface/controller/AddTaskController.java" />
-        <option value="$PROJECT_DIR$/src/userInterface/Main.java" />
-        <option value="$PROJECT_DIR$/src/TaskManagement/backend/userInterface/Main.java" />
+        <option value="$PROJECT_DIR$/src/userInterface/userInterface.Main.java" />
+        <option value="$PROJECT_DIR$/src/TaskManagement/backend/userInterface/userInterface.Main.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/RiskMatrix.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/backend/userInterface/Member.java" />
         <option value="$PROJECT_DIR$/src/Backend/Member.java" />
@@ -164,7 +164,7 @@
         <option value="$PROJECT_DIR$/src/TaskManagement/backend/Project.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/backend/Schedule.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/backend/Task.java" />
-        <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/Main.java" />
+        <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/userInterface.Main.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/controller/ProjectOverviewController.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/controller/AddMemberController.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/controller/AddRiskController.java" />
@@ -177,7 +177,7 @@
         <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/view/addMember.fxml" />
         <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/controller/OptionClassController.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/TaskManagement/Main.java" />
+        <option value="$PROJECT_DIR$/src/TaskManagement/userInterface.Main.java" />
         <option value="$PROJECT_DIR$/src/TaskManagement/userInterface/controller/StartScreenController.java" />
       </list>
     </option>
@@ -302,8 +302,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="TaskManagement.Main" />
+    <configuration name="userInterface.Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="TaskManagement.userInterface.Main" />
       <module name="TeamProject" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\JavaFX\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <extension name="coverage">
@@ -646,7 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TaskManagement/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/TaskManagement/userInterface.Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />

@@ -1,32 +1,54 @@
 package userInterface;
 
+import backend.Project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class StartScreenController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class StartScreenController implements Initializable {
+
+    private Project project;
+    private Project loadedProject;
+
 
     @FXML
     private Button newBtn;
 
+    public void initData(Project project){
+        this.project = project;
+    }
+
     //When button is clicked instantiate a Project and open the Project overview Scene
     @FXML
-    void newBtnClicked(ActionEvent event) throws Exception {
-        // project initialization should happen when the user entered the inputs and made sure they want to create a project
+        void newBtnClicked(ActionEvent event) throws Exception {
+        //initializing project
+        project = new Project();
 
-        ////////change window to ProjectOverview//////
+        ////////change window to ProjectOverview and passes a project object to the ProjectOverviewController//////
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
+        Parent projectOverview = loader.load();
 
-        Parent projectOverview = FXMLLoader.load(getClass().getResource("/ProjectOverview.fxml"));
         Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+        ProjectOverviewController controller = loader.getController();
+
+        controller.initData(project);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(projectOverviewScene);
         window.show();
-
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
