@@ -1,5 +1,6 @@
 package userInterface;
 
+import backend.Controller;
 import backend.Project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,8 +31,12 @@ public class StartScreenController implements Initializable {
     //When button is clicked instantiate a Project and open the Project overview Scene
     @FXML
         void newBtnClicked(ActionEvent event) throws Exception {
+
         //initializing project
-        project = new Project();
+        // ToDo : fix when do you create new project and what is the minimal info you need to do so
+        String name = "";
+        double budget = 1.0;
+        project = Controller.createNewProject(name,budget);
 
         ////////change window to ProjectOverview and passes a project object to the ProjectOverviewController//////
         FXMLLoader loader = new FXMLLoader();
