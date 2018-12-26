@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Task {
     ArrayList<Member> listOfMembers;
+    private String name;
     private int startWeek;
     private int endWeek;
     private double cost;
@@ -16,13 +17,21 @@ public class Task {
         this.cost = 0;
         this.isCompleted = false;
     }
-
-    public Task(ArrayList<Member> members, int startWeek, int endWeek, double cost, boolean isCompleted){
+    public Task(String name, int startWeek, int endWeek, double cost, boolean isCompleted) {
+        listOfMembers = new ArrayList<Member>();
+        this.startWeek = startWeek;
+        this.endWeek = endWeek;
+        this.cost = cost;
+        this.isCompleted = isCompleted;
+        this.name = name;
+    }
+    public Task(ArrayList<Member> members,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
         listOfMembers = members;
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;
         this.isCompleted = isCompleted;
+        this.name = name;
     }
     public void addMember(Member member){
         listOfMembers.add(member);
@@ -63,4 +72,11 @@ public class Task {
         isCompleted = completed;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

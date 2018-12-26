@@ -16,7 +16,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -60,18 +59,21 @@ public class AddMemberController implements Initializable {
     @FXML
     void addMember(ActionEvent event) {
 
-            String memberName = nameInput.getText();
-            String memberID = IDInput.getText();
-            double memberSalary = Double.parseDouble(salaryInput.getText());
+        String memberName = nameInput.getText();
+        String memberID = IDInput.getText();
+        double memberSalary = Double.parseDouble(salaryInput.getText());
+        project.createMember(memberName, memberID, memberSalary);
 
-            Member newMember = new Member(memberName, memberID, memberSalary);
+        ObservableList<Member> currentMembers = FXCollections.observableArrayList();
+        for (Member member : members) {
+            currentMembers.add(member);
+        }
 
-            project.createMember(memberName, memberID, memberSalary);
+        table.setItems(currentMembers);
 
-            table.getItems().add(newMember);
-            nameInput.clear();
-            IDInput.clear();
-            salaryInput.clear();
+        nameInput.clear();
+        IDInput.clear();
+        salaryInput.clear();
 
 
     }
@@ -83,7 +85,7 @@ public class AddMemberController implements Initializable {
             allMembers = table.getItems();
             memberSelected = table.getSelectionModel().getSelectedItems();
 
-            project.removeMember(table.getSelectionModel().getSelectedItem());
+            members.remove(table.getSelectionModel().getSelectedItem());
 
             memberSelected.forEach(allMembers::remove);
         } catch (RuntimeException e){

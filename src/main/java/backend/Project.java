@@ -52,16 +52,19 @@ public class Project {
         members.remove(memberToRemove);
     }
 
-    public void createTask(int startWeek, int endWeek, double cost, boolean completed){
-        tasks.add(factory.createTask(startWeek, endWeek, cost, completed));
+    public void createTask(String name, int startWeek, int endWeek, double cost, boolean completed){
+        tasks.add(factory.createTask(name, startWeek, endWeek, cost, completed));
     }
 
-    public void createTask(ArrayList<Member> members, int startWeek, int endWeek, double cost, boolean completed){
-        tasks.add(factory.createTask(members, startWeek, endWeek, cost, completed));
+    public void createTask(ArrayList<Member> members,String name, int startWeek, int endWeek, double cost, boolean completed){
+        tasks.add(factory.createTask(members,name, startWeek, endWeek, cost, completed));
     }
 
     public void createTask(){
         tasks.add(factory.createTask());
+    }
+    public void removeTask(Task tasToRemove){
+        tasks.remove(tasToRemove);
     }
 
     public Member searchMember(String id){
@@ -75,6 +78,9 @@ public class Project {
 
     public void createRisk(String name, double probability, double impact){
         risks.add(factory.createRisk(name,probability,impact));
+    }
+    public void removeRisk(Risk riskToRemove){
+        risks.remove(riskToRemove);
     }
 
     public String getName() {

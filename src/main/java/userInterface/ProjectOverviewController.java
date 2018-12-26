@@ -114,7 +114,7 @@ public class ProjectOverviewController implements Initializable{
             series1.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()));
             series2.getData().add(new XYChart.Data(risk.getName(), risk.getImpact()));
             series3.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()*risk.getImpact() ));
-            
+
         }
 
 

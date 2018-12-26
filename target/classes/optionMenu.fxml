@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -9,57 +10,142 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
-    <children>
-        <MenuBar>
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="513.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar VBox.vgrow="NEVER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
                         <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
                         <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <AnchorPane>
-            <children>
-                <Button fx:id="addRiskBtn" layoutX="50.0" layoutY="142.0" mnemonicParsing="false" onAction="#addRisk" prefHeight="29.0" prefWidth="128.0" text="Add risk" />
-                <Button fx:id="addTaskBtn" layoutX="53.0" layoutY="82.0" mnemonicParsing="false" onAction="#addTask" prefHeight="29.0" prefWidth="122.0" text="Add task" />
-                <Text layoutX="53.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the budget: " />
-                <TextField fx:id="budgetTextfield" layoutX="181.0" layoutY="204.0" />
-                <Button fx:id="enterBtn" layoutX="362.0" layoutY="204.0" mnemonicParsing="false" onAction="#enterBtnClicked" text="Enter" />
-                <Text layoutX="54.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove member:" />
-                <SplitMenuButton fx:id="removeMemberDropdown" layoutX="188.0" layoutY="257.0" mnemonicParsing="false" text="Select a member ">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                        <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
-                </SplitMenuButton>
-                <Text layoutX="55.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove task:" />
-                <MenuButton fx:id="removeTaskDropdown" layoutX="188.0" layoutY="303.0" mnemonicParsing="false" text="Select a task">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                        <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
-                </MenuButton>
-            <Button fx:id="removeMemberBtn" layoutX="377.0" layoutY="257.0" mnemonicParsing="false" onAction="#removeMemberConfirm" text="Confirm" />
-            <Button fx:id="removeTaskBtn" layoutX="377.0" layoutY="300.0" mnemonicParsing="false" onAction="#removeTaskConfirm" text="Confirm" />
-            <Button fx:id="backBtn" layoutX="452.0" layoutY="326.0" mnemonicParsing="false" onAction="#backBtnClicked" text="Back to Overview" />
-            <Label layoutX="237.0" layoutY="26.0" prefHeight="31.0" prefWidth="108.0" text="-Edit Project-">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            </children>
-        </AnchorPane>
-    </children>
-</VBox>
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <TabPane prefHeight="420.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Budget">
+                     <content>
+                        <AnchorPane prefHeight="277.0" prefWidth="600.0">
+                           <children>
+                              <Label layoutX="101.0" layoutY="162.0" text="Enter budget:" />
+                              <TextField fx:id="budgetTextfield" layoutX="200.0" layoutY="157.0" />
+                              <Button fx:id="enterBtn" layoutX="411.0" layoutY="157.0" mnemonicParsing="false" onAction="#enterBtnClicked" text="Confirm" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Risk">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="800.0">
+                           <children>
+                              <TableView fx:id="table" layoutX="6.0" layoutY="5.0" minHeight="220.0" minWidth="800.0" prefHeight="318.0" prefWidth="800.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="riskColumn" prefWidth="423.0" text="Risk" />
+                                    <TableColumn fx:id="impactColumn" prefWidth="132.0" text="Impact" />
+                                    <TableColumn fx:id="probColumn" prefWidth="179.0" text="Probability" />
+                                 </columns>
+                              </TableView>
+                              <HBox alignment="BOTTOM_RIGHT" layoutX="20.0" layoutY="321.0" prefHeight="51.0" prefWidth="776.0" spacing="5.0">
+                                 <children>
+                                    <TextField fx:id="riskInput" prefHeight="31.0" prefWidth="345.0" promptText="Risk" />
+                                    <TextField fx:id="impactInput" prefHeight="31.0" prefWidth="143.0" promptText="Impact (1-10)" />
+                                    <TextField fx:id="probInput" prefHeight="31.0" prefWidth="140.0" promptText="Probability (1-10)" />
+                                    <Button fx:id="addRiskBtn" mnemonicParsing="false" onAction="#addRiskBtnClicked" text="Add" />
+                                    <Button fx:id="deleteRiskBtn" mnemonicParsing="false" onAction="#deleteRiskBtnClicked" text="Delete" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </opaqueInsets>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Tasks">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="381.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text layoutX="27.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member/members responsible: " />
+                                    <Text layoutX="22.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Week:" />
+                                    <Text layoutX="26.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the following information about the task: " />
+                                    <Text layoutX="25.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Week:" />
+                                    <Text layoutX="60.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost: " />
+                                    <TextField fx:id="cost" layoutX="110.0" layoutY="259.0" />
+                                    <Text layoutX="50.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
+                                    <Button fx:id="confirmBtn" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#confirmTask" prefHeight="31.0" prefWidth="150.0" text="Confirm" />
+                                    <MenuButton layoutX="242.0" layoutY="58.0" mnemonicParsing="false" text="Select member">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Action 1" />
+                                          <MenuItem mnemonicParsing="false" text="Action 2" />
+                                       </items>
+                                    </MenuButton>
+                                    <RadioButton fx:id="completeRadioBtn" layoutX="110.0" layoutY="300.0" mnemonicParsing="false" text="Completed" />
+                                    <RadioButton fx:id="notCompleteRadioBtn" layoutX="223.0" layoutY="300.0" mnemonicParsing="false" text="Not Completed" />
+                                    <TextField fx:id="endWeek" layoutX="110.0" layoutY="219.0" />
+                                    <TextField fx:id="startWeek" layoutX="110.0" layoutY="175.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                    <TableView fx:id="taskTable" layoutX="405.0" prefHeight="310.0" prefWidth="397.0">
+                                      <columns>
+                                        <TableColumn fx:id="taskColumn" prefWidth="191.0" text="Task" />
+                                        <TableColumn fx:id="startWeekColumn" prefWidth="95.0" text="Start Week" />
+                                          <TableColumn fx:id="endWeekColumn" prefWidth="107.0" text="End week" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="deleteTaskBtn" layoutX="699.0" layoutY="313.0" mnemonicParsing="false" onAction="#deleteTask" text="Delete Task" />
+                                    <Label layoutX="23.0" layoutY="135.0" text="Task name:" />
+                                    <TextField fx:id="taskNameInput" layoutX="110.0" layoutY="130.0" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <VBox alignment="BOTTOM_RIGHT" prefHeight="40.0" prefWidth="800.0">
+               <children>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="112.0" prefWidth="800.0">
+                     <children>
+                        <Button fx:id="backBtn" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#backBtnClicked" text="Back to Overview" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </children>
+</AnchorPane>

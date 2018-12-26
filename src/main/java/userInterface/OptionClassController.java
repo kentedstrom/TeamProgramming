@@ -1,6 +1,11 @@
 package userInterface;
 
+import backend.Member;
 import backend.Project;
+import backend.Risk;
+import backend.Task;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,12 +16,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class OptionClassController implements Initializable {
@@ -24,68 +31,203 @@ public class OptionClassController implements Initializable {
     private Project project;
 
     @FXML
-    private Button backBtn;
+    private TextField startWeek;
 
     @FXML
-    private SplitMenuButton removeMemberDropdown;
+    private TextField cost;
 
     @FXML
-    private MenuButton removeTaskDropdown;
+    private RadioButton completeRadioBtn;
 
     @FXML
-    private Button removeMemberBtn;
+    private Button confirmBtn;
 
     @FXML
-    private Button removeTaskBtn;
+    private TextField endWeek;
+
+    @FXML
+    private RadioButton notCompleteRadioBtn;
+
+    @FXML
+    private TableView<Risk> table;
 
     @FXML
     private TextField budgetTextfield;
 
     @FXML
-    private Button addMemberBtn;
+    private Button deleteRiskBtn;
+
+    @FXML
+    private TableColumn<Risk, String> probColumn;
+
+    @FXML
+    private TextField probInput;
+
+    @FXML
+    private Button backBtn;
 
     @FXML
     private Button addRiskBtn;
 
     @FXML
-    private Button addTaskBtn;
+    private TableColumn<Risk, Double> impactColumn;
+
+    @FXML
+    private TextField riskInput;
+
+    @FXML
+    private TextField impactInput;
 
     @FXML
     private Button enterBtn;
 
+    @FXML
+    private TableColumn<Risk, Double> riskColumn;
+
+    @FXML
+    private TableView<Task> taskTable;
+
+    @FXML
+    private TableColumn<Task, String> taskColumn;
+
+    @FXML
+    private TableColumn<Task, Integer> startWeekColumn;
+
+    @FXML
+    private  TableColumn<Task, Integer> endWeekColumn;
+
+    @FXML
+    private TextField taskNameInput;
+
+    @FXML
+    private Button deleteTaskBtn;
+
+    private ArrayList<Risk> risks;
+
+    private ArrayList<Task> tasks;
+
     public void initData(Project project){
-        this.project = project;
+        try {
+            this.project = project;
+
+            risks = new ArrayList<Risk>();
+            risks = project.getRisks();
+
+            tasks = new ArrayList<Task>();
+            tasks = project.getTasks();
+
+            riskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            impactColumn.setCellValueFactory(new PropertyValueFactory<>("impact"));
+            probColumn.setCellValueFactory(new PropertyValueFactory<>("probability"));
+
+            taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            startWeekColumn.setCellValueFactory(new PropertyValueFactory<>("startWeek"));
+            endWeekColumn.setCellValueFactory(new PropertyValueFactory<>("endWeek"));
+
+
+            taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+            table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+            ObservableList<Risk> currentRisks = FXCollections.observableArrayList();
+            for (Risk risk : risks) {
+                currentRisks.add(risk);
+            }
+
+            ObservableList<Task> currentTasks = FXCollections.observableArrayList();
+            for (Task task: tasks){
+                currentTasks.add(task);
+            }
+
+            taskTable.setItems(currentTasks);
+            table.setItems(currentRisks);
+
+        }catch (NullPointerException e){
+            System.out.println(e.getMessage());
+        }
+
     }
     @FXML
-    void addRisk(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation((getClass().getResource("/addRisk.fxml")));
-        Parent addRisk = loader.load();
+    void addRiskBtnClicked(ActionEvent event) throws IOException {
 
-        Scene addRiskScene = new Scene(addRisk, 800,500);
-        AddRiskController controller = loader.getController();
+        String riskName = riskInput.getText();
+        double prob = Double.parseDouble(probInput.getText());
+        double impact = Double.parseDouble(impactInput.getText());
 
-        controller.initData(project);
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(addRiskScene);
-        window.show();
 
+        project.createRisk(riskName, prob, impact);
+
+        ObservableList<Risk> currentRisks = FXCollections.observableArrayList();
+        for (Risk risk : risks) {
+            currentRisks.add(risk);
+        }
+        table.setItems(currentRisks);
+        riskInput.clear();
+        probInput.clear();
+        impactInput.clear();
+
+
+    }
+    @FXML
+    void deleteRiskBtnClicked(ActionEvent event){
+        try {
+            ObservableList<Risk> riskSelected, allRisks;
+            allRisks = table.getItems();
+            riskSelected = table.getSelectionModel().getSelectedItems();
+
+            project.removeRisk(table.getSelectionModel().getSelectedItem());
+
+            riskSelected.forEach(allRisks::remove);
+
+        } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
-    void addTask(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation((getClass().getResource("/addTask.fxml")));
-        Parent addTask = loader.load();
+    void confirmTask(ActionEvent event) {
+        int startWeek = Integer.parseInt(this.startWeek.getText());
+        int endWeek = Integer.parseInt(this.endWeek.getText());
+        double cost = Double.parseDouble(this.cost.getText());
+        String taskName = taskNameInput.getText();
+        boolean completed;
 
-        Scene addTaskScene = new Scene(addTask, 800,500);
-        AddTaskController controller = loader.getController();
+        if (completeRadioBtn.isSelected()){
+            completed = true;
+        }
+        else{
+            completed = false;
+        }
 
-        controller.initData(project);
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(addTaskScene);
-        window.show();
+        project.createTask(taskName,startWeek, endWeek,cost,completed);
 
+        ObservableList<Task> currentTasks = FXCollections.observableArrayList();
+        for (Task task: tasks){
+            currentTasks.add(task);
+        }
+
+        taskTable.setItems(currentTasks);
+
+        this.startWeek.clear();
+        this.endWeek.clear();
+        this.cost.clear();
+        this.completeRadioBtn.setSelected(false);
+        this.notCompleteRadioBtn.setSelected(false);
+
+    }
+    @FXML
+    void deleteTask(ActionEvent event){
+        try {
+            ObservableList<Task> taskSelected, allTasks;
+            allTasks = taskTable.getItems();
+            taskSelected = taskTable.getSelectionModel().getSelectedItems();
+
+            project.removeTask(taskTable.getSelectionModel().getSelectedItem());
+
+            taskSelected.forEach(allTasks::remove);
+
+        } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
@@ -128,16 +270,6 @@ public class OptionClassController implements Initializable {
         budgetTextfield.clear();
 
 
-
-    }
-
-    @FXML
-    void removeMemberConfirm(ActionEvent event) {
-
-    }
-
-    @FXML
-    void removeTaskConfirm(ActionEvent event) {
 
     }
 
