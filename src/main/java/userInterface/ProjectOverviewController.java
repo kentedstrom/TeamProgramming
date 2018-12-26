@@ -1,6 +1,7 @@
 package userInterface;
 
 import backend.Project;
+import backend.Risk;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -37,6 +42,8 @@ public class ProjectOverviewController implements Initializable{
     private Button backBtn;
     @FXML
     private Label budgetLabel;
+    @FXML
+    private Button riskMatrix;
 
     public void initData(Project project){
         this.project = project;
@@ -73,6 +80,48 @@ public class ProjectOverviewController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+    @FXML
+    void getRiskMatrix(ActionEvent event){
+        final  String risk1 = "Risk 1";
+        final  String risk2 = "Risk 2";
+        final  String risk3 = "Risk 3";
+        final  String risk4 = "Risk 4";
+        final  String risk5 = "Risk 5";
+
+        Stage stage = new Stage();
+        stage.setTitle("Risk Matrix");
+
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis(0, 10, 1);
+        final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis,yAxis);
+
+        bc.setTitle("Risk Matrix");
+        xAxis.setLabel("Risk");
+        yAxis.setLabel("Value");
+
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName("Impact");
+
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName("Probability");
+
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName("Risk");
+
+        for (Risk risk:project.getRisks()) {
+            series1.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()));
+            series2.getData().add(new XYChart.Data(risk.getName(), risk.getImpact()));
+            series3.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()*risk.getImpact() ));
+            
+        }
+
+
+            Scene scene  = new Scene(bc,500,450);
+            bc.getData().addAll(series1, series2, series3);
+            stage.setScene(scene);
+            stage.show();
 
     }
 

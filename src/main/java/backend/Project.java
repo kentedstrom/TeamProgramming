@@ -48,6 +48,9 @@ public class Project {
     public void createMember(String name, String Id, double salary){
         members.add(this.factory.createMember(name, Id, salary));
     }
+    public void removeMember(Member memberToRemove){
+        members.remove(memberToRemove);
+    }
 
     public void createTask(int startWeek, int endWeek, double cost, boolean completed){
         tasks.add(factory.createTask(startWeek, endWeek, cost, completed));

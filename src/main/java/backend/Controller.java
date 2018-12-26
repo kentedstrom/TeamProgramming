@@ -30,7 +30,7 @@ public class Controller {
         JSONwr.writeProject(project,path);
     }
 
-    public static void main(String[] args) throws IOException {
+    /*public static void main(String[] args) throws IOException {
 
         Project testProject = new Project();
         testProject.createMember("Ben","11", 200);
@@ -43,6 +43,6 @@ public class Controller {
 
         System.out.println(readInProject.getTasks());
 
-    }
+    }*/
 
 }

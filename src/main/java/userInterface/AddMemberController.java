@@ -16,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -58,28 +59,36 @@ public class AddMemberController implements Initializable {
 
     @FXML
     void addMember(ActionEvent event) {
-        String memberName = nameInput.getText();
-        String memberID = IDInput.getText();
-        double memberSalary = Double.parseDouble(salaryInput.getText());
 
-        Member newMember = new Member(memberName,memberID,memberSalary);
+            String memberName = nameInput.getText();
+            String memberID = IDInput.getText();
+            double memberSalary = Double.parseDouble(salaryInput.getText());
 
-        project.createMember(memberName,memberID,memberSalary);
+            Member newMember = new Member(memberName, memberID, memberSalary);
 
-        table.getItems().add(newMember);
-        nameInput.clear();
-        IDInput.clear();
-        salaryInput.clear();
+            project.createMember(memberName, memberID, memberSalary);
+
+            table.getItems().add(newMember);
+            nameInput.clear();
+            IDInput.clear();
+            salaryInput.clear();
+
 
     }
 
     @FXML
     void deleteMember(ActionEvent event) {
-        ObservableList<Member> memberSelected, allMembers;
-        allMembers = table.getItems();
-        memberSelected = table.getSelectionModel().getSelectedItems();
+        try {
+            ObservableList<Member> memberSelected, allMembers;
+            allMembers = table.getItems();
+            memberSelected = table.getSelectionModel().getSelectedItems();
 
-        memberSelected.forEach(allMembers::remove);
+            project.removeMember(table.getSelectionModel().getSelectedItem());
+
+            memberSelected.forEach(allMembers::remove);
+        } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
 
     }
 

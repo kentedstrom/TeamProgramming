@@ -36,7 +36,9 @@ public class StartScreenController implements Initializable {
         // ToDo : fix when do you create new project and what is the minimal info you need to do so
         String name = "";
         double budget = 1.0;
-        project = Controller.createNewProject(name,budget);
+        //  Creating a project with the controller ( doesn't work right now)
+        // project = Controller.createNewProject(name,budget);
+        this.project = new Project();
 
         ////////change window to ProjectOverview and passes a project object to the ProjectOverviewController//////
         FXMLLoader loader = new FXMLLoader();
