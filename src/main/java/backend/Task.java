@@ -25,8 +25,9 @@ public class Task {
         this.isCompleted = isCompleted;
         this.name = name;
     }
-    public Task(ArrayList<Member> members,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
-        listOfMembers = members;
+    public Task(Member member,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
+        listOfMembers = new ArrayList<Member>();
+        listOfMembers.add(member);
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;

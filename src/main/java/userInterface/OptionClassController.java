@@ -102,19 +102,35 @@ public class OptionClassController implements Initializable {
     @FXML
     private Button deleteTaskBtn;
 
+    @FXML
+    private ChoiceBox<Member> memberChoice;
+
     private ArrayList<Risk> risks;
 
     private ArrayList<Task> tasks;
 
+    private ArrayList<Member> members;
+
     public void initData(Project project){
         try {
             this.project = project;
+
+            members = new ArrayList<Member>();
+            members = project.getMembers();
 
             risks = new ArrayList<Risk>();
             risks = project.getRisks();
 
             tasks = new ArrayList<Task>();
             tasks = project.getTasks();
+
+            for (Member member:members) {
+
+                memberChoice.getItems().add(member);
+                memberChoice.setId(member.getName());
+
+            }
+
 
             riskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
             impactColumn.setCellValueFactory(new PropertyValueFactory<>("impact"));
@@ -185,6 +201,10 @@ public class OptionClassController implements Initializable {
 
     @FXML
     void confirmTask(ActionEvent event) {
+
+        Member memberToAdd;
+        memberToAdd = memberChoice.getSelectionModel().getSelectedItem();
+
         int startWeek = Integer.parseInt(this.startWeek.getText());
         int endWeek = Integer.parseInt(this.endWeek.getText());
         double cost = Double.parseDouble(this.cost.getText());
@@ -197,16 +217,22 @@ public class OptionClassController implements Initializable {
         else{
             completed = false;
         }
+        if (memberToAdd == null) {
+            project.createTask(taskName, startWeek, endWeek, cost, completed);
+        }
 
-        project.createTask(taskName,startWeek, endWeek,cost,completed);
-
+        else{
+            project.createTask(memberToAdd, taskName, startWeek, endWeek, cost, completed);
+        }
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();
+
         for (Task task: tasks){
             currentTasks.add(task);
         }
 
         taskTable.setItems(currentTasks);
 
+        this.taskNameInput.clear();
         this.startWeek.clear();
         this.endWeek.clear();
         this.cost.clear();

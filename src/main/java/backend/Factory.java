@@ -11,18 +11,18 @@ public class Factory {
         return new Member(name, Id, salary);
     }
 
-    public Task createTask(ArrayList<Member> members,String name, int startWeek, int endWeek, double cost, Boolean completed){
-        return new Task(members,name, startWeek, endWeek, cost, completed);
+    public Task createTask(Member member,String name, int startWeek, int endWeek, double cost, Boolean completed){
+        return new Task(member,name, startWeek, endWeek, cost, completed);
     }
 
     public Task createTask(){
-        ArrayList<Member> members = new ArrayList<>();
-        return new Task(members,"", -1, -1, -1, false);
+
+        return new Task("", -1, -1, -1, false);
     }
 
     public Task createTask(String name, int startWeek, int endWeek, double cost, boolean completed){
-        ArrayList<Member> members = new ArrayList<>();
-        return new Task(members, name, startWeek, endWeek, cost, completed);
+
+        return new Task(name, startWeek, endWeek, cost, completed);
     }
 
     public Risk createRisk(String name, double probability, double impact){

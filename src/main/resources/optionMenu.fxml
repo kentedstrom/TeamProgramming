@@ -82,20 +82,14 @@
                            <children>
                               <AnchorPane prefHeight="381.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Text layoutX="27.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member/members responsible: " />
+                                    <Text layoutX="22.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member/members responsible: " />
                                     <Text layoutX="22.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Week:" />
-                                    <Text layoutX="26.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the following information about the task: " />
+                                    <Text layoutX="22.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the following information about the task: " />
                                     <Text layoutX="25.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Week:" />
                                     <Text layoutX="60.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost: " />
                                     <TextField fx:id="cost" layoutX="110.0" layoutY="259.0" />
                                     <Text layoutX="50.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
-                                    <Button fx:id="confirmBtn" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#confirmTask" prefHeight="31.0" prefWidth="150.0" text="Confirm" />
-                                    <MenuButton layoutX="242.0" layoutY="58.0" mnemonicParsing="false" text="Select member">
-                                       <items>
-                                          <MenuItem mnemonicParsing="false" text="Action 1" />
-                                          <MenuItem mnemonicParsing="false" text="Action 2" />
-                                       </items>
-                                    </MenuButton>
+                                    <Button fx:id="confirmBtn" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#confirmTask" prefHeight="31.0" prefWidth="150.0" text="Add Task" />
                                     <RadioButton fx:id="completeRadioBtn" layoutX="110.0" layoutY="300.0" mnemonicParsing="false" text="Completed" />
                                     <RadioButton fx:id="notCompleteRadioBtn" layoutX="223.0" layoutY="300.0" mnemonicParsing="false" text="Not Completed" />
                                     <TextField fx:id="endWeek" layoutX="110.0" layoutY="219.0" />
@@ -114,6 +108,7 @@
                                     <Button fx:id="deleteTaskBtn" layoutX="699.0" layoutY="313.0" mnemonicParsing="false" onAction="#deleteTask" text="Delete Task" />
                                     <Label layoutX="23.0" layoutY="135.0" text="Task name:" />
                                     <TextField fx:id="taskNameInput" layoutX="110.0" layoutY="130.0" />
+                                    <ChoiceBox fx:id="memberChoice" layoutX="233.0" layoutY="57.0" prefWidth="150.0" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

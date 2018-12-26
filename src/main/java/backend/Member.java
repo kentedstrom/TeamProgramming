@@ -70,5 +70,8 @@ public class Member {
         this.salary = salary;
     }
 
-
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

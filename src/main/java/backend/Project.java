@@ -56,8 +56,8 @@ public class Project {
         tasks.add(factory.createTask(name, startWeek, endWeek, cost, completed));
     }
 
-    public void createTask(ArrayList<Member> members,String name, int startWeek, int endWeek, double cost, boolean completed){
-        tasks.add(factory.createTask(members,name, startWeek, endWeek, cost, completed));
+    public void createTask(Member member,String name, int startWeek, int endWeek, double cost, boolean completed){
+        tasks.add(factory.createTask(member,name, startWeek, endWeek, cost, completed));
     }
 
     public void createTask(){
