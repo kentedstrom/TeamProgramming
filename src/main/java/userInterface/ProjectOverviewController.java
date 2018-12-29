@@ -154,10 +154,10 @@ public class ProjectOverviewController implements Initializable{
         yAxis.setLabel("Value");
 
         XYChart.Series series1 = new XYChart.Series();
-        series1.setName("Impact");
+        series1.setName("Probability");
 
         XYChart.Series series2 = new XYChart.Series();
-        series2.setName("Probability");
+        series2.setName("Impact");
 
         XYChart.Series series3 = new XYChart.Series();
         series3.setName("Risk");
