@@ -51,7 +51,6 @@ public class Task {
     }
     public void addMember(Member member){
         listOfMembers.add(member);
-        member.addTask(this);
     }
     public void removeMember(Member member){
         listOfMembers.remove(member);

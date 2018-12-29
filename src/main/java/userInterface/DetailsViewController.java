@@ -108,7 +108,7 @@ public class DetailsViewController implements Initializable {
         try {
             taskLabel.setText(task.getName());
             startWeekLabel.setText(String.valueOf(task.getStartWeek()));
-            endWeekLabel.setText(String.valueOf(task.getStartWeek()));
+            endWeekLabel.setText(String.valueOf(task.getEndWeek()));
             costLabel.setText(String.valueOf(task.getCost()));
             statusLabel.setText(task.getStatus());
 

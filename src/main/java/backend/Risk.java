@@ -10,6 +10,9 @@ public class Risk {
         this.probability = probability;
         this.impact = impact;
     }
+    public Risk (){
+
+    }
 
     public String getName() {
         return name;

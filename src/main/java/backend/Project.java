@@ -31,19 +31,7 @@ public class Project {
         this.factory = new Factory();
     }
 
-// searches for a member and returns their work done
-    public ArrayList<Task> workOfMember(String id){
-        Member member = searchMember(id);
-        if(member != null){
-            return member.getTasks();
-        }
-        return null;
-    }
 
-    public int timeSpent(String id){
-        Member member = searchMember(id);
-        return member.timeSpent();
-    }
 
     public void createMember(String name, String Id, double salary){
         members.add(this.factory.createMember(name, Id, salary));

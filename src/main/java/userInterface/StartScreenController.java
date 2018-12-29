@@ -58,9 +58,11 @@ public class StartScreenController implements Initializable {
     }
 
     @FXML
-    void openProject(ActionEvent event)throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        this.project = objectMapper.readValue(new File("C:\\Users\\tobbe\\JSON files\\Project.JSON"),Project.class);
+    void openProject(ActionEvent event) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            this.project = objectMapper.readValue(new File("C:\\Users\\tobbe\\JSON files\\Projecttest.JSON"), Project.class);
+
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
@@ -73,6 +75,10 @@ public class StartScreenController implements Initializable {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(projectOverviewScene);
         window.show();
+
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
 
     }
 

@@ -211,8 +211,9 @@ public class ProjectOverviewController implements Initializable{
     }
     @FXML
     void saveProject(ActionEvent event)throws IOException{
+
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writeValue(new File("C:\\Users\\tobbe\\JSON files\\Project.JSON"), project);
+        objectMapper.writeValue(new File("C:\\Users\\tobbe\\JSON files\\Projecttest.JSON"), project);
 
 
         /* Can't get this to work
