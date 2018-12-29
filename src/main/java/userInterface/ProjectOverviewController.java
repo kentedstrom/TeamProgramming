@@ -1,11 +1,14 @@
 package userInterface;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import backend.Controller;
 import backend.Project;
 import backend.Risk;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,8 +18,12 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -71,30 +78,75 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     void backBtnClicked(ActionEvent event) throws Exception {
 
-        Parent startScreen = FXMLLoader.load(getClass().getResource("/StartScreen.fxml"));
-        Scene startScreenScreen = new Scene(startScreen, 800,500);
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(startScreenScreen);
-        window.show();
+        ////Doesn't work at the moment////
+
+        /* Stage confirmBox = new Stage();
+
+        confirmBox.setTitle("Are you sure you want to exit?");
+        confirmBox.setMinWidth(250);
+        confirmBox.initModality(Modality.APPLICATION_MODAL);
+
+        Button saveAndExitBtn = new Button("Save and Exit");
+        Button exitBtn = new Button("Exit without saving");
+        Button closeBtn = new Button("Close");
+
+        Label label = new Label("-Choose Option-");
+
+        VBox layout = new VBox(10);
+        HBox hbox = new HBox(10);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.getChildren().addAll(saveAndExitBtn,exitBtn,closeBtn);
+        layout.getChildren().addAll(label, hbox);
+        layout.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(layout, 400, 250);
+        confirmBox.setScene(scene);
+        confirmBox.showAndWait();
+
+
+        exitBtn.setOnAction(e ->{
+            try {
+                confirmBox.close();
+                Parent startScreen = FXMLLoader.load(getClass().getResource("/StartScreen.fxml"));
+                Scene startScreenScreen = new Scene(startScreen, 800, 500);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(startScreenScreen);
+                window.show();
+            }catch (Exception exception){
+                System.out.println(exception.getMessage());
+            }
+                });
+
+        saveAndExitBtn.setOnAction(e ->{
+            try {
+                confirmBox.close();
+                Parent startScreen = FXMLLoader.load(getClass().getResource("/StartScreen.fxml"));
+                Scene startScreenScreen = new Scene(startScreen, 800, 500);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(startScreenScreen);
+                window.show();
+            }catch (Exception exception){
+                System.out.println(exception.getMessage());
+            }
+        });
+
+        closeBtn.setOnAction(e -> confirmBox.close());
+        */
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
     @FXML
     void getRiskMatrix(ActionEvent event){
-        final  String risk1 = "Risk 1";
-        final  String risk2 = "Risk 2";
-        final  String risk3 = "Risk 3";
-        final  String risk4 = "Risk 4";
-        final  String risk5 = "Risk 5";
 
         Stage stage = new Stage();
         stage.setTitle("Risk Matrix");
 
         final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis(0, 10, 1);
+        final NumberAxis yAxis = new NumberAxis(0,10,1);
         final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis,yAxis);
 
         bc.setTitle("Risk Matrix");
@@ -111,6 +163,7 @@ public class ProjectOverviewController implements Initializable{
         series3.setName("Risk");
 
         for (Risk risk:project.getRisks()) {
+
             series1.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()));
             series2.getData().add(new XYChart.Data(risk.getName(), risk.getImpact()));
             series3.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()*risk.getImpact() ));
@@ -126,7 +179,20 @@ public class ProjectOverviewController implements Initializable{
     }
 
     @FXML
-    void showScheduleBtnClicked(ActionEvent event) {
+    void showScheduleBtnClicked(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/ScheduleView.fxml")));
+        Parent scheduleView = loader.load();
+
+        Scene scheduleScene = new Scene(scheduleView, 800,500);
+        scheduleScene.getStylesheets().add("/ganttChart.css");
+        ScheduleController controller = loader.getController();
+
+        controller.initData(project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scheduleScene);
+        window.show();
+
     }
 
     @FXML
@@ -142,5 +208,17 @@ public class ProjectOverviewController implements Initializable{
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(addMemberScene);
         window.show();
+    }
+    @FXML
+    void saveProject(ActionEvent event)throws IOException{
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writeValue(new File("C:\\Users\\tobbe\\JSON files\\Project.JSON"), project);
+
+
+        /* Can't get this to work
+
+            Controller.saveProject(project, "C:\\Users\\tobbe\\JSON files");
+
+         */
     }
 }

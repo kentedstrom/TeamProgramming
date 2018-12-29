@@ -92,8 +92,8 @@
                                     <Button fx:id="confirmBtn" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#confirmTask" prefHeight="31.0" prefWidth="150.0" text="Add Task" />
                                     <RadioButton fx:id="completeRadioBtn" layoutX="110.0" layoutY="300.0" mnemonicParsing="false" text="Completed" />
                                     <RadioButton fx:id="notCompleteRadioBtn" layoutX="223.0" layoutY="300.0" mnemonicParsing="false" text="Not Completed" />
-                                    <TextField fx:id="endWeek" layoutX="110.0" layoutY="219.0" />
-                                    <TextField fx:id="startWeek" layoutX="110.0" layoutY="175.0">
+                                    <TextField fx:id="endWeekInput" layoutX="110.0" layoutY="219.0" />
+                                    <TextField fx:id="startWeekInput" layoutX="110.0" layoutY="175.0">
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>

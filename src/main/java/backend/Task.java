@@ -9,6 +9,7 @@ public class Task {
     private int endWeek;
     private double cost;
     private boolean isCompleted;
+    private String status = "";
 
     public Task(){
         this.listOfMembers = new ArrayList<Member>();
@@ -16,6 +17,7 @@ public class Task {
         this.endWeek = 0;
         this.cost = 0;
         this.isCompleted = false;
+        this.status = "In progress";
     }
     public Task(String name, int startWeek, int endWeek, double cost, boolean isCompleted) {
         listOfMembers = new ArrayList<Member>();
@@ -24,6 +26,12 @@ public class Task {
         this.cost = cost;
         this.isCompleted = isCompleted;
         this.name = name;
+        if (isCompleted){
+            this.status = "Completed";
+        }
+        else{
+            this.status = "In progress";
+        }
     }
     public Task(Member member,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
         listOfMembers = new ArrayList<Member>();
@@ -33,6 +41,13 @@ public class Task {
         this.cost = cost;
         this.isCompleted = isCompleted;
         this.name = name;
+        if (isCompleted){
+            this.status = "Completed";
+        }
+        else{
+            this.status = "In progress";
+        }
+
     }
     public void addMember(Member member){
         listOfMembers.add(member);
@@ -71,6 +86,12 @@ public class Task {
 
     public void setCompleted(boolean completed) {
         isCompleted = completed;
+        if (completed){
+            this.status = "Completed";
+        }
+        else{
+            this.status = "In progress";
+        }
     }
 
     public String getName() {
@@ -79,5 +100,14 @@ public class Task {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String toString(){
+        return this.name;
+    }
+    public String getStatus(){
+        return this.status;
+    }
+    public ArrayList<Member> getListOfMembers(){
+        return this.listOfMembers;
     }
 }

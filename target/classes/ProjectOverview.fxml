@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -30,19 +33,20 @@
       </MenuBar>
       <AnchorPane prefHeight="323.0" prefWidth="600.0">
          <children>
-            <Button fx:id="showScheduleBtn" layoutX="46.0" layoutY="86.0" mnemonicParsing="false" onAction="#showScheduleBtnClicked" text="Show Schedule" />
+            <Button fx:id="showScheduleBtn" layoutX="46.0" layoutY="35.0" mnemonicParsing="false" onAction="#showScheduleBtnClicked" text="Show Schedule" />
             <Text layoutX="148.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.2060546875" />
-            <Button id="showMembersButton" fx:id="showMembersBtn" layoutX="46.0" layoutY="151.0" mnemonicParsing="false" onAction="#showMembersBtnClicked" text="Show members" />
-            <Button fx:id="optionsBtn" layoutX="46.0" layoutY="262.0" mnemonicParsing="false" onAction="#optionsBtnClicked" text="Edit Project" />
+            <Button id="showMembersButton" fx:id="showMembersBtn" layoutX="45.0" layoutY="95.0" mnemonicParsing="false" onAction="#showMembersBtnClicked" text="Show members" />
+            <Button fx:id="optionsBtn" layoutX="44.0" layoutY="205.0" mnemonicParsing="false" onAction="#optionsBtnClicked" text="Edit Project" />
             <Text layoutX="241.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget: " />
             <Text layoutX="240.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Earned value: " />
             <Text layoutX="350.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule Variance: " />
             <Text layoutX="486.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost variance: " />
-            <Label fx:id="earnedValueLabel" layoutX="250.0" layoutY="156.0" text="Label" />
-            <Label fx:id="ScheduleVarianceLabel" layoutX="357.0" layoutY="156.0" text="Label" />
+            <Label fx:id="earnedValueLabel" layoutX="240.0" layoutY="156.0" text="Label" />
+            <Label fx:id="ScheduleVarianceLabel" layoutX="350.0" layoutY="156.0" text="Label" />
             <Label fx:id="costVarianceLabel" layoutX="486.0" layoutY="156.0" text="Label" />
             <Label fx:id="budgetLabel" layoutX="340.0" layoutY="66.0" text="Label" />
-            <Button fx:id="riskMatrix" layoutX="46.0" layoutY="205.0" mnemonicParsing="false" onAction="#getRiskMatrix" text="Risk Matrix" />
+            <Button fx:id="riskMatrix" layoutX="45.0" layoutY="151.0" mnemonicParsing="false" onAction="#getRiskMatrix" text="Risk Matrix" />
+            <Button fx:id="saveProjectBtn" layoutX="41.0" layoutY="255.0" mnemonicParsing="false" onAction="#saveProject" text="Save Project" />
          </children>
       </AnchorPane>
       <ToolBar prefHeight="53.0" prefWidth="600.0">

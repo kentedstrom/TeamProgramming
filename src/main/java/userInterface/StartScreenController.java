@@ -2,6 +2,7 @@ package userInterface;
 
 import backend.Controller;
 import backend.Project;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -53,6 +56,26 @@ public class StartScreenController implements Initializable {
         window.setScene(projectOverviewScene);
         window.show();
     }
+
+    @FXML
+    void openProject(ActionEvent event)throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        this.project = objectMapper.readValue(new File("C:\\Users\\tobbe\\JSON files\\Project.JSON"),Project.class);
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
+        Parent projectOverview = loader.load();
+
+        Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+        ProjectOverviewController controller = loader.getController();
+
+        controller.initData(project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(projectOverviewScene);
+        window.show();
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

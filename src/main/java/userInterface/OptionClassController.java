@@ -31,7 +31,7 @@ public class OptionClassController implements Initializable {
     private Project project;
 
     @FXML
-    private TextField startWeek;
+    private TextField startWeekInput;
 
     @FXML
     private TextField cost;
@@ -43,7 +43,7 @@ public class OptionClassController implements Initializable {
     private Button confirmBtn;
 
     @FXML
-    private TextField endWeek;
+    private TextField endWeekInput;
 
     @FXML
     private RadioButton notCompleteRadioBtn;
@@ -127,7 +127,6 @@ public class OptionClassController implements Initializable {
             for (Member member:members) {
 
                 memberChoice.getItems().add(member);
-                memberChoice.setId(member.getName());
 
             }
 
@@ -205,11 +204,16 @@ public class OptionClassController implements Initializable {
         Member memberToAdd;
         memberToAdd = memberChoice.getSelectionModel().getSelectedItem();
 
-        int startWeek = Integer.parseInt(this.startWeek.getText());
-        int endWeek = Integer.parseInt(this.endWeek.getText());
+        int startWeek = Integer.parseInt(this.startWeekInput.getText());
+        int endWeek = Integer.parseInt(this.endWeekInput.getText());
         double cost = Double.parseDouble(this.cost.getText());
         String taskName = taskNameInput.getText();
         boolean completed;
+
+        ToggleGroup group = new ToggleGroup();
+
+        completeRadioBtn.setToggleGroup(group);
+        notCompleteRadioBtn.setToggleGroup(group);
 
         if (completeRadioBtn.isSelected()){
             completed = true;
@@ -233,8 +237,8 @@ public class OptionClassController implements Initializable {
         taskTable.setItems(currentTasks);
 
         this.taskNameInput.clear();
-        this.startWeek.clear();
-        this.endWeek.clear();
+        this.startWeekInput.clear();
+        this.endWeekInput.clear();
         this.cost.clear();
         this.completeRadioBtn.setSelected(false);
         this.notCompleteRadioBtn.setSelected(false);
