@@ -55,15 +55,6 @@ public class Project {
         tasks.remove(tasToRemove);
     }
 
-    public Member searchMember(String id){
-        for(Member member : members){
-            if(member.compare(id)){
-                return member;
-            }
-        }
-        return null;
-    }
-
     public void createRisk(String name, double probability, double impact){
         risks.add(factory.createRisk(name,probability,impact));
     }
@@ -119,3 +110,19 @@ public class Project {
         this.budget = budget;
     }
 }
+
+// member stuff below
+    public void addMembers (Member member){
+    members.add(member);
+    }
+    public void removeMembers (Member member){
+    members.remove(member)
+    }
+    public Member searchMember(String id){
+        for(Member member : members){
+            if(member.compare(id)){
+                return member;
+            }
+        }
+        return null;
+    }

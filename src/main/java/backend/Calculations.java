@@ -4,17 +4,15 @@ import backend.Task;
 
 import java.util.ArrayList;
 
-public class Schedule {
+public class Calculations {
 
     private ArrayList<Task> tasks;
 
-    public Schedule(){
+    public Calculations(){
 
     }
 
-    public Schedule(ArrayList<Task> tasks) {
-        this.tasks = tasks;
-    }
+
 
 
     public double ScheduleVariance(){
