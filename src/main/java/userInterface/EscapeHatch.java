@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class escapeHatch {
+public class EscapeHatch {
 
     void backBtnClicked(ActionEvent event, Project project) throws IOException {
         FXMLLoader loader = new FXMLLoader();

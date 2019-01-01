@@ -7,13 +7,8 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private static ArrayList<Project> projects;
-    private static JSONReader JSONwr;
-
-    public Controller(){
-        projects = new ArrayList<Project>();
-        JSONwr = new JSONReader();
-    }
+    private static ArrayList<Project> projects = new ArrayList<Project>();
+    private static JSONReader JSONwr = new JSONReader();
 
     public static Project createNewProject(String name, double budget){
         Project newProject = new Project(name,budget);

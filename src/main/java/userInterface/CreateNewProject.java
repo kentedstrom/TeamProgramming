@@ -2,53 +2,58 @@ package userInterface;
 
 import backend.Controller;
 import backend.Project;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodEvent;
 import javafx.stage.Stage;
 
-import java.io.File;
+import javafx.event.ActionEvent;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class StartScreenController implements Initializable {
+public class CreateNewProject {
 
     private Project project;
 
 
     @FXML
-    private Button newBtn;
+    private TextField typeProjectName;
 
-    //When button is clicked instantiate a Project and open the Create New Project Screen
     @FXML
-        void newBtnClicked(ActionEvent event) throws Exception {
+    private TextField typeProjectBudget;
 
-        ////////change window to ProjectOverview and passes a project object to the ProjectOverviewController//////
+    @FXML
+    private Button createProject;
+
+    @FXML
+    private Button backToStart;
+
+    @FXML
+    void backToStart(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation((getClass().getResource("/CreateNewProject.fxml")));
+        loader.setLocation(getClass().getResource("/StartScreen.fxml"));
         Parent projectOverview = loader.load();
 
         Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(projectOverviewScene);
         window.show();
-
     }
 
     @FXML
-    void openProject(ActionEvent event) {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            this.project = objectMapper.readValue(new File("C:\\Users\\tobbe\\JSON files\\Projecttest.JSON"), Project.class);
+    void createProject(ActionEvent event) throws IOException {
 
+        String name = typeProjectName.getText();
+        double budget = Double.parseDouble(typeProjectBudget.getText());
+       // create a new project with name and budget through controller class
+        this.project = Controller.createNewProject(name,budget);
 
+        ////////change window to ProjectOverview and passes a project object to the ProjectOverviewController//////
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
         Parent projectOverview = loader.load();
@@ -60,16 +65,7 @@ public class StartScreenController implements Initializable {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(projectOverviewScene);
         window.show();
-
-        }catch (IOException e){
-            System.out.println(e.getMessage());
-        }
-
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 }
+

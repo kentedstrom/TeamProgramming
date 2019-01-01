@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.Plots">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="159.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="159.0" text="  Dashboard" textAlignment="CENTER">
+               <font>
+                  <Font name="Chandas" size="20.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="159.0">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="schedule" mnemonicParsing="false" onAction="#showSchedule" prefHeight="56.0" prefWidth="159.0" text="Schedule">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="EV" mnemonicParsing="false" onAction="#showEV" prefHeight="56.0" prefWidth="159.0" text="Earned Value">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="risks" mnemonicParsing="false" onAction="#showRisks" prefHeight="56.0" prefWidth="159.0" text="Risks">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="159.0">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#backBtnClicked" prefHeight="56.0" prefWidth="159.0" text="Back">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="158.0" layoutY="-4.0" prefHeight="409.0" prefWidth="443.0">
+         <children>
+            <TableView prefHeight="204.0" prefWidth="443.0">
+              <columns>
+                <TableColumn fx:id="taskColumn" prefWidth="212.0" text="Task" />
+                <TableColumn fx:id="statusColumn" prefWidth="229.0" text="Status" />
+              </columns>
+            </TableView>
+            <StackedBarChart>
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="ganttChart" side="LEFT" />
+              </yAxis>
+            </StackedBarChart>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

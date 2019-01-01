@@ -6,14 +6,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +17,9 @@ import java.util.ResourceBundle;
 
 public class AddMemberController implements Initializable {
 
-    Project project;
+    private Project project;
+    // use a class for all cases where it wants to go back to the main screen
+    private EscapeHatch goBack = new EscapeHatch();
 
     @FXML
     private TableView<Member> table;
@@ -122,19 +119,8 @@ public class AddMemberController implements Initializable {
     }
 
     @FXML
-    void backBtnClicked(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
-        Parent projectOverview = loader.load();
-
-        Scene projectOverviewScene = new Scene(projectOverview, 800,500);
-        ProjectOverviewController controller = loader.getController();
-
-        controller.initData(project);
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(projectOverviewScene);
-        window.show();
-
+    void backBtnClicked(ActionEvent event) throws IOException{
+        goBack.backBtnClicked(event, project);
     }
 
     @Override

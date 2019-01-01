@@ -12,10 +12,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -26,6 +23,9 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 public class ProjectOverviewController implements Initializable{
@@ -140,8 +140,22 @@ public class ProjectOverviewController implements Initializable{
     }
 
     @FXML
-    void getRiskMatrix(ActionEvent event){
+    void getRiskMatrix(ActionEvent event) throws IOException {
 
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/Plots.fxml")));
+        Parent Plots = loader.load();
+
+        Scene PlotsScene = new Scene(Plots, 800,500);
+        Plots controller = loader.getController();
+
+        controller.initData(this.project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(PlotsScene);
+        window.show();
+
+
+/*
         Stage stage = new Stage();
         stage.setTitle("Risk Matrix");
 
@@ -153,7 +167,13 @@ public class ProjectOverviewController implements Initializable{
         xAxis.setLabel("Risk");
         yAxis.setLabel("Value");
 
-        XYChart.Series series1 = new XYChart.Series();
+        XYChart.Series series1 = new XYChart.Series();<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+
+
+<Button mnemonicParsing="false" text="Back" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+
         series1.setName("Probability");
 
         XYChart.Series series2 = new XYChart.Series();
@@ -175,7 +195,32 @@ public class ProjectOverviewController implements Initializable{
             bc.getData().addAll(series1, series2, series3);
             stage.setScene(scene);
             stage.show();
+*/
+/*
+        stage.setTitle("Scatter Chart Sample");
+        final NumberAxis xAxis = new NumberAxis(0, 10, 1);
+        final NumberAxis yAxis = new NumberAxis(0, 10, 1);
+        final ScatterChart<Number, Number> sc = new
+                ScatterChart<Number, Number>(xAxis, yAxis);
+        xAxis.setLabel("Impact");
+        yAxis.setLabel("Probability");
+        sc.setTitle("Risk Assessment");
 
+        //ArrayList<XYChart.Series> allSeries = new ArrayList<>();
+
+        Scene scene  = new Scene(sc,500,450);
+
+        for (Risk risk : project.getRisks()) {
+            XYChart.Series series = new XYChart.Series();
+            series.setName(risk.getName());
+            series.getData().add(new XYChart.Data(risk.getImpact(), risk.getProbability()));
+            sc.getData().add(series);
+            //allSeries.add(series);
+        }
+
+        stage.setScene(scene);
+        stage.show();
+*/
     }
 
     @FXML
