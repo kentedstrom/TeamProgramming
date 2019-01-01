@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.Plots">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.RiskController">
    <children>
-      <VBox prefHeight="400.0" prefWidth="159.0">
+      <VBox prefHeight="688.0" prefWidth="159.0">
          <children>
             <Label prefHeight="30.0" prefWidth="159.0" text="  Dashboard" textAlignment="CENTER">
                <font>
@@ -30,7 +29,7 @@
                   <Font name="Chandas" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="EV" mnemonicParsing="false" onAction="#showEV" prefHeight="56.0" prefWidth="159.0" text="Earned Value">
+            <Button fx:id="taskOverview" mnemonicParsing="false" onAction="#showTaskOV" prefHeight="56.0" prefWidth="159.0" text="Task Overview">
                <font>
                   <Font size="16.0" />
                </font>
@@ -52,22 +51,24 @@
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="158.0" layoutY="-4.0" prefHeight="409.0" prefWidth="443.0">
+      <VBox layoutX="158.0" layoutY="-4.0" prefHeight="688.0" prefWidth="443.0">
          <children>
-            <TableView prefHeight="204.0" prefWidth="443.0">
-              <columns>
-                <TableColumn fx:id="taskColumn" prefWidth="212.0" text="Task" />
-                <TableColumn fx:id="statusColumn" prefWidth="229.0" text="Status" />
-              </columns>
-            </TableView>
-            <StackedBarChart>
+            <ScatterChart prefHeight="356.0" prefWidth="443.0" title="Risks">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
               <yAxis>
-                <NumberAxis fx:id="ganttChart" side="LEFT" />
+                <NumberAxis side="LEFT" />
               </yAxis>
-            </StackedBarChart>
+            </ScatterChart>
+            <BarChart prefHeight="378.0" prefWidth="443.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
          </children>
       </VBox>
    </children>
