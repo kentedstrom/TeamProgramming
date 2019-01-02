@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.PlotStartPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.PlotStartPageController">
    <children>
       <VBox prefHeight="688.0" prefWidth="159.0">
          <children>
@@ -58,19 +58,19 @@
             </Button>
          </children>
       </VBox>
-      <ScrollPane layoutX="160.0" layoutY="-4.0" prefHeight="469.0" prefWidth="435.0">
+      <ScrollPane layoutX="160.0" layoutY="-4.0" prefHeight="500.0" prefWidth="640.0">
          <content>
-            <VBox prefHeight="989.0" prefWidth="443.0">
+            <VBox prefHeight="989.0" prefWidth="620.0">
                <children>
                   <TableView fx:id="taskTable" prefHeight="269.0" prefWidth="443.0">
                     <columns>
-                      <TableColumn fx:id="taskColumn" prefWidth="129.0" text="Task" />
-                        <TableColumn fx:id="memberColumn" prefWidth="167.0" text="Member" />
-                      <TableColumn fx:id="statusColumn" prefWidth="146.0" text="Status" />
+                      <TableColumn fx:id="taskColumn" prefWidth="206.0" text="Task" />
+                        <TableColumn fx:id="memberColumn" prefWidth="207.0" text="Members" />
+                      <TableColumn fx:id="statusColumn" prefWidth="206.0" text="Status" />
                     </columns>
                   </TableView>
                   <TextField alignment="TOP_CENTER" text="Gantt Chart" />
-                  <StackedBarChart fx:id="ganttChart">
+                  <StackedBarChart fx:id="ganttChart" prefWidth="541.0">
                     <xAxis>
                       <CategoryAxis fx:id="yAxis" side="LEFT" />
                     </xAxis>

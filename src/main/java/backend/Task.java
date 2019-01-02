@@ -3,24 +3,27 @@ package backend;
 import java.util.ArrayList;
 
 public class Task {
-    ArrayList<Member> listOfMembers;
+
+    private ArrayList<Member> members;
     private String name;
     private int startWeek;
     private int endWeek;
     private double cost;
     private boolean isCompleted;
-    private String status = "";
+    private String status;
 
     public Task(){
-        this.listOfMembers = new ArrayList<Member>();
+        this.members = new ArrayList<>();
         this.startWeek = 0;
         this.endWeek = 0;
         this.cost = 0;
         this.isCompleted = false;
         this.status = "In progress";
     }
+
+
     public Task(String name, int startWeek, int endWeek, double cost, boolean isCompleted) {
-        listOfMembers = new ArrayList<Member>();
+        this.members = new ArrayList<>();
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;
@@ -33,9 +36,10 @@ public class Task {
             this.status = "In progress";
         }
     }
+
+
     public Task(Member member,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
-        listOfMembers = new ArrayList<Member>();
-        listOfMembers.add(member);
+        this.members.add(member);
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;
@@ -50,10 +54,10 @@ public class Task {
 
     }
     public void addMember(Member member){
-        listOfMembers.add(member);
+        this.members.add(member);
     }
     public void removeMember(Member member){
-        listOfMembers.remove(member);
+        this.members.remove(member);
     }
 
     public int getStartWeek() {
@@ -106,7 +110,21 @@ public class Task {
     public String getStatus(){
         return this.status;
     }
+
+    public String getMembers(){
+        String nameList = "";
+        int memberNum = 0;
+        for (Member member: this.members) {
+            if (memberNum >0){
+                nameList += ", ";
+            }
+            nameList += member.getName() ;
+            memberNum += 1 ;
+        }
+        return nameList;
+    }
+
     public ArrayList<Member> getListOfMembers(){
-        return this.listOfMembers;
+        return this.members;
     }
 }

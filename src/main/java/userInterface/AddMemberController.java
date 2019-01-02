@@ -19,7 +19,7 @@ public class AddMemberController implements Initializable {
 
     private Project project;
     // use a class for all cases where it wants to go back to the main screen
-    private EscapeHatch goBack = new EscapeHatch();
+    private Navigation goBack = new Navigation();
 
     @FXML
     private TableView<Member> table;
@@ -120,7 +120,7 @@ public class AddMemberController implements Initializable {
 
     @FXML
     void backBtnClicked(ActionEvent event) throws IOException{
-        goBack.backBtnClicked(event, project);
+        goBack.toProjectOverview(event, project);
     }
 
     @Override

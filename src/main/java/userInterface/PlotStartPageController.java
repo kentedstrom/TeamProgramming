@@ -2,6 +2,7 @@ package userInterface;
 
 import backend.Project;
 import backend.Task;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,14 +17,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PlotStartPageController implements Initializable {
 
     private Project project;
     // use a class for all cases where it wants to go back to the main screen
-    private EscapeHatch goBack = new EscapeHatch();
+    private Navigation goBack = new Navigation();
 
     @FXML
     private Button schedule;
@@ -39,19 +39,19 @@ public class PlotStartPageController implements Initializable {
 
 
     @FXML
-    private TableView<backend.Task> taskTable;
+    private TableView<Task> taskTable;
 
     @FXML
-    private TableColumn<?, ?> taskColumn;
+    private TableColumn<Task, String> taskColumn;
 
     @FXML
-    private TableColumn<?, ?> memberColumn;
+    private TableColumn<Task, String> memberColumn;
 
     @FXML
-    private TableColumn<?, ?> statusColumn;
+    private TableColumn<Task, String> statusColumn;
 
     @FXML
-    private StackedBarChart<?, ?> ganttChart;
+    private StackedBarChart ganttChart;
 
     @FXML
     private CategoryAxis yAxis;
@@ -60,7 +60,7 @@ public class PlotStartPageController implements Initializable {
     private NumberAxis xAxis;
 
     @FXML
-    private AreaChart<?, ?> totalWorkload;
+    private AreaChart totalWorkload;
 
     @FXML
     private CategoryAxis workloadXAxis;
@@ -73,7 +73,7 @@ public class PlotStartPageController implements Initializable {
     private PieChart memberTimePie;
 
     @FXML
-    private BarChart<?, ?> memberTimeBar;
+    private BarChart memberTimeBar;
 
 
     @Override
@@ -107,10 +107,11 @@ public class PlotStartPageController implements Initializable {
 
         // plot data
         ganttChart.getData().addAll(series1, series2);
+
         // add data to the table's columns
         taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        memberColumn.setCellValueFactory(new PropertyValueFactory<>("member"));
+        memberColumn.setCellValueFactory(new PropertyValueFactory<>("members"));
 
         taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();
@@ -125,6 +126,8 @@ public class PlotStartPageController implements Initializable {
         workloadXAxis.setLabel("Task");
         workloiadYAxis.setLabel("Week");
 
+
+
         // TODO: calculate overlap : backend task
 
         // ToDO: calculate time spent by member (%) to show on Pie Chart and the same as absolute value to show on Bar Plot
@@ -135,7 +138,7 @@ public class PlotStartPageController implements Initializable {
 
     @FXML
     void backBtnClicked(ActionEvent event) throws IOException {
-        goBack.backBtnClicked(event, project);
+        goBack.toProjectOverview(event, project);
     }
 
     @FXML

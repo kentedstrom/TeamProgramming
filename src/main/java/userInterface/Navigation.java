@@ -10,9 +10,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EscapeHatch {
+public class Navigation {
 
-    void backBtnClicked(ActionEvent event, Project project) throws IOException {
+    void toProjectOverview(ActionEvent event, Project project) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
         Parent projectOverview = loader.load();
@@ -25,4 +25,19 @@ public class EscapeHatch {
         window.setScene(projectOverviewScene);
         window.show();
     }
+
+    void toRiskPlots(ActionEvent event, Project project) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/Risks.fxml")));
+        Parent riskDashboard = loader.load();
+
+        Scene riskScene = new Scene(riskDashboard, 800,500);
+        RiskController controller = loader.getController();
+
+        controller.initData(project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(riskScene);
+        window.show();
+    }
+
 }

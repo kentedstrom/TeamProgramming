@@ -66,6 +66,9 @@ public class DetailsViewController implements Initializable {
         statusLabel.setText(task.getStatus());
     }
 
+
+    // I am not sure it is important, but I am afraid we will shoot ourselves in the foot letting having tasks without people
+
     @FXML
     void addMember(ActionEvent event) {
 
@@ -97,6 +100,7 @@ public class DetailsViewController implements Initializable {
 
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -121,9 +125,12 @@ public class DetailsViewController implements Initializable {
             IDColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
 
             ObservableList<Member> currentMembers = FXCollections.observableArrayList();
+
             for (Member member : task.getListOfMembers()) {
                 currentMembers.add(member);
             }
+
+
             memberTable.setItems(currentMembers);
 
             for (Member member:project.getMembers()) {

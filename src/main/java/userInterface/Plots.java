@@ -1,30 +1,22 @@
 package userInterface;
 
-import backend.Member;
 import backend.Project;
 import backend.Risk;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.chart.*;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.scene.chart.ScatterChart;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class Plots extends Application {
 
     private Project project;
     // use a class for all cases where it wants to go back to the main screen
-    private EscapeHatch goBack = new EscapeHatch();
+    private Navigation goBack = new Navigation();
 
     @FXML
     private ScatterChart<Double, Double> riskAssessment;
@@ -34,7 +26,7 @@ public class Plots extends Application {
 
     @FXML
     private void backBtn(ActionEvent event) throws IOException {
-        goBack.backBtnClicked(event, this.project);
+        goBack.toProjectOverview(event, this.project);
     }
 
 

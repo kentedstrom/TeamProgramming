@@ -14,8 +14,26 @@ public class Calculations {
         this.tasks = tasks;
     }
 
+    public int[] calculateWorkLoadPerWeek(){
+        // store the end of the gantt chart, that is the end of the last task
+        int endOfTasks = 0;
+        for (Task task: this.tasks) {
+            if(task.getEndWeek() > endOfTasks){
+                endOfTasks = task.getEndWeek();
+            }
+        }
+        // loop though each week and count the number of tasks running
+        int[] tasksRunningPerWeek = new int[endOfTasks];
 
-
+        for (int i = 0; i < endOfTasks; i++) {
+            for (Task task: this.tasks) {
+                if(task.getStartWeek()>=i && task.getEndWeek()<=i){
+                    tasksRunningPerWeek[i] =+ 1;
+                }
+            }
+        }
+        return tasksRunningPerWeek;
+    }
 
     public double ScheduleVariance(){
         double completedCost = 0;

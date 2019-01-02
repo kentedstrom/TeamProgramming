@@ -142,14 +142,16 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     void getDashboard(ActionEvent event) throws IOException {
 
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((getClass().getResource("/PlotsStartPage.fxml")));
-        Parent PlotStartPageController = loader.load();
+        Parent PlotStartPage = loader.load();
 
-        Scene PlotsScene = new Scene(PlotStartPageController, 800,500);
+        Scene PlotsScene = new Scene(PlotStartPage, 800,500);
+        PlotsScene.getStylesheets().add("/ganttChart.css");
         PlotStartPageController controller = loader.getController();
 
-        controller.initData(this.project);
+        controller.initData(project);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(PlotsScene);
         window.show();
