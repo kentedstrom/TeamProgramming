@@ -93,10 +93,10 @@
                         <PieChart fx:id="memberTimePie" />
                         <BarChart fx:id="memberTimeBar">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" />
+                            <CategoryAxis fx:id="bcXAxis" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis side="LEFT" />
+                            <NumberAxis fx:id="bcYAxis" side="LEFT" />
                           </yAxis>
                         </BarChart>
                      </children>

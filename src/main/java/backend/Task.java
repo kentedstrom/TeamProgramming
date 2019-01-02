@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Task {
 
-    private ArrayList<Member> members;
+    private ArrayList<String> memberNames;
     private String name;
     private int startWeek;
     private int endWeek;
@@ -13,7 +13,7 @@ public class Task {
     private String status;
 
     public Task(){
-        this.members = new ArrayList<>();
+        this.memberNames = new ArrayList<>();
         this.startWeek = 0;
         this.endWeek = 0;
         this.cost = 0;
@@ -23,7 +23,7 @@ public class Task {
 
 
     public Task(String name, int startWeek, int endWeek, double cost, boolean isCompleted) {
-        this.members = new ArrayList<>();
+        this.memberNames = new ArrayList<>();
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;
@@ -38,8 +38,10 @@ public class Task {
     }
 
 
-    public Task(Member member,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
-        this.members.add(member);
+    // task has only the name of the memberNames not the memberNames themselves, otherwise infinite recursion
+    public Task(String memberName,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
+        this.memberNames = new ArrayList<>();
+        this.memberNames.add(memberName);
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;
@@ -53,11 +55,11 @@ public class Task {
         }
 
     }
-    public void addMember(Member member){
-        this.members.add(member);
+    public void addMember(String memberName){
+        this.memberNames.add(memberName);
     }
-    public void removeMember(Member member){
-        this.members.remove(member);
+    public void removeMember(String memberName){
+        this.memberNames.remove(memberName);
     }
 
     public int getStartWeek() {
@@ -111,20 +113,20 @@ public class Task {
         return this.status;
     }
 
-    public String getMembers(){
+    public String getMemberNames(){
         String nameList = "";
         int memberNum = 0;
-        for (Member member: this.members) {
+        for (String name: this.memberNames) {
             if (memberNum >0){
                 nameList += ", ";
             }
-            nameList += member.getName() ;
+            nameList += name ;
             memberNum += 1 ;
         }
         return nameList;
     }
 
-    public ArrayList<Member> getListOfMembers(){
-        return this.members;
+    public ArrayList<String> getListOfMemberNames(){
+        return this.memberNames;
     }
 }

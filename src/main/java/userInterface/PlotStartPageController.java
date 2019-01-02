@@ -80,6 +80,12 @@ public class PlotStartPageController implements Initializable {
     @FXML
     private BarChart memberTimeBar;
 
+    @FXML
+    private CategoryAxis bcXAxis;
+
+    @FXML
+    private NumberAxis bcYAxis;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -146,20 +152,30 @@ public class PlotStartPageController implements Initializable {
         totalWorkload.getData().addAll(series3,series4);
 
 
-        // set up time spent by member on the project Pie Chart
-        PieChart timeSpentByMemberPie = new PieChart();
+        // set up time spent by member on the project Pie Chart...
+        memberTimePie = new PieChart();
+
+        // ... and at the same time plot the time spent by member on a BarChart
+
+        bcXAxis.setLabel("Member");
+        bcYAxis.setLabel("Time");
+
+        XYChart.Series series5 = new XYChart.Series();
 
         // retrieve calculated time spent
         HashMap<String,Double> timeSpentByMember = getData.TimeSpentOnProjectByMember(project.getMembers());
 
         for (String key: timeSpentByMember.keySet()) {
-            // not counting the total number in
-            if(!key.equals("Total")){
-                timeSpentByMemberPie.getData().add(new PieChart.Data(key,timeSpentByMember.get(key)));
+            // not counting the total number in the PieChart
+            if(!key.equals("Total")) {
+                memberTimePie.getData().add(new PieChart.Data(key, timeSpentByMember.get(key)));
             }
+            series5.getData().add(new XYChart.Data(timeSpentByMember.get(key), key));
         }
 
-        // plot the time spent by member on a barchart
+        // plot the bar chart
+        memberTimeBar.getData().addAll(series5);
+
 
     }
 

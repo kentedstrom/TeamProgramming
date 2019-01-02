@@ -200,8 +200,7 @@ public class OptionClassController implements Initializable {
     @FXML
     void confirmTask(ActionEvent event) {
 
-        Member memberToAdd;
-        memberToAdd = memberChoice.getSelectionModel().getSelectedItem();
+        Member memberToAdd = memberChoice.getSelectionModel().getSelectedItem();
 
         int startWeek = Integer.parseInt(this.startWeekInput.getText());
         int endWeek = Integer.parseInt(this.endWeekInput.getText());
@@ -216,16 +215,15 @@ public class OptionClassController implements Initializable {
 
         if (completeRadioBtn.isSelected()){
             completed = true;
-        }
-        else{
+        }else{
             completed = false;
         }
+
         if (memberToAdd == null) {
             project.createTask(taskName, startWeek, endWeek, cost, completed);
-        }
 
-        else{
-            project.createTask(memberToAdd, taskName, startWeek, endWeek, cost, completed);
+        }else{
+            project.createTask(memberToAdd.getName(), taskName, startWeek, endWeek, cost, completed);
         }
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();
 

@@ -44,20 +44,37 @@ public class Project {
     // when a member is removed, remove their name from all tasks they were involved in
     public void removeMember(Member memberToRemove) {
         ArrayList<Task> removedMembersTasks = memberToRemove.getTasks();
-        for (Task taskWithMissingMember: removedMembersTasks) {
-            taskWithMissingMember.removeMember(memberToRemove);
+        for (Task taskInProject: this.tasks) {
+            if(taskInProject.equals(removedMembersTasks)){
+                taskInProject.removeMember(memberToRemove.getName());
+            }
         }
+
         members.remove(memberToRemove);
+    }
+
+    public Member searchMember(String id) {
+        for (Member member : members) {
+            if (member.compare(id)) {
+                return member;
+            }
+        }
+        return null;
     }
 
     public void createTask(String name, int startWeek, int endWeek, double cost, boolean completed) {
         tasks.add(factory.createTask(name, startWeek, endWeek, cost, completed));
     }
 
-    public void createTask(Member member, String name, int startWeek, int endWeek, double cost, boolean completed) {
-        Task newTask =factory.createTask(member, name, startWeek, endWeek, cost, completed);
+    public void createTask(String memberName, String name, int startWeek, int endWeek, double cost, boolean completed) {
+        Task newTask = factory.createTask(memberName, name, startWeek, endWeek, cost, completed);
         tasks.add(newTask);
-        member.addTask(newTask);
+        // the section below could be rewritten with search through member ID
+        for (Member member: this.members) {
+            if(member.getName().equals(memberName)){
+                member.addTask(newTask);
+            }
+        }
     }
 
     public void createTask() {
@@ -65,9 +82,11 @@ public class Project {
     }
 
     public void removeTask(Task taskToRemove) {
-        ArrayList<Member> membersToAdjust = taskToRemove.getListOfMembers();
-        for (Member member: membersToAdjust) {
-            member.removeTask(taskToRemove);
+        ArrayList<String> membersToAdjust = taskToRemove.getListOfMemberNames();
+        for (Member member: this.members) {
+            if(member.getName().equals(membersToAdjust)){
+                member.removeTask(taskToRemove);
+            }
         }
         tasks.remove(taskToRemove);
     }
@@ -128,25 +147,4 @@ public class Project {
         this.budget = budget;
     }
 
-
-    // member stuff below
-
-/*
-    no need for it since only project can create member
-    public void addMembers(Member member) {
-        members.add(member);
-    }
-
-    public void removeMembers(Member member) {
-        members.remove(member);
-    }
-*/
-    public Member searchMember(String id) {
-        for (Member member : members) {
-            if (member.compare(id)) {
-                return member;
-            }
-        }
-        return null;
-    }
 }

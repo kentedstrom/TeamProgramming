@@ -72,13 +72,16 @@ public class DetailsViewController implements Initializable {
     @FXML
     void addMember(ActionEvent event) {
 
-        Member memberToAdd;
-        memberToAdd = addMemberMenu.getSelectionModel().getSelectedItem();
-        task.addMember(memberToAdd);
+        Member memberToAdd = addMemberMenu.getSelectionModel().getSelectedItem();
+        task.addMember(memberToAdd.getName());
 
         ObservableList<Member> currentMembers = FXCollections.observableArrayList();
-        for (Member member : task.getListOfMembers()) {
-            currentMembers.add(member);
+        for (String memberName : task.getListOfMemberNames()) {
+            for (Member member: project.getMembers()) {
+                if (member.getName().equals(memberName)){
+                    currentMembers.add(member);
+                }
+            }
         }
         memberTable.setItems(currentMembers);
 
@@ -88,13 +91,13 @@ public class DetailsViewController implements Initializable {
     void removeBtnClicked(ActionEvent event){
         Member memberToRemove;
         memberToRemove = memberTable.getSelectionModel().getSelectedItem();
-        task.removeMember(memberToRemove);
+        task.removeMember(memberToRemove.getName());
 
         ObservableList<Member> memberSelected, allMembers;
         allMembers = memberTable.getItems();
         memberSelected = memberTable.getSelectionModel().getSelectedItems();
 
-        task.getListOfMembers().remove(memberTable.getSelectionModel().getSelectedItem());
+        task.getListOfMemberNames().remove(memberTable.getSelectionModel().getSelectedItem());
 
         memberSelected.forEach(allMembers::remove);
 
@@ -126,8 +129,12 @@ public class DetailsViewController implements Initializable {
 
             ObservableList<Member> currentMembers = FXCollections.observableArrayList();
 
-            for (Member member : task.getListOfMembers()) {
-                currentMembers.add(member);
+            for (String memberName : task.getListOfMemberNames()) {
+                for (Member member: project.getMembers()) {
+                    if (member.getName().equals(memberName)){
+                        currentMembers.add(member);
+                    }
+                }
             }
 
 

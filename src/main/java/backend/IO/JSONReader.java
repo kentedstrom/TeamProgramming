@@ -1,6 +1,7 @@
 package backend.IO;
 
 import backend.Project;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -10,8 +11,9 @@ public class JSONReader {
 
     private ObjectMapper objectMapper;
 
-    public JSONReader(){
+    public JSONReader(){ 
         objectMapper = new ObjectMapper();
+        objectMapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
     }
 
    public void writeProject(Project project,String path) throws IOException {
