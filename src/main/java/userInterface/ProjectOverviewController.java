@@ -50,7 +50,7 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     private Label budgetLabel;
     @FXML
-    private Button riskMatrix;
+    private Button dashboard;
 
     public void initData(Project project){
         this.project = project;
@@ -140,14 +140,14 @@ public class ProjectOverviewController implements Initializable{
     }
 
     @FXML
-    void getRiskMatrix(ActionEvent event) throws IOException {
+    void getDashboard(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation((getClass().getResource("/Plots.fxml")));
-        Parent Plots = loader.load();
+        loader.setLocation((getClass().getResource("/PlotsStartPage.fxml")));
+        Parent PlotStartPageController = loader.load();
 
-        Scene PlotsScene = new Scene(Plots, 800,500);
-        Plots controller = loader.getController();
+        Scene PlotsScene = new Scene(PlotStartPageController, 800,500);
+        PlotStartPageController controller = loader.getController();
 
         controller.initData(this.project);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -257,14 +257,11 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     void saveProject(ActionEvent event)throws IOException{
 
-        ObjectMapper objectMapper = new ObjectMapper();
+        /*ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.writeValue(new File("C:\\Users\\tobbe\\JSON files\\Projecttest.JSON"), project);
+        */
+        // it saves to your TeamProgramming folder
+        Controller.saveProject(project, "Projecttest.json");
 
-
-        /* Can't get this to work
-
-            Controller.saveProject(project, "C:\\Users\\tobbe\\JSON files");
-
-         */
     }
 }

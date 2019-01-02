@@ -7,58 +7,60 @@ public class Project {
     private ArrayList<Member> members;
     private ArrayList<Task> tasks;
     private ArrayList<Risk> risks;
-    private Schedule schedule;
+    private Calculations schedule;
     private Factory factory;
     private double budget;
 
-    public Project(){
+    public Project() {
         this.name = "";
         this.budget = 0;
-    	this.members = new ArrayList<>();
-    	this.tasks = new ArrayList<>();
-    	this.risks = new ArrayList<>();
-    	this.schedule = new Schedule(tasks);
-    	this.factory = new Factory();
+        this.members = new ArrayList<>();
+        this.tasks = new ArrayList<>();
+        this.risks = new ArrayList<>();
+        this.schedule = new Calculations(tasks);
+        this.factory = new Factory();
     }
 
-    public Project(String name, double budget){
+    public Project(String name, double budget) {
         this.budget = budget;
         this.name = name;
         this.members = new ArrayList<>();
         this.tasks = new ArrayList<>();
         this.risks = new ArrayList<>();
-        this.schedule = new Schedule(tasks);
+        this.schedule = new Calculations(tasks);
         this.factory = new Factory();
     }
 
 
-
-    public void createMember(String name, String Id, double salary){
+    public void createMember(String name, String Id, double salary) {
         members.add(this.factory.createMember(name, Id, salary));
     }
-    public void removeMember(Member memberToRemove){
+
+    public void removeMember(Member memberToRemove) {
         members.remove(memberToRemove);
     }
 
-    public void createTask(String name, int startWeek, int endWeek, double cost, boolean completed){
+    public void createTask(String name, int startWeek, int endWeek, double cost, boolean completed) {
         tasks.add(factory.createTask(name, startWeek, endWeek, cost, completed));
     }
 
-    public void createTask(Member member,String name, int startWeek, int endWeek, double cost, boolean completed){
-        tasks.add(factory.createTask(member,name, startWeek, endWeek, cost, completed));
+    public void createTask(Member member, String name, int startWeek, int endWeek, double cost, boolean completed) {
+        tasks.add(factory.createTask(member, name, startWeek, endWeek, cost, completed));
     }
 
-    public void createTask(){
+    public void createTask() {
         tasks.add(factory.createTask());
     }
-    public void removeTask(Task tasToRemove){
+
+    public void removeTask(Task tasToRemove) {
         tasks.remove(tasToRemove);
     }
 
-    public void createRisk(String name, double probability, double impact){
-        risks.add(factory.createRisk(name,probability,impact));
+    public void createRisk(String name, double probability, double impact) {
+        risks.add(factory.createRisk(name, probability, impact));
     }
-    public void removeRisk(Risk riskToRemove){
+
+    public void removeRisk(Risk riskToRemove) {
         risks.remove(riskToRemove);
     }
 
@@ -94,11 +96,11 @@ public class Project {
         this.risks = risks;
     }
 
-    public Schedule getSchedule() {
+    public Calculations getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(Schedule schedule) {
+    public void setSchedule(Calculations schedule) {
         this.schedule = schedule;
     }
 
@@ -109,20 +111,23 @@ public class Project {
     public void setBudget(double budget) {
         this.budget = budget;
     }
-}
 
-// member stuff below
-    public void addMembers (Member member){
-    members.add(member);
+
+    // member stuff below
+    public void addMembers(Member member) {
+        members.add(member);
     }
-    public void removeMembers (Member member){
-    members.remove(member)
+
+    public void removeMembers(Member member) {
+        members.remove(member);
     }
-    public Member searchMember(String id){
-        for(Member member : members){
-            if(member.compare(id)){
+
+    public Member searchMember(String id) {
+        for (Member member : members) {
+            if (member.compare(id)) {
                 return member;
             }
         }
         return null;
     }
+}

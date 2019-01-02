@@ -29,7 +29,7 @@ public class Factory {
         return new Risk(name, probability, impact);
     }
 
-    public Schedule createSchedule(){
-        return new Schedule();
+    public Calculations createCalculations(ArrayList<Task> tasks){
+        return new Calculations(tasks);
     }
 }

@@ -8,8 +8,10 @@ public class Calculations {
 
     private ArrayList<Task> tasks;
 
-    public Calculations(){
+    public Calculations(){}
 
+    public Calculations(ArrayList<Task> tasks){
+        this.tasks = tasks;
     }
 
 
@@ -45,6 +47,7 @@ public class Calculations {
             percentageWorkDone = completedTasks / numOfTasks;
         }
         catch (ArithmeticException exception){
+            // where is it expected to be written?
             System.out.println("Error: no registered tasks");
              percentageWorkDone = 0;
         }
@@ -53,6 +56,7 @@ public class Calculations {
 
         }
         catch(ArithmeticException exception) {
+            // sout to where?
             System.out.println("Error: no work was done or the project does not have a budget");
 
         }

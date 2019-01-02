@@ -1,6 +1,7 @@
 package userInterface;
 
 import backend.Controller;
+import backend.IO.JSONReader;
 import backend.Project;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
@@ -45,8 +46,13 @@ public class StartScreenController implements Initializable {
     @FXML
     void openProject(ActionEvent event) {
         try {
+            /*
             ObjectMapper objectMapper = new ObjectMapper();
             this.project = objectMapper.readValue(new File("C:\\Users\\tobbe\\JSON files\\Projecttest.JSON"), Project.class);
+            */
+
+            //imports from TeamProgramming folder the same as it saves
+            this.project = Controller.importProject("Projecttest.json");
 
 
         FXMLLoader loader = new FXMLLoader();
