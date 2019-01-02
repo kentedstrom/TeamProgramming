@@ -113,19 +113,6 @@ public class Task {
         return this.status;
     }
 
-    public String getMemberNames(){
-        String nameList = "";
-        int memberNum = 0;
-        for (String name: this.memberNames) {
-            if (memberNum >0){
-                nameList += ", ";
-            }
-            nameList += name ;
-            memberNum += 1 ;
-        }
-        return nameList;
-    }
-
     public ArrayList<String> getListOfMemberNames(){
         return this.memberNames;
     }

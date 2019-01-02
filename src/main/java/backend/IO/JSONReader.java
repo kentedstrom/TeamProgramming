@@ -11,7 +11,7 @@ public class JSONReader {
 
     private ObjectMapper objectMapper;
 
-    public JSONReader(){ 
+    public JSONReader(){
         objectMapper = new ObjectMapper();
         objectMapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
     }

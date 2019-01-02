@@ -26,9 +26,6 @@ public class PlotStartPageController implements Initializable {
     private Project project;
     // use a class for all cases where it wants to go back to the main screen
     private Navigation goBack = new Navigation();
-    // to get data from calculations class
-    // not sure if responsibilities are right here
-    private Calculations getData = new Calculations(project.getTasks());
 
     @FXML
     private Button schedule;
@@ -98,10 +95,14 @@ public class PlotStartPageController implements Initializable {
 
         this.project = project;
 
+        // to get data from calculations class
+        // not sure if responsibilities are right here
+        Calculations getData = new Calculations(project.getTasks());
+
         // add data to the table's columns
         taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        memberColumn.setCellValueFactory(new PropertyValueFactory<>("members"));
+        memberColumn.setCellValueFactory(new PropertyValueFactory<>("listOfMemberNames"));
 
         taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();
@@ -124,8 +125,8 @@ public class PlotStartPageController implements Initializable {
 
         for (Task task:project.getTasks()) {
 
-            series1.getData().add(new XYChart.Data(task.getStartWeek(), task.getName()));
-            series2.getData().add(new XYChart.Data((task.getEndWeek()-task.getStartWeek()), task.getName()));
+            series1.getData().add(new XYChart.Data(task.getName(), task.getStartWeek()));
+            series2.getData().add(new XYChart.Data(task.getName(),task.getEndWeek()-task.getStartWeek()));
 
         }
 
@@ -144,8 +145,8 @@ public class PlotStartPageController implements Initializable {
 
         int[] workLoadPerWeek = getData.calculateWorkLoadPerWeek();
         for (int i = 0; i < workLoadPerWeek.length; i++) {
-            series3.getData().add(new XYChart.Data(i,"week"+i));
-            series4.getData().add(new XYChart.Data(workLoadPerWeek[i],"week"+i));
+            series3.getData().add(new XYChart.Data("week"+i,i));
+            series4.getData().add(new XYChart.Data("week"+i,workLoadPerWeek[i]));
         }
 
         // plot workload per week area chart
