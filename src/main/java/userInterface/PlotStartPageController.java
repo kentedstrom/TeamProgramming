@@ -18,6 +18,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class PlotStartPageController implements Initializable {
@@ -146,10 +147,19 @@ public class PlotStartPageController implements Initializable {
 
 
         // set up time spent by member on the project Pie Chart
+        PieChart timeSpentByMemberPie = new PieChart();
 
+        // retrieve calculated time spent
+        HashMap<String,Double> timeSpentByMember = getData.TimeSpentOnProjectByMember(project.getMembers());
 
-        // ToDO: calculate time spent by member (%) to show on Pie Chart and the same as absolute value to show on Bar Plot
+        for (String key: timeSpentByMember.keySet()) {
+            // not counting the total number in
+            if(!key.equals("Total")){
+                timeSpentByMemberPie.getData().add(new PieChart.Data(key,timeSpentByMember.get(key)));
+            }
+        }
 
+        // plot the time spent by member on a barchart
 
     }
 

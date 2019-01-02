@@ -1,6 +1,8 @@
 package backend;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Project {
     private String name;
@@ -10,6 +12,7 @@ public class Project {
     private Calculations schedule;
     private Factory factory;
     private double budget;
+    private Calendar calendar;
 
     public Project() {
         this.name = "";
@@ -19,6 +22,7 @@ public class Project {
         this.risks = new ArrayList<>();
         this.schedule = new Calculations(tasks);
         this.factory = new Factory();
+        this.calendar = new GregorianCalendar();
     }
 
     public Project(String name, double budget) {
@@ -29,6 +33,7 @@ public class Project {
         this.risks = new ArrayList<>();
         this.schedule = new Calculations(tasks);
         this.factory = new Factory();
+        this.calendar = new GregorianCalendar();
     }
 
 

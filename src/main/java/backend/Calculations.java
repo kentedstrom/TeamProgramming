@@ -3,6 +3,8 @@ package backend;
 import backend.Task;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Calculations {
 
@@ -34,6 +36,23 @@ public class Calculations {
             }
         }
         return tasksRunningPerWeek;
+    }
+
+    // calculate the total time of the tasks done so far and how much each person added to it
+    public HashMap<String,Double> TimeSpentOnProjectByMember(ArrayList<Member> members){
+        // calculate the time each member spent on the project and store in a hashMap
+        HashMap<String,Double> timeDistribution = new HashMap<>();
+        // store the total time too
+        timeDistribution.put("Total",0.0);
+        int total = 0;
+        for (Member  member: members) {
+            // store the total time in the 1st element of the array
+            total += member.timeSpent();
+            timeDistribution.replace("Total",Double.valueOf(total));
+            // store the personal times in the next elements of the array
+            timeDistribution.put(member.getName(),Double.valueOf(member.timeSpent()));
+        }
+        return timeDistribution;
     }
 
     public double ScheduleVariance(){
