@@ -1,5 +1,6 @@
 package userInterface;
 
+import backend.Calculations;
 import backend.Project;
 import backend.Task;
 
@@ -24,6 +25,9 @@ public class PlotStartPageController implements Initializable {
     private Project project;
     // use a class for all cases where it wants to go back to the main screen
     private Navigation goBack = new Navigation();
+    // to get data from calculations class
+    // not sure if responsibilities are right here
+    private Calculations getData = new Calculations(project.getTasks());
 
     @FXML
     private Button schedule;
@@ -87,6 +91,19 @@ public class PlotStartPageController implements Initializable {
 
         this.project = project;
 
+        // add data to the table's columns
+        taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+        memberColumn.setCellValueFactory(new PropertyValueFactory<>("members"));
+
+        taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        ObservableList<Task> currentTasks = FXCollections.observableArrayList();
+        for (Task task: project.getTasks()){
+            currentTasks.add(task);
+        }
+
+        taskTable.setItems(currentTasks);
+
         // set up Gantt Chart
 
         yAxis.setLabel("Task");
@@ -105,30 +122,31 @@ public class PlotStartPageController implements Initializable {
 
         }
 
-        // plot data
+        // plot gantt chart data
         ganttChart.getData().addAll(series1, series2);
 
-        // add data to the table's columns
-        taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        memberColumn.setCellValueFactory(new PropertyValueFactory<>("members"));
-
-        taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        ObservableList<Task> currentTasks = FXCollections.observableArrayList();
-        for (Task task: project.getTasks()){
-            currentTasks.add(task);
-        }
-
-        taskTable.setItems(currentTasks);
 
         // set up Total Workload Chart
 
         workloadXAxis.setLabel("Task");
         workloiadYAxis.setLabel("Week");
 
+        // new series for AreaChart
+        XYChart.Series series3 = new XYChart.Series();
+        XYChart.Series series4 = new XYChart.Series();
+
+        int[] workLoadPerWeek = getData.calculateWorkLoadPerWeek();
+        for (int i = 0; i < workLoadPerWeek.length; i++) {
+            series3.getData().add(new XYChart.Data(i,"week"+i));
+            series4.getData().add(new XYChart.Data(workLoadPerWeek[i],"week"+i));
+        }
+
+        // plot workload per week area chart
+        totalWorkload.getData().addAll(series3,series4);
 
 
-        // TODO: calculate overlap : backend task
+        // set up time spent by member on the project Pie Chart
+
 
         // ToDO: calculate time spent by member (%) to show on Pie Chart and the same as absolute value to show on Bar Plot
 

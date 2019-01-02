@@ -36,7 +36,12 @@ public class Project {
         members.add(this.factory.createMember(name, Id, salary));
     }
 
+    // when a member is removed, remove their name from all tasks they were involved in
     public void removeMember(Member memberToRemove) {
+        ArrayList<Task> removedMembersTasks = memberToRemove.getTasks();
+        for (Task taskWithMissingMember: removedMembersTasks) {
+            taskWithMissingMember.removeMember(memberToRemove);
+        }
         members.remove(memberToRemove);
     }
 
@@ -45,15 +50,21 @@ public class Project {
     }
 
     public void createTask(Member member, String name, int startWeek, int endWeek, double cost, boolean completed) {
-        tasks.add(factory.createTask(member, name, startWeek, endWeek, cost, completed));
+        Task newTask =factory.createTask(member, name, startWeek, endWeek, cost, completed);
+        tasks.add(newTask);
+        member.addTask(newTask);
     }
 
     public void createTask() {
         tasks.add(factory.createTask());
     }
 
-    public void removeTask(Task tasToRemove) {
-        tasks.remove(tasToRemove);
+    public void removeTask(Task taskToRemove) {
+        ArrayList<Member> membersToAdjust = taskToRemove.getListOfMembers();
+        for (Member member: membersToAdjust) {
+            member.removeTask(taskToRemove);
+        }
+        tasks.remove(taskToRemove);
     }
 
     public void createRisk(String name, double probability, double impact) {
@@ -114,6 +125,9 @@ public class Project {
 
 
     // member stuff below
+
+/*
+    no need for it since only project can create member
     public void addMembers(Member member) {
         members.add(member);
     }
@@ -121,7 +135,7 @@ public class Project {
     public void removeMembers(Member member) {
         members.remove(member);
     }
-
+*/
     public Member searchMember(String id) {
         for (Member member : members) {
             if (member.compare(id)) {

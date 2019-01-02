@@ -14,6 +14,7 @@ public class Calculations {
         this.tasks = tasks;
     }
 
+    // calculate task overlap for AreaChart
     public int[] calculateWorkLoadPerWeek(){
         // store the end of the gantt chart, that is the end of the last task
         int endOfTasks = 0;
