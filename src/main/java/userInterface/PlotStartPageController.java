@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Side;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.SelectionMode;
@@ -75,13 +76,13 @@ public class PlotStartPageController implements Initializable {
     private PieChart memberTimePie;
 
     @FXML
-    private BarChart memberTimeBar;
+    private StackedBarChart memberTimeBar;
 
     @FXML
-    private CategoryAxis bcXAxis;
+    private CategoryAxis timeBarXAxis;
 
     @FXML
-    private NumberAxis bcYAxis;
+    private NumberAxis timeBarYAxis;
 
 
     @Override
@@ -114,7 +115,9 @@ public class PlotStartPageController implements Initializable {
 
         // set up Gantt Chart
 
+        yAxis.setSide(Side.LEFT);
         yAxis.setLabel("Task");
+        xAxis.setSide(Side.BOTTOM);
         xAxis.setLabel("Week");
 
 
@@ -125,8 +128,8 @@ public class PlotStartPageController implements Initializable {
 
         for (Task task:project.getTasks()) {
 
-            series1.getData().add(new XYChart.Data(task.getName(), task.getStartWeek()));
-            series2.getData().add(new XYChart.Data(task.getName(),task.getEndWeek()-task.getStartWeek()));
+            series1.getData().add(new XYChart.Data(task.getStartWeek(),task.getName()));
+            series2.getData().add(new XYChart.Data(task.getEndWeek()-task.getStartWeek(),task.getName()));
 
         }
 
@@ -141,16 +144,14 @@ public class PlotStartPageController implements Initializable {
 
         // new series for AreaChart
         XYChart.Series series3 = new XYChart.Series();
-        XYChart.Series series4 = new XYChart.Series();
 
         int[] workLoadPerWeek = getData.calculateWorkLoadPerWeek();
         for (int i = 0; i < workLoadPerWeek.length; i++) {
-            series3.getData().add(new XYChart.Data("week"+i,i));
-            series4.getData().add(new XYChart.Data("week"+i,workLoadPerWeek[i]));
+            series3.getData().add(new XYChart.Data("week"+i,workLoadPerWeek[i]));
         }
 
         // plot workload per week area chart
-        totalWorkload.getData().addAll(series3,series4);
+        totalWorkload.getData().addAll(series3);
 
 
         // set up time spent by member on the project Pie Chart...
@@ -158,24 +159,29 @@ public class PlotStartPageController implements Initializable {
 
         // ... and at the same time plot the time spent by member on a BarChart
 
-        bcXAxis.setLabel("Member");
-        bcYAxis.setLabel("Time");
+        timeBarXAxis.setLabel("Member");
+        timeBarYAxis.setLabel("Time");
 
+        XYChart.Series seriesHidden = new XYChart.Series();
         XYChart.Series series5 = new XYChart.Series();
 
         // retrieve calculated time spent
         HashMap<String,Double> timeSpentByMember = getData.TimeSpentOnProjectByMember(project.getMembers());
 
+        series5.getData().add(new XYChart.Data("Total",timeSpentByMember.get("Total")));
+        seriesHidden.getData().add(new XYChart.Data("Total",0));
+
         for (String key: timeSpentByMember.keySet()) {
             // not counting the total number in the PieChart
             if(!key.equals("Total")) {
                 memberTimePie.getData().add(new PieChart.Data(key, timeSpentByMember.get(key)));
+                series5.getData().add(new XYChart.Data(key,timeSpentByMember.get(key)));
+                seriesHidden.getData().add(new XYChart.Data(key,0));
             }
-            series5.getData().add(new XYChart.Data(timeSpentByMember.get(key), key));
         }
 
         // plot the bar chart
-        memberTimeBar.getData().addAll(series5);
+        memberTimeBar.getData().addAll(seriesHidden,series5);
 
 
     }

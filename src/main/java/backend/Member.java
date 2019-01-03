@@ -46,14 +46,17 @@ public class Member {
     // distinguish between completed and incomplete tasks
     public int timeSpent(){
         // if a task is incomplete, the time spent = the time from the beginnign of the task till the current date
-        int currentWeek = calendar.WEEK_OF_YEAR;
+        //int currentWeek = calendar.WEEK_OF_YEAR;
         int timeSpent = 0;
         for(Task task : this.tasks){
+            timeSpent += task.getEndWeek() - task.getStartWeek();
+            /*
             if(task.isCompleted()){
                 timeSpent += task.getEndWeek() - task.getStartWeek();
             }else{
                 timeSpent += currentWeek - task.getStartWeek();
             }
+            */
 
         }
         return timeSpent;

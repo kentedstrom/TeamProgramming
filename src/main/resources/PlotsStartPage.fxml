@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.AreaChart?>
-<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
@@ -60,7 +60,7 @@
       </VBox>
       <ScrollPane layoutX="160.0" layoutY="-4.0" prefHeight="500.0" prefWidth="640.0">
          <content>
-            <VBox prefHeight="989.0" prefWidth="620.0">
+            <VBox prefHeight="1020.0" prefWidth="620.0">
                <children>
                   <TableView fx:id="taskTable" prefHeight="269.0" prefWidth="443.0">
                     <columns>
@@ -71,15 +71,18 @@
                   </TableView>
                   <TextField alignment="TOP_CENTER" text="Gantt Chart" />
                   <StackedBarChart fx:id="ganttChart" prefWidth="541.0">
-                    <xAxis>
-                      <CategoryAxis fx:id="yAxis" side="LEFT" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="BOTTOM" fx:id="xAxis" />
-                    </yAxis>
+                      <xAxis>
+                          <NumberAxis autoRanging="true" lowerBound="0.0" side="TOP" fx:id="xAxis">
+                              <opaqueInsets>
+                                  <Insets />
+                              </opaqueInsets></NumberAxis>
+                      </xAxis>
+                      <yAxis>
+                          <CategoryAxis fx:id="yAxis" side="LEFT" />
+                      </yAxis>
                   </StackedBarChart>
                   <TextField alignment="TOP_CENTER" text="Total Workload per Week" />
-                  <AreaChart fx:id="totalWorkload" prefHeight="386.0" prefWidth="443.0">
+                  <AreaChart fx:id="totalWorkload" prefHeight="386.0" prefWidth="620.0">
                     <xAxis>
                       <CategoryAxis fx:id="workloadXAxis" prefWidth="382.0" side="BOTTOM" />
                     </xAxis>
@@ -87,18 +90,18 @@
                       <NumberAxis fx:id="workloiadYAxis" side="LEFT" />
                     </yAxis>
                   </AreaChart>
-                  <TextField alignment="TOP_CENTER" text="Time Spent on Task by Member" />
-                  <HBox prefHeight="305.0" prefWidth="443.0">
+                  <TextField alignment="TOP_CENTER" prefHeight="63.0" prefWidth="620.0" text="Time Spent on Task by Member" />
+                  <HBox prefHeight="384.0" prefWidth="620.0">
                      <children>
                         <PieChart fx:id="memberTimePie" />
-                        <BarChart fx:id="memberTimeBar">
+                        <StackedBarChart fx:id="memberTimeBar">
                           <xAxis>
-                            <CategoryAxis fx:id="bcXAxis" side="BOTTOM" />
+                            <CategoryAxis fx:id="timeBarXAxis" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis fx:id="bcYAxis" side="LEFT" />
+                            <NumberAxis fx:id="timeBarYAxis" side="LEFT" />
                           </yAxis>
-                        </BarChart>
+                        </StackedBarChart>
                      </children>
                   </HBox>
                </children>

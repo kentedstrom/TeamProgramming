@@ -26,12 +26,12 @@ public class Calculations {
             }
         }
         // loop though each week and count the number of tasks running
-        int[] tasksRunningPerWeek = new int[endOfTasks];
+        int[] tasksRunningPerWeek = new int[endOfTasks+2];
 
-        for (int i = 0; i < endOfTasks; i++) {
-            for (Task task: this.tasks) {
-                if(task.getStartWeek()>=i && task.getEndWeek()<=i){
-                    tasksRunningPerWeek[i] =+ 1;
+        for (Task task: this.tasks) {
+            for (int i = 0; i < endOfTasks+2; i++) {
+                if(task.getStartWeek()<=i && task.getEndWeek()>=i){
+                    tasksRunningPerWeek[i] += 1;
                 }
             }
         }
