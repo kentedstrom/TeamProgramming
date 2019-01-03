@@ -55,18 +55,38 @@ public class Calculations {
         return timeDistribution;
     }
 
-    public double ScheduleVariance(){
-        double completedCost = 0;
-        double unCompletedCost =0;
-        for (Task task : tasks){
-            if (task.isCompleted()){
-                completedCost=+ task.getCost();
-            }
-            else {
-                unCompletedCost =+ task.getCost();
+    // calculate how many tasks are finished and how many are unfinished
+    public double[] TaskCompletion(){
+        double[] taskCompleteness = new double[2];
+        for (Task task: tasks) {
+            if(task.isCompleted()){
+                // if task IS completed it is stored in the first index of the array
+                taskCompleteness[0] += 1;
+            }else{
+                // if the task IS NOT completed it stays in the second index of the array
+                taskCompleteness[1] += 1;
             }
         }
-        return completedCost - unCompletedCost;
+        return taskCompleteness;
+    }
+
+    public double[] BudgetStatus(){
+        double[] budgetStatus = new double[2];
+        for (Task task: tasks) {
+            if(task.isCompleted()){
+                budgetStatus[0] += task.getCost();
+            }else{
+                budgetStatus[1] += task.getCost();
+            }
+        }
+        return budgetStatus;
+    }
+
+
+    // make use of the budgetstatus function and calculates the cost of work done - cost of work scheduled
+    public double ScheduleVariance(){
+        double[] costs = BudgetStatus();
+        return costs[0]-costs[1];
     }
 
 

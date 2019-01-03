@@ -28,7 +28,7 @@ public class Navigation {
 
     void toRiskPlots(ActionEvent event, Project project) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation((getClass().getResource("/Risks.fxml")));
+        loader.setLocation((getClass().getResource("/Risk.fxml")));
         Parent riskDashboard = loader.load();
 
         Scene riskScene = new Scene(riskDashboard, 800,500);
@@ -37,6 +37,36 @@ public class Navigation {
         controller.initData(project);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(riskScene);
+        window.show();
+    }
+
+    void toPlotStartPage(ActionEvent event, Project project) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/PlotsStartPage.fxml")));
+        Parent PlotStartPage = loader.load();
+
+        Scene PlotsScene = new Scene(PlotStartPage, 800,500);
+        PlotsScene.getStylesheets().add("/ganttChart.css");
+        PlotStartPageController controller = loader.getController();
+
+        controller.initData(project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(PlotsScene);
+        window.show();
+    }
+
+    void toTaskOV(ActionEvent event, Project project) throws IOException {
+        // go to Task Overview
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/TaskOverview.fxml")));
+        Parent taskOV = loader.load();
+
+        Scene taskScene = new Scene(taskOV, 800,500);
+        TaskOverviewController controller = loader.getController();
+
+        controller.initData(project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(taskScene);
         window.show();
     }
 

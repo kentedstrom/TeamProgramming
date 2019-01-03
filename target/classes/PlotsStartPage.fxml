@@ -90,7 +90,7 @@
                       <NumberAxis fx:id="workloiadYAxis" side="LEFT" />
                     </yAxis>
                   </AreaChart>
-                  <TextField alignment="TOP_CENTER" prefHeight="63.0" prefWidth="620.0" text="Time Spent on Task by Member" />
+                  <TextField alignment="TOP_CENTER" prefHeight="63.0" prefWidth="620.0" text="Time Spent on Project by Member" />
                   <HBox prefHeight="384.0" prefWidth="620.0">
                      <children>
                         <PieChart fx:id="memberTimePie" />

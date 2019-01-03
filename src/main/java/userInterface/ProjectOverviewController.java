@@ -31,6 +31,7 @@ import java.util.ResourceBundle;
 public class ProjectOverviewController implements Initializable{
 
     private Project project;
+    private Navigation goBack;
 
 
     @FXML
@@ -54,6 +55,7 @@ public class ProjectOverviewController implements Initializable{
 
     public void initData(Project project){
         this.project = project;
+        this.goBack = new Navigation();
         budgetLabel.setText(Double.toString(project.getBudget()));
 
     }
@@ -142,62 +144,8 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     void getDashboard(ActionEvent event) throws IOException {
 
+        goBack.toPlotStartPage(event,project);
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation((getClass().getResource("/PlotsStartPage.fxml")));
-        Parent PlotStartPage = loader.load();
-
-        Scene PlotsScene = new Scene(PlotStartPage, 800,500);
-        PlotsScene.getStylesheets().add("/ganttChart.css");
-        PlotStartPageController controller = loader.getController();
-
-        controller.initData(project);
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(PlotsScene);
-        window.show();
-
-
-/*
-        Stage stage = new Stage();
-        stage.setTitle("Risk Matrix");
-
-        final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis(0,10,1);
-        final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis,yAxis);
-
-        bc.setTitle("Risk Matrix");
-        xAxis.setLabel("Risk");
-        yAxis.setLabel("Value");
-
-        XYChart.Series series1 = new XYChart.Series();<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.Button?>
-
-
-<Button mnemonicParsing="false" text="Back" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" />
-
-        series1.setName("Probability");
-
-        XYChart.Series series2 = new XYChart.Series();
-        series2.setName("Impact");
-
-        XYChart.Series series3 = new XYChart.Series();
-        series3.setName("Risk");
-
-        for (Risk risk:project.getRisks()) {
-
-            series1.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()));
-            series2.getData().add(new XYChart.Data(risk.getName(), risk.getImpact()));
-            series3.getData().add(new XYChart.Data(risk.getName(), risk.getProbability()*risk.getImpact() ));
-
-        }
-
-
-            Scene scene  = new Scene(bc,500,450);
-            bc.getData().addAll(series1, series2, series3);
-            stage.setScene(scene);
-            stage.show();
-*/
 /*
         stage.setTitle("Scatter Chart Sample");
         final NumberAxis xAxis = new NumberAxis(0, 10, 1);
