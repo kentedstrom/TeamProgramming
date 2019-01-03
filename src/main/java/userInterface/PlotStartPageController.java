@@ -18,7 +18,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -174,7 +176,7 @@ public class PlotStartPageController implements Initializable {
 
     private void addMemberTimeCharts(){
         // set up time spent by member on the project Pie Chart...
-        memberTimePie = new PieChart();
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
         // ... and at the same time plot the time spent by member on a BarChart
 
@@ -195,13 +197,14 @@ public class PlotStartPageController implements Initializable {
         for (String key: timeSpentByMember.keySet()) {
             // not counting the total number in the PieChart
             if(!key.equals("Total")) {
-                memberTimePie.getData().add(new PieChart.Data(key, timeSpentByMember.get(key)));
+                pieChartData.add(new PieChart.Data(key, timeSpentByMember.get(key)));
                 series5.getData().add(new XYChart.Data(key,timeSpentByMember.get(key)));
                 seriesHidden.getData().add(new XYChart.Data(key,0));
             }
         }
 
-
+        // add data to pieChart
+        memberTimePie.setData(pieChartData);
 
         // plot the bar chart
         memberTimeBar.getData().addAll(seriesHidden,series5);
