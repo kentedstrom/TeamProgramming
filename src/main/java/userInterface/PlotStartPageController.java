@@ -26,7 +26,8 @@ public class PlotStartPageController implements Initializable {
 
     private Project project;
     // use a class for all cases where it wants to go back to the main screen
-    private Navigation goBack = new Navigation();
+    private Navigation goBack;
+    private Calculations getData;
 
     @FXML
     private Button schedule;
@@ -95,12 +96,30 @@ public class PlotStartPageController implements Initializable {
 
 
         this.project = project;
-
+        // for back button to work
+        this.goBack = new Navigation();
         // to get data from calculations class
         // not sure if responsibilities are right here
-        Calculations getData = new Calculations(project.getTasks());
+        this.getData = new Calculations(project.getTasks());
 
         // add data to the table's columns
+        addTableData();
+
+        // set up Gantt Chart
+
+        addGanttChart();
+
+
+        // set up Total Workload Chart
+        addWorkloadAreaChart();
+
+
+        // set up member time charts
+        addMemberTimeCharts();
+
+    }
+
+    private void addTableData(){
         taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         memberColumn.setCellValueFactory(new PropertyValueFactory<>("listOfMemberNames"));
@@ -112,9 +131,9 @@ public class PlotStartPageController implements Initializable {
         }
 
         taskTable.setItems(currentTasks);
+    }
 
-        // set up Gantt Chart
-
+    private void addGanttChart(){
         yAxis.setSide(Side.LEFT);
         yAxis.setLabel("Task");
         xAxis.setSide(Side.BOTTOM);
@@ -135,10 +154,9 @@ public class PlotStartPageController implements Initializable {
 
         // plot gantt chart data
         ganttChart.getData().addAll(series1, series2);
+    }
 
-
-        // set up Total Workload Chart
-
+    private void addWorkloadAreaChart(){
         workloadXAxis.setLabel("Task");
         workloiadYAxis.setLabel("Week");
 
@@ -152,8 +170,9 @@ public class PlotStartPageController implements Initializable {
 
         // plot workload per week area chart
         totalWorkload.getData().addAll(series3);
+    }
 
-
+    private void addMemberTimeCharts(){
         // set up time spent by member on the project Pie Chart...
         memberTimePie = new PieChart();
 
@@ -169,6 +188,8 @@ public class PlotStartPageController implements Initializable {
         HashMap<String,Double> timeSpentByMember = getData.TimeSpentOnProjectByMember(project.getMembers());
 
         series5.getData().add(new XYChart.Data("Total",timeSpentByMember.get("Total")));
+        // hidden layer and stacked bar chart because the style css file says (bc of the gantt chart) that the first bar is hidden
+        // since a normal bar chart has only one bar, that would be the hidden one
         seriesHidden.getData().add(new XYChart.Data("Total",0));
 
         for (String key: timeSpentByMember.keySet()) {
@@ -180,12 +201,11 @@ public class PlotStartPageController implements Initializable {
             }
         }
 
+
+
         // plot the bar chart
         memberTimeBar.getData().addAll(seriesHidden,series5);
-
-
     }
-
 
     @FXML
     void backBtnClicked(ActionEvent event) throws IOException {
