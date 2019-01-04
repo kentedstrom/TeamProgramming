@@ -74,6 +74,7 @@ public class DetailsViewController implements Initializable {
 
         Member memberToAdd = addMemberMenu.getSelectionModel().getSelectedItem();
         task.addMember(memberToAdd.getName());
+        memberToAdd.addTask(this.task);
 
         ObservableList<Member> currentMembers = FXCollections.observableArrayList();
         for (String memberName : task.getListOfMemberNames()) {
