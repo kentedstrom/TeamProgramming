@@ -8,7 +8,7 @@ public class Task {
     private String name;
     private int startWeek;
     private int endWeek;
-    private double cost;
+    private double budget;
     private boolean isCompleted;
     private String status;
 
@@ -16,17 +16,17 @@ public class Task {
         this.memberNames = new ArrayList<>();
         this.startWeek = 0;
         this.endWeek = 0;
-        this.cost = 0;
+        this.budget = 0;
         this.isCompleted = false;
         this.status = "In progress";
     }
 
 
-    public Task(String name, int startWeek, int endWeek, double cost, boolean isCompleted) {
+    public Task(String name, int startWeek, int endWeek, double budget, boolean isCompleted) {
         this.memberNames = new ArrayList<>();
         this.startWeek = startWeek;
         this.endWeek = endWeek;
-        this.cost = cost;
+        this.budget = budget;
         this.isCompleted = isCompleted;
         this.name = name;
         if (isCompleted){
@@ -39,12 +39,12 @@ public class Task {
 
 
     // task has only the name of the memberNames not the memberNames themselves, otherwise infinite recursion
-    public Task(String memberName,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
+    public Task(String memberName,String name, int startWeek, int endWeek, double budget, boolean isCompleted){
         this.memberNames = new ArrayList<>();
         this.memberNames.add(memberName);
         this.startWeek = startWeek;
         this.endWeek = endWeek;
-        this.cost = cost;
+        this.budget = budget;
         this.isCompleted = isCompleted;
         this.name = name;
         if (isCompleted){
@@ -77,12 +77,12 @@ public class Task {
     public void setEndWeek(int endWeek) {
         this.endWeek = endWeek;
     }
-    public double getCost() {
-        return cost;
+    public double getBudget() {
+        return budget;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setBudget(double budget) {
+        this.budget = budget;
     }
 
     public boolean isCompleted() {

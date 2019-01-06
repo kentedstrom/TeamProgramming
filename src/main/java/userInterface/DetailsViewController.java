@@ -29,7 +29,7 @@ public class DetailsViewController implements Initializable {
     private Label startWeekLabel;
 
     @FXML
-    private Label costLabel;
+    private Label budgetLabel;
 
     @FXML
     private Button changeStatusBtn;
@@ -117,7 +117,7 @@ public class DetailsViewController implements Initializable {
             taskLabel.setText(task.getName());
             startWeekLabel.setText(String.valueOf(task.getStartWeek()));
             endWeekLabel.setText(String.valueOf(task.getEndWeek()));
-            costLabel.setText(String.valueOf(task.getCost()));
+            budgetLabel.setText(String.valueOf(task.getBudget()));
             statusLabel.setText(task.getStatus());
 
             ToggleGroup group = new ToggleGroup();

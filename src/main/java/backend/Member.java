@@ -3,6 +3,7 @@ package backend;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 
 public class Member {
     private String name;
@@ -10,12 +11,15 @@ public class Member {
     private double salary;
     private ArrayList<Task> tasks;
     private Calendar calendar;
+    // map to store the time spent on each task
+    private HashMap<Task,Double> timeSpentPerTask;
 
     public Member(){
         this.ID = "";
         this.name = "";
         this.salary = 0.0;
         this.tasks = new ArrayList<>();
+        this.timeSpentPerTask = new HashMap<>();
         this.calendar = new GregorianCalendar();
     }
 
@@ -24,6 +28,7 @@ public class Member {
     this.ID = ID;
     this.salary = salary;
     this.tasks = new ArrayList<>();
+    this.timeSpentPerTask = new HashMap<>();
     this.calendar = new GregorianCalendar();
     }
 
@@ -37,11 +42,27 @@ public class Member {
 
     public void addTask(Task task){
         tasks.add(task);
-    }
-    public void removeTask(Task task){
-        tasks.remove(task);
+        this.timeSpentPerTask.put(task,Double.valueOf(0.0));
     }
 
+    public void removeTask(Task task){
+        tasks.remove(task);
+        this.timeSpentPerTask.remove(task);
+    }
+
+    public void addTimeToTask(Task taskThatTimeSpentOn, double time){
+        Double timeSoFar = this.timeSpentPerTask.get(taskThatTimeSpentOn);
+        Double timeNow = timeSoFar + Double.valueOf(time);
+        this.timeSpentPerTask.replace(taskThatTimeSpentOn,timeNow);
+    }
+
+    public Double getTimeSpentPerTask(Task task){
+        return this.timeSpentPerTask.get(task);
+    }
+
+    public HashMap<Task, Double> getTimeSpentAllTasks() {
+        return this.timeSpentPerTask;
+    }
 
     // distinguish between completed and incomplete tasks
     public int timeSpent(){
@@ -92,4 +113,5 @@ public class Member {
     public String toString() {
         return this.name;
     }
+
 }
