@@ -13,6 +13,7 @@ public class Project {
     private Factory factory;
     private double budget;
     private Calendar calendar;
+    protected static int currentWeek;
 
     public Project() {
         this.name = "";
@@ -65,6 +66,12 @@ public class Project {
             }
         }
         return null;
+    }
+    public int getCurrentWeek(){
+        return currentWeek;
+    }
+    public void setCurrentWeek(int week){
+        currentWeek = week;
     }
 
     public void createTask(String name, int startWeek, int endWeek, double cost, boolean completed) {

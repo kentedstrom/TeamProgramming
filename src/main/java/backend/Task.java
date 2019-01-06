@@ -116,4 +116,11 @@ public class Task {
     public ArrayList<String> getListOfMemberNames(){
         return this.memberNames;
     }
+    //takes a project and gets its current week and compares if its larger than the end week and then returns the difference
+    public int amIBehind(Project project){
+        if (project.getCurrentWeek() > getEndWeek()){
+            return project.getCurrentWeek() - getEndWeek();
+        }
+        else return 0;
+    }
 }
