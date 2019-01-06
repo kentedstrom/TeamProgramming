@@ -38,6 +38,11 @@ public class Project {
 
 
     public void createMember(String name, String Id, double salary) {
+        for(Member member : Members){
+            if(Id.equals(member.getId)){
+                return;
+            }
+        }
         members.add(this.factory.createMember(name, Id, salary));
     }
 
