@@ -129,7 +129,7 @@ public class PlotStartPageController implements Initializable {
     private void addTableData(){
         taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        memberColumn.setCellValueFactory(new PropertyValueFactory<>("listOfMemberNames"));
+        memberColumn.setCellValueFactory(new PropertyValueFactory<>("listOfMemberIDs"));
 
         taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();

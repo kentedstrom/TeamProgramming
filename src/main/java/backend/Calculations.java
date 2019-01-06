@@ -55,30 +55,37 @@ public class Calculations {
     }
 
     // calculate the cost of each task by adding time spent on each task by members multiplied by member salary + task cost
-    public HashMap<String,Double> CostOfTasks(ArrayList<Member> members){
-        HashMap<String,Double> taskCosts = new HashMap<>();
+    public HashMap<Integer,Double> CostOfTasks(ArrayList<Member> members){
+        HashMap<Integer,Double> taskCosts = new HashMap<>();
         // calculate total cost for all tasks
         Double total = 0.0;
         for (Member member: members) {
             // loop through the map with tasks and their costs
-            for (Task membersTask: member.getTimeSpentAllTasks().keySet()){
-                if(!taskCosts.containsKey(membersTask)){
-                    Double oldCost = taskCosts.get(membersTask);
+            for (Integer membersTaskID: member.getTimeSpentAllTasks().keySet()){
+                if(!taskCosts.containsKey(membersTaskID)){
+                    Double oldCost = taskCosts.get(membersTaskID);
                     // add cost as time spent by member*memberSalary
-                    Double newCost = oldCost + member.getTimeSpentPerTask(membersTask)*member.getSalary();
-                    taskCosts.replace(membersTask.getName(),newCost);
+                    Double newCost = oldCost + member.getTimeSpentPerTask(membersTaskID)*member.getSalary();
+                    taskCosts.replace(Integer.valueOf(membersTaskID),newCost);
                     // add cost as time spent by member*memberSalary
-                    total += member.getTimeSpentPerTask(membersTask)*member.getSalary();
+                    total += member.getTimeSpentPerTask(membersTaskID)*member.getSalary();
                 }else{
                     // add cost as time spent by member*memberSalary
-                    taskCosts.put(membersTask.getName(),member.getTimeSpentPerTask(membersTask)*member.getSalary());
+                    taskCosts.put(membersTaskID,member.getTimeSpentPerTask(membersTaskID)*member.getSalary());
+                    // get starting cost fo a task
+                    double cost = 0.0;
+                    for (Task task:tasks) {
+                        if(task.getID() == membersTaskID){
+                            cost = task.getCost();
+                        }
+                    }
                     // add cost as time spent by member*memberSalary + taskCost (only once)
-                    total += membersTask.getBudget() + member.getTimeSpentPerTask(membersTask)*member.getSalary();
+                    total += cost + member.getTimeSpentPerTask(membersTaskID)*member.getSalary();
                 }
             }
         }
         // store total cost spent
-        taskCosts.put("Total",total);
+        taskCosts.put(0,total);
         return taskCosts;
     }
 

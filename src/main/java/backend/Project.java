@@ -1,5 +1,7 @@
 package backend;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -36,43 +38,41 @@ public class Project {
         this.calendar = new GregorianCalendar();
     }
 
+    // Create and Remove methods ------------------------------------------
 
-    public void createMember(String name, String Id, double salary) {
-        members.add(this.factory.createMember(name, Id, salary));
+    public void createMember(String name, int ID, double salary) {
+        members.add(this.factory.createMember(name, ID, salary));
     }
 
     // when a member is removed, remove their name from all tasks they were involved in
     public void removeMember(Member memberToRemove) {
-        ArrayList<Task> removedMembersTasks = memberToRemove.getTasks();
-        for (Task taskInProject: this.tasks) {
-            if(taskInProject.equals(removedMembersTasks)){
-                taskInProject.removeMember(memberToRemove.getName());
-            }
-        }
 
+        // remove the member from the list
         members.remove(memberToRemove);
-    }
 
-    public Member searchMember(String id) {
-        for (Member member : members) {
-            if (member.compare(id)) {
-                return member;
+        // remove the member id from the task they were involved
+        // find the task IDs
+        ArrayList<Integer> removedMembersTasks = memberToRemove.getTasks();
+        // find the task with the ID
+        for (Integer task: removedMembersTasks) {
+            Task taskWithLessMember = searchTask(task);
+            if(taskWithLessMember != null){
+                taskWithLessMember.removeMember(memberToRemove.getID());
             }
         }
-        return null;
     }
 
-    public void createTask(String name, int startWeek, int endWeek, double cost, boolean completed) {
-        tasks.add(factory.createTask(name, startWeek, endWeek, cost, completed));
+    public void createTask(int taskID,String name, int startWeek, int endWeek, double cost, double budget, boolean completed) {
+        tasks.add(factory.createTask(taskID,name, startWeek, endWeek, cost,budget, completed));
     }
 
-    public void createTask(String memberName, String name, int startWeek, int endWeek, double cost, boolean completed) {
-        Task newTask = factory.createTask(memberName, name, startWeek, endWeek, cost, completed);
+    public void createTask(int taskID ,int memberID, String name, int startWeek, int endWeek, double cost, double budget, boolean completed) {
+        Task newTask = factory.createTask(taskID,memberID, name, startWeek, endWeek, cost, budget, completed);
         tasks.add(newTask);
         // the section below could be rewritten with search through member ID
         for (Member member: this.members) {
-            if(member.getName().equals(memberName)){
-                member.addTask(newTask);
+            if(member.compare(memberID)){
+                member.addTask(taskID);
             }
         }
     }
@@ -82,14 +82,20 @@ public class Project {
     }
 
     public void removeTask(Task taskToRemove) {
-        ArrayList<String> membersToAdjust = taskToRemove.getListOfMemberNames();
-        for (Member member: this.members) {
-            if(member.getName().equals(membersToAdjust)){
-                member.removeTask(taskToRemove);
+        // find the people who had this task
+        ArrayList<Integer> membersToAdjust = taskToRemove.getListOfMemberIDs();
+        for (int memberToRemoveID: membersToAdjust) {
+            for (Member member: members) {
+                if(member.compare(memberToRemoveID)){
+                    // remove the taskID from the people who were involved
+                    member.removeTask(taskToRemove.getID());
+                }
             }
         }
+        // remove the task fromt he task list
         tasks.remove(taskToRemove);
     }
+
 
     public void createRisk(String name, double probability, double impact) {
         risks.add(factory.createRisk(name, probability, impact));
@@ -98,6 +104,28 @@ public class Project {
     public void removeRisk(Risk riskToRemove) {
         risks.remove(riskToRemove);
     }
+
+
+    // Search methods ---------------------------------------------
+    public Task searchTask(int taskID){
+        for (Task task:tasks) {
+            if(task.compare(taskID)){
+                return task;
+            }
+        }
+        return null;
+    }
+
+    public Member searchMember(int memberID){
+        for (Member member:members) {
+            if(member.compare(memberID)){
+                return member;
+            }
+        }
+        return null;
+    }
+
+    // Getters and Setters -------------------------------------------
 
     public String getName() {
         return name;
@@ -145,6 +173,31 @@ public class Project {
 
     public void setBudget(double budget) {
         this.budget = budget;
+    }
+
+    // Create new task and member ID -----------------------------------------------
+
+    @JsonIgnore
+    public int getHighestTaskID(){
+        int maxTaskID = 0;
+        for (Task task: this.tasks) {
+            if(task.getID() > maxTaskID){
+                maxTaskID = task.getID();
+            }
+        }
+        return maxTaskID;
+    }
+
+
+    @JsonIgnore
+    public int getHighestMemberID(){
+        int maxMemberID = 0;
+        for (Member member: members) {
+            if(member.getID() > maxMemberID){
+                maxMemberID = member.getID();
+            }
+        }
+        return maxMemberID;
     }
 
 }

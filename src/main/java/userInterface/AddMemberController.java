@@ -57,7 +57,8 @@ public class AddMemberController implements Initializable {
     void addMember(ActionEvent event) {
 
         String memberName = nameInput.getText();
-        String memberID = IDInput.getText();
+        // create member ID
+        int memberID = project.getHighestMemberID() + 1;
         double memberSalary = Double.parseDouble(salaryInput.getText());
         project.createMember(memberName, memberID, memberSalary);
 
