@@ -38,8 +38,8 @@ public class Project {
 
 
     public void createMember(String name, String Id, double salary) {
-        for(Member member : Members){
-            if(Id.equals(member.getId)){
+        for(Member member : members){
+            if(Id.equals(member.getID())){
                 return;
             }
         }
