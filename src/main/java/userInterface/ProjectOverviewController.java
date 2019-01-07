@@ -33,6 +33,9 @@ public class ProjectOverviewController implements Initializable{
     private Project project;
     private Navigation goBack;
 
+    boolean SAVEANDCLOSE;
+    Boolean CLOSE;
+
 
     @FXML
     private Label earnedValueLabel;
@@ -79,61 +82,28 @@ public class ProjectOverviewController implements Initializable{
 
     @FXML
     void backBtnClicked(ActionEvent event) throws Exception {
+        
 
-        ////Doesn't work at the moment////
+        boolean save = ConfirmBox.save();
 
-        /* Stage confirmBox = new Stage();
+        if (save){
 
-        confirmBox.setTitle("Are you sure you want to exit?");
-        confirmBox.setMinWidth(250);
-        confirmBox.initModality(Modality.APPLICATION_MODAL);
+            Controller.saveProject(project, "Projecttest.json" );
+        }
+        else if (!save){
 
-        Button saveAndExitBtn = new Button("Save and Exit");
-        Button exitBtn = new Button("Exit without saving");
-        Button closeBtn = new Button("Close");
+        }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/StartScreen.fxml")));
+        Parent startScreen = loader.load();
 
-        Label label = new Label("-Choose Option-");
+        Scene startScreenScene = new Scene(startScreen, 800,500);
 
-        VBox layout = new VBox(10);
-        HBox hbox = new HBox(10);
-        hbox.setAlignment(Pos.CENTER);
-        hbox.getChildren().addAll(saveAndExitBtn,exitBtn,closeBtn);
-        layout.getChildren().addAll(label, hbox);
-        layout.setAlignment(Pos.CENTER);
-
-        Scene scene = new Scene(layout, 400, 250);
-        confirmBox.setScene(scene);
-        confirmBox.showAndWait();
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(startScreenScene);
+        window.show();
 
 
-        exitBtn.setOnAction(e ->{
-            try {
-                confirmBox.close();
-                Parent startScreen = FXMLLoader.load(getClass().getResource("/StartScreen.fxml"));
-                Scene startScreenScreen = new Scene(startScreen, 800, 500);
-                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                window.setScene(startScreenScreen);
-                window.show();
-            }catch (Exception exception){
-                System.out.println(exception.getMessage());
-            }
-                });
-
-        saveAndExitBtn.setOnAction(e ->{
-            try {
-                confirmBox.close();
-                Parent startScreen = FXMLLoader.load(getClass().getResource("/StartScreen.fxml"));
-                Scene startScreenScreen = new Scene(startScreen, 800, 500);
-                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                window.setScene(startScreenScreen);
-                window.show();
-            }catch (Exception exception){
-                System.out.println(exception.getMessage());
-            }
-        });
-
-        closeBtn.setOnAction(e -> confirmBox.close());
-        */
     }
 
     @Override

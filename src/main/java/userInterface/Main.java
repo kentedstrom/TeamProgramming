@@ -17,7 +17,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/StartScreen.fxml"));
         primaryStage.setTitle("Champagne Ladies Task Management");
         primaryStage.setScene(new Scene(root, 800, 500));
-        primaryStage.show();
+    primaryStage.show();
     }
 
 

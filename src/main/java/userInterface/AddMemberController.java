@@ -2,13 +2,19 @@ package userInterface;
 
 import backend.Member;
 import backend.Project;
+import backend.Task;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -86,6 +92,54 @@ public class AddMemberController implements Initializable {
 
             memberSelected.forEach(allMembers::remove);
         } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+    @FXML
+    void showTimeSpent(ActionEvent event){
+        try {
+            Member memberToShow;
+            memberToShow = table.getSelectionModel().getSelectedItem();
+
+            String tasksCompleted = " ";
+            String tasksInProgress = " ";
+
+            for (Task task : memberToShow.getTasks()) {
+                if (task.isCompleted()) {
+                    tasksCompleted += " " + task.getName() + ",";
+                } else if (!task.isCompleted()) {
+                    tasksInProgress += " " + task.getName() + ",";
+                }
+
+            }
+
+            tasksCompleted = tasksCompleted.substring(0, tasksCompleted.length() -1) + "";
+            tasksInProgress = tasksInProgress.substring(0, tasksInProgress.length()-1) + "";
+
+
+
+        Stage timeSpentWindow = new Stage();
+            timeSpentWindow.setTitle("Work done/in progress");
+
+        VBox vBox = new VBox(10);
+        vBox.setAlignment(Pos.CENTER_LEFT);
+        vBox.setPadding(new Insets(30,30,30,30));
+
+
+        Label tasksCompletedLabel = new Label("Tasks completed: " + tasksCompleted);
+        Label tasksInProgressLabel = new Label("Tasks in progress: " + tasksInProgress);
+        Label timeSpentLabel = new Label("Time spent on project:  " + memberToShow.timeSpent() + " weeks");
+        Button okBtn = new Button("OK");
+
+        okBtn.setOnAction(e -> timeSpentWindow.close());
+
+        vBox.getChildren().setAll(tasksCompletedLabel, tasksInProgressLabel, timeSpentLabel, okBtn);
+        Scene scene = new Scene(vBox, 350,200);
+        timeSpentWindow.setScene(scene);
+        timeSpentWindow.showAndWait();
+
+        }catch (NullPointerException e){
             System.out.println(e.getMessage());
         }
 

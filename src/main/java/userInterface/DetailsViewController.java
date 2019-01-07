@@ -94,6 +94,8 @@ public class DetailsViewController implements Initializable {
         memberToRemove = memberTable.getSelectionModel().getSelectedItem();
         task.removeMember(memberToRemove.getName());
 
+        memberToRemove.removeTask(this.task);
+
         ObservableList<Member> memberSelected, allMembers;
         allMembers = memberTable.getItems();
         memberSelected = memberTable.getSelectionModel().getSelectedItems();
