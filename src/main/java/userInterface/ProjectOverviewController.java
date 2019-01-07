@@ -47,11 +47,14 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     private Button optionsBtn;
     @FXML
+    private Button timeSpentReg;
+    @FXML
     private Button backBtn;
     @FXML
     private Label budgetLabel;
     @FXML
     private Button dashboard;
+
 
     public void initData(Project project){
         this.project = project;
@@ -204,6 +207,22 @@ public class ProjectOverviewController implements Initializable{
         window.setScene(addMemberScene);
         window.show();
     }
+
+    @FXML
+    void timeSpentRegClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/TimeRegister.fxml")));
+        Parent timeRegister = loader.load();
+
+        Scene timeRegScene = new Scene(timeRegister, 800,500);
+        TimeRegisterController controller = loader.getController();
+
+        controller.initData(project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(timeRegScene);
+        window.show();
+    }
+
     @FXML
     void saveProject(ActionEvent event)throws IOException{
 

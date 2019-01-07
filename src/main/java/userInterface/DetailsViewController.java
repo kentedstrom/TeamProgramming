@@ -70,7 +70,7 @@ public class DetailsViewController implements Initializable {
     void addMember(ActionEvent event) {
 
         Member memberToAdd = addMemberMenu.getSelectionModel().getSelectedItem();
-        task.addMember(memberToAdd.getID());
+        task.addMember(memberToAdd.getID(),memberToAdd.getName());
         memberToAdd.addTask(this.task.getID());
 
         ObservableList<Member> currentMembers = FXCollections.observableArrayList();
@@ -86,7 +86,7 @@ public class DetailsViewController implements Initializable {
     void removeBtnClicked(ActionEvent event){
         Member memberToRemove;
         memberToRemove = memberTable.getSelectionModel().getSelectedItem();
-        task.removeMember(memberToRemove.getID());
+        task.removeMember(memberToRemove.getID(),memberToRemove.getName());
 
         ObservableList<Member> memberSelected, allMembers;
         allMembers = memberTable.getItems();

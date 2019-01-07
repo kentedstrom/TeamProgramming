@@ -25,9 +25,6 @@ public class AddMemberController implements Initializable {
     private TableView<Member> table;
 
     @FXML
-    private TextField IDInput;
-
-    @FXML
     private Button backBtn;
 
     @FXML
@@ -70,7 +67,6 @@ public class AddMemberController implements Initializable {
         table.setItems(currentMembers);
 
         nameInput.clear();
-        IDInput.clear();
         salaryInput.clear();
 
 

@@ -50,14 +50,23 @@ public class Member {
         this.timeSpentPerTask.remove(taskID);
     }
 
-    public void addTimeToTask(Task taskThatTimeSpentOn, double time){
-        Double timeSoFar = this.timeSpentPerTask.get(taskThatTimeSpentOn);
-        Double timeNow = timeSoFar + Double.valueOf(time);
-        this.timeSpentPerTask.replace(Integer.valueOf(taskThatTimeSpentOn.getID()),timeNow);
+    public void addTimeToTask(Integer taskThatTimeSpentOn, double time){
+        if(this.timeSpentPerTask.containsKey(taskThatTimeSpentOn)){
+            Double timeSoFar = this.timeSpentPerTask.get(taskThatTimeSpentOn);
+            Double timeNow = timeSoFar + Double.valueOf(time);
+            this.timeSpentPerTask.replace(Integer.valueOf(taskThatTimeSpentOn),timeNow);
+        }else{
+            taskIDs.add(taskThatTimeSpentOn);
+            this.timeSpentPerTask.put(taskThatTimeSpentOn,time);
+        }
+
     }
 
     public Double getTimeSpentPerTask(Integer taskID){
-        return this.timeSpentPerTask.get(taskID);
+        if(timeSpentPerTask.containsKey(taskID)){
+            return this.timeSpentPerTask.get(taskID);
+        }
+        return 0.0;
     }
 
     public HashMap<Integer, Double> getTimeSpentAllTasks() {

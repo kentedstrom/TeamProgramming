@@ -57,7 +57,7 @@ public class Project {
         for (Integer task: removedMembersTasks) {
             Task taskWithLessMember = searchTask(task);
             if(taskWithLessMember != null){
-                taskWithLessMember.removeMember(memberToRemove.getID());
+                taskWithLessMember.removeMember(memberToRemove.getID(), memberToRemove.getName());
             }
         }
     }
@@ -66,8 +66,8 @@ public class Project {
         tasks.add(factory.createTask(taskID,name, startWeek, endWeek, cost,budget, completed));
     }
 
-    public void createTask(int taskID ,int memberID, String name, int startWeek, int endWeek, double cost, double budget, boolean completed) {
-        Task newTask = factory.createTask(taskID,memberID, name, startWeek, endWeek, cost, budget, completed);
+    public void createTask(int taskID , String name, int memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean completed) {
+        Task newTask = factory.createTask(taskID, name, memberID, memberName, startWeek, endWeek, cost, budget, completed);
         tasks.add(newTask);
         // the section below could be rewritten with search through member ID
         for (Member member: this.members) {
@@ -176,6 +176,7 @@ public class Project {
     }
 
     // Create new task and member ID -----------------------------------------------
+
 
     @JsonIgnore
     public int getHighestTaskID(){

@@ -178,6 +178,7 @@ public class OptionClassController implements Initializable {
             currentRisks.add(risk);
         }
         table.setItems(currentRisks);
+
         riskInput.clear();
         probInput.clear();
         impactInput.clear();
@@ -229,7 +230,7 @@ public class OptionClassController implements Initializable {
             project.createTask(taskID,taskName, startWeek, endWeek, cost, budget, completed);
 
         }else{
-            project.createTask(taskID,memberToAdd.getID(), taskName, startWeek, endWeek, cost, budget, completed);
+            project.createTask(taskID, taskName, memberToAdd.getID(), memberToAdd.getName(), startWeek, endWeek, cost, budget, completed);
         }
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();
 
@@ -248,6 +249,7 @@ public class OptionClassController implements Initializable {
         this.notCompleteRadioBtn.setSelected(false);
 
     }
+
     @FXML
     void deleteTask(ActionEvent event){
         try {

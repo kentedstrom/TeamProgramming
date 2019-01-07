@@ -4,6 +4,7 @@ import backend.Calculations;
 import backend.Project;
 import backend.Task;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -127,9 +128,11 @@ public class PlotStartPageController implements Initializable {
     }
 
     private void addTableData(){
+
+
         taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        memberColumn.setCellValueFactory(new PropertyValueFactory<>("listOfMemberIDs"));
+        memberColumn.setCellValueFactory(new PropertyValueFactory<>("listOfMemberNames"));
 
         taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();

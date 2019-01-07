@@ -11,8 +11,8 @@ public class Factory {
         return new Member(name, memberID, salary);
     }
 
-    public Task createTask(int taskID,int memberID,String name, int startWeek, int endWeek, double cost, double budget, Boolean completed){
-        return new Task(taskID,memberID,name, startWeek, endWeek, cost, budget, completed);
+    public Task createTask(int taskID,String name, int memberID, String memberName, int startWeek, int endWeek, double cost, double budget, Boolean completed){
+        return new Task(taskID,name, memberID,memberName, startWeek, endWeek, cost, budget, completed);
     }
 
     public Task createTask(){
