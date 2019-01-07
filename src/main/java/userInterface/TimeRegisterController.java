@@ -3,8 +3,10 @@ package userInterface;
 import backend.Member;
 import backend.Project;
 import backend.Task;
+import backend.TimeSpentTable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javafx.beans.Observable;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -27,7 +30,7 @@ public class TimeRegisterController implements Initializable {
     private Navigation goBack;
 
     @FXML
-    private TableView<String> table;
+    private TableView<TimeSpentTable> table;
 
     @FXML
     private Button back;
@@ -47,45 +50,6 @@ public class TimeRegisterController implements Initializable {
     @FXML
     private TextField timeInput;
 
-
-    @FXML
-    void addTime(ActionEvent event) {
-
-        Task task = taskChoice.getSelectionModel().getSelectedItem();
-        Integer taskID = task.getID();
-        Member member = memberChoice.getSelectionModel().getSelectedItem();
-        String timeSpent = timeInput.getText();
-
-        // add time spent on taks to member
-        member.addTimeToTask(taskID,Double.parseDouble(timeSpent));
-
-        ObservableList<String> memberTimes = FXCollections.observableArrayList();
-
-        memberTimes.add(task.getName());
-
-        for (Member eachMember : project.getMembers()) {
-            memberTimes.add(String.valueOf(eachMember.getTimeSpentPerTask(taskID)));
-        }
-
-
-        table.setItems(memberTimes);
-
-
-
-        timeInput.clear();
-
-
-    }
-
-    @FXML
-    void deleteTime(ActionEvent event) {
-
-    }
-
-    @FXML
-    void backPushed(ActionEvent event) {
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -112,31 +76,69 @@ public class TimeRegisterController implements Initializable {
 
         table.setEditable(true);
 
-        //table.getColumns().add(new TableColumn("Task"));
-
-
+        // add starting info to TimeSpentTable class
+        TableColumn<TimeSpentTable,String> firstCol = new TableColumn<>("Task");
+        table.getColumns().add(firstCol);
 
         for (Member member: project.getMembers()) {
-            TableColumn<String,String> column = new TableColumn<>(member.getName());
-            column.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-            table.getColumns().add(column);
+            TableColumn<TimeSpentTable,String> nameCol = new TableColumn<>(member.getName());
+            table.getColumns().add(nameCol);
+            nameCol.setCellValueFactory(new PropertyValueFactory<>("memberTimes"));
         }
 
+        firstCol.setCellValueFactory(new PropertyValueFactory<>("taskName"));
 
+        ObservableList<TimeSpentTable> currentTimeSpent = FXCollections.observableArrayList();
+        for (TimeSpentTable timeSpent : project.getTimeSpentTables()) {
+            currentTimeSpent.add(timeSpent);
+        }
+
+        table.setItems(currentTimeSpent);
+
+    }
+
+    @FXML
+    void addTime(ActionEvent event) {
+
+
+        Task task = taskChoice.getSelectionModel().getSelectedItem();
+        Integer taskID = task.getID();
+        Member member = memberChoice.getSelectionModel().getSelectedItem();
+        String timeSpent = timeInput.getText();
+
+        // add time spent on taks to member
+        member.addTimeToTask(taskID,Double.parseDouble(timeSpent));
+
+        // add the info to the project's timespenttable class that is purely for showing the data
+
+        ArrayList<String> memberTimes = new ArrayList<>();
+        for (Member currentOne: project.getMembers()) {
+            memberTimes.add(String.valueOf(currentOne.getTimeSpentPerTask(taskID)));
+        }
+
+        project.addTimeSpent(task.getName(),memberTimes);
+
+        // transfer the project's class to observablelist
+        ObservableList<TimeSpentTable> timeSpentTable = FXCollections.observableArrayList();
+        for (TimeSpentTable timesOfPeople : project.getTimeSpentTables()) {
+            timeSpentTable.add(timesOfPeople);
+        }
+
+        table.setItems(timeSpentTable);
+
+        timeInput.clear();
 
 
     }
 
-    /*
-    @JsonIgnore
-    private TableColumn getTableColumnByName(String name){
-        for (Object col: table.getColumns()) {
-            TableColumn column = (TableColumn) col;
-            if(column.getText().equals(name)){
-                return column;
-            }
-        }
-        return null;
+    @FXML
+    void deleteTime(ActionEvent event) {
+
     }
-    */
+
+    @FXML
+    void backPushed(ActionEvent event) {
+
+    }
+
 }

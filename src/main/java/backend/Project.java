@@ -15,6 +15,7 @@ public class Project {
     private Factory factory;
     private double budget;
     private Calendar calendar;
+    private ArrayList<TimeSpentTable> timeSpentTables;
 
     public Project() {
         this.name = "";
@@ -25,6 +26,7 @@ public class Project {
         this.schedule = new Calculations(tasks);
         this.factory = new Factory();
         this.calendar = new GregorianCalendar();
+        this.timeSpentTables = new ArrayList<>();
     }
 
     public Project(String name, double budget) {
@@ -36,6 +38,7 @@ public class Project {
         this.schedule = new Calculations(tasks);
         this.factory = new Factory();
         this.calendar = new GregorianCalendar();
+        this.timeSpentTables = new ArrayList<>();
     }
 
     // Create and Remove methods ------------------------------------------
@@ -103,6 +106,10 @@ public class Project {
 
     public void removeRisk(Risk riskToRemove) {
         risks.remove(riskToRemove);
+    }
+
+    public void addTimeSpent(String taskName, ArrayList<String> memberTimes){
+        timeSpentTables.add(new TimeSpentTable(taskName,memberTimes));
     }
 
 
@@ -173,6 +180,10 @@ public class Project {
 
     public void setBudget(double budget) {
         this.budget = budget;
+    }
+
+    public ArrayList<TimeSpentTable> getTimeSpentTables() {
+        return timeSpentTables;
     }
 
     // Create new task and member ID -----------------------------------------------
