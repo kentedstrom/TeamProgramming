@@ -1,22 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.TimeRegisterController">
+<AnchorPane prefHeight="609.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.TimeRegisterController">
    <children>
-      <TableView fx:id="table" layoutX="14.0" layoutY="14.0" prefHeight="253.0" prefWidth="577.0" />
-      <Button fx:id="back" layoutX="532.0" layoutY="349.0" mnemonicParsing="false" onAction="#backPushed" text="Back" />
-      <Button fx:id="addBtn" layoutX="466.0" layoutY="307.0" mnemonicParsing="false" onAction="#addTime" text="Add" />
-      <Button fx:id="deleteBtn" layoutX="526.0" layoutY="307.0" mnemonicParsing="false" onAction="#deleteTime" text="Delete" />
-      <ChoiceBox fx:id="taskChoice" layoutX="23.0" layoutY="307.0" prefHeight="26.0" prefWidth="119.0" />
-      <Label layoutX="28.0" layoutY="283.0" prefHeight="16.0" prefWidth="111.0" text="Choose Task" />
-      <ChoiceBox fx:id="memberChoice" layoutX="164.0" layoutY="307.0" prefHeight="26.0" prefWidth="119.0" />
-      <Label layoutX="168.0" layoutY="283.0" prefHeight="16.0" prefWidth="111.0" text="Choose Member" />
-      <TextField fx:id="timeInput" layoutX="300.0" layoutY="307.0" prefHeight="26.0" prefWidth="142.0" promptText="time spent (week)" />
+      <ScrollPane prefHeight="500.0" prefWidth="800.0">
+         <content>
+            <VBox prefHeight="609.0" prefWidth="781.0">
+               <children>
+                  <TextField alignment="TOP_CENTER" prefHeight="30.0" prefWidth="630.0" text="Time Spent on Project by Member">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <HBox prefHeight="245.0" prefWidth="681.0">
+                     <children>
+                        <PieChart fx:id="memberTimePie" />
+                        <StackedBarChart fx:id="memberTimeBar" prefHeight="245.0" prefWidth="441.0">
+                           <xAxis>
+                              <CategoryAxis fx:id="timeBarXAxis" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="timeBarYAxis" side="LEFT" />
+                           </yAxis>
+                        </StackedBarChart>
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="329.0" prefWidth="630.0">
+                     <children>
+                        <Button fx:id="addBtn" layoutX="544.0" layoutY="44.0" mnemonicParsing="false" onAction="#addTime" text="Add" />
+                        <Button fx:id="deleteBtn" layoutX="617.0" layoutY="44.0" mnemonicParsing="false" onAction="#deleteTime" text="Remove" />
+                        <ChoiceBox fx:id="taskChoice" layoutX="92.0" layoutY="44.0" prefHeight="26.0" prefWidth="119.0" />
+                        <Label layoutX="104.0" layoutY="25.0" prefHeight="16.0" prefWidth="111.0" text="Choose Task" />
+                        <ChoiceBox fx:id="memberChoice" layoutX="241.0" layoutY="44.0" prefHeight="26.0" prefWidth="119.0" />
+                        <Label layoutX="249.0" layoutY="25.0" prefHeight="16.0" prefWidth="111.0" text="Choose Member" />
+                        <TextField fx:id="timeInput" layoutX="374.0" layoutY="44.0" prefHeight="26.0" prefWidth="142.0" promptText="time spent (week)" />
+                        <TextArea fx:id="logField" layoutX="32.0" layoutY="85.0" prefHeight="194.0" prefWidth="699.0" />
+                        <Button fx:id="backBtn" layoutX="681.0" layoutY="289.0" mnemonicParsing="false" onAction="#backBtnPushed" text="Back" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

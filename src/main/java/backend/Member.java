@@ -62,6 +62,22 @@ public class Member {
 
     }
 
+    public void removeTimeFromTask(Integer taskThatTimeSpentOn, double time){
+        if(this.timeSpentPerTask.containsKey(taskThatTimeSpentOn)){
+            Double timeSoFar = this.timeSpentPerTask.get(taskThatTimeSpentOn);
+            Double timeNow = timeSoFar - Double.valueOf(time);
+            if(timeNow>= 0){
+                this.timeSpentPerTask.replace(Integer.valueOf(taskThatTimeSpentOn),timeNow);
+            }else{
+                this.timeSpentPerTask.replace(Integer.valueOf(taskThatTimeSpentOn),Double.valueOf(0.0));
+            }
+
+        }else{
+            taskIDs.add(taskThatTimeSpentOn);
+            this.timeSpentPerTask.put(taskThatTimeSpentOn,Double.valueOf(0.0));
+        }
+    }
+
     public Double getTimeSpentPerTask(Integer taskID){
         if(timeSpentPerTask.containsKey(taskID)){
             return this.timeSpentPerTask.get(taskID);
