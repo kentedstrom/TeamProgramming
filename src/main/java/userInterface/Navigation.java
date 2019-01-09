@@ -17,7 +17,7 @@ public class Navigation {
         loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
         Parent projectOverview = loader.load();
 
-        Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+        Scene projectOverviewScene = new Scene(projectOverview, 1080,700);
         ProjectOverviewController controller = loader.getController();
 
         controller.initData(project);
@@ -31,7 +31,7 @@ public class Navigation {
         loader.setLocation((getClass().getResource("/Risk.fxml")));
         Parent riskDashboard = loader.load();
 
-        Scene riskScene = new Scene(riskDashboard, 800,500);
+        Scene riskScene = new Scene(riskDashboard, 1080,700);
         RiskController controller = loader.getController();
 
         controller.initData(project);
@@ -45,7 +45,7 @@ public class Navigation {
         loader.setLocation((getClass().getResource("/PlotsStartPage.fxml")));
         Parent PlotStartPage = loader.load();
 
-        Scene PlotsScene = new Scene(PlotStartPage, 800,500);
+        Scene PlotsScene = new Scene(PlotStartPage, 1080,700);
         PlotsScene.getStylesheets().add("/ganttChart.css");
         PlotStartPageController controller = loader.getController();
 
@@ -61,7 +61,7 @@ public class Navigation {
         loader.setLocation((getClass().getResource("/TaskOverview.fxml")));
         Parent taskOV = loader.load();
 
-        Scene taskScene = new Scene(taskOV, 800,500);
+        Scene taskScene = new Scene(taskOV, 1080,700);
         TaskOverviewController controller = loader.getController();
 
         controller.initData(project);

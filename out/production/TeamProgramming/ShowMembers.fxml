@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.AddMemberController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.AddMemberController">
    <children>
       <MenuBar>
         <menus>
@@ -28,11 +28,11 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TableView fx:id="table" prefHeight="413.0" prefWidth="800.0">
+      <TableView fx:id="table" prefHeight="610.0" prefWidth="1080.0">
         <columns>
-          <TableColumn fx:id="IDColumn" prefWidth="84.0" text="ID" />
-          <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="257.0" text="Name" />
-            <TableColumn fx:id="salaryColumn" prefWidth="256.0" text="Salary" />
+          <TableColumn fx:id="IDColumn" prefWidth="179.0" text="ID" />
+          <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="537.0" text="Name" />
+            <TableColumn fx:id="salaryColumn" minWidth="0.0" prefWidth="363.0" text="Salary" />
         </columns>
       </TableView>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="43.0" prefWidth="600.0" spacing="5.0">

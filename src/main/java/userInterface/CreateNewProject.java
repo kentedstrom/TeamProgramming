@@ -58,7 +58,7 @@ public class CreateNewProject {
         loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
         Parent projectOverview = loader.load();
 
-        Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+        Scene projectOverviewScene = new Scene(projectOverview, 1080,800);
         ProjectOverviewController controller = loader.getController();
 
         controller.initData(project);

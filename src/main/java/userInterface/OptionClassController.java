@@ -106,6 +106,9 @@ public class OptionClassController implements Initializable {
     @FXML
     private ChoiceBox<Member> memberChoice;
 
+    @FXML
+    private Label budgetLabel;
+
     private ArrayList<Risk> risks;
 
     private ArrayList<Task> tasks;
@@ -115,6 +118,8 @@ public class OptionClassController implements Initializable {
     public void initData(Project project){
         try {
             this.project = project;
+
+            budgetLabel.setText(Double.toString(project.getBudget()));
 
             members = new ArrayList<Member>();
             members = project.getMembers();
@@ -287,6 +292,7 @@ public class OptionClassController implements Initializable {
     @FXML
     void enterBtnClicked(ActionEvent event) {
         project.setBudget(Double.parseDouble(budgetTextfield.getText()));
+        budgetLabel.setText(Double.toString(project.getBudget()));
         Stage window = new Stage();
         window.setTitle("Budget Changed!");
         window.setMinWidth(250);

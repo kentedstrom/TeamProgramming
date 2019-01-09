@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -11,9 +15,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.ProjectOverviewController">
+<AnchorPane maxHeight="1500.0" maxWidth="1500.0" minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.ProjectOverviewController">
    <children>
-      <MenuBar>
+      <Button fx:id="showScheduleBtn" layoutX="220.0" layoutY="136.0" mnemonicParsing="false" onAction="#showScheduleBtnClicked" prefHeight="100.0" prefWidth="300.0" text="Schedule" />
+      <Button id="showMembersButton" fx:id="showMembersBtn" layoutX="220.0" layoutY="262.0" mnemonicParsing="false" onAction="#showMembersBtnClicked" prefHeight="100.0" prefWidth="300.0" text="Members" />
+      <Button fx:id="optionsBtn" layoutX="220.0" layoutY="389.0" mnemonicParsing="false" onAction="#optionsBtnClicked" prefHeight="100.0" prefWidth="300.0" text="Edit Project" />
+      <Button fx:id="dashboard" layoutX="540.0" layoutY="136.0" mnemonicParsing="false" onAction="#getDashboard" prefHeight="100.0" prefWidth="300.0" text="Dashboard" />
+      <Label layoutX="399.0" layoutY="86.0" prefHeight="35.0" prefWidth="282.0" text="-Project Overview Menu-">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="backBtn" layoutX="540.0" layoutY="511.0" mnemonicParsing="false" onAction="#backBtnClicked" prefHeight="100.0" prefWidth="300.0" text="Exit" />
+      <Button fx:id="saveProjectBtn" layoutX="540.0" layoutY="389.0" mnemonicParsing="false" onAction="#saveProject" prefHeight="100.0" prefWidth="300.0" text="Save Project" />
+      <Button layoutX="540.0" layoutY="262.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="Katas Button" />
+      <MenuBar prefHeight="32.0" prefWidth="1080.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -32,29 +48,5 @@
           </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane prefHeight="323.0" prefWidth="600.0">
-         <children>
-            <Button fx:id="showScheduleBtn" layoutX="46.0" layoutY="35.0" mnemonicParsing="false" onAction="#showScheduleBtnClicked" text="Show Schedule" />
-            <Text layoutX="148.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.2060546875" />
-            <Button id="showMembersButton" fx:id="showMembersBtn" layoutX="45.0" layoutY="95.0" mnemonicParsing="false" onAction="#showMembersBtnClicked" text="Show members" />
-            <Button fx:id="optionsBtn" layoutX="44.0" layoutY="205.0" mnemonicParsing="false" onAction="#optionsBtnClicked" text="Edit Project" />
-            <Text layoutX="241.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget: " />
-            <Text layoutX="240.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Earned value: " />
-            <Text layoutX="350.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule Variance: " />
-            <Text layoutX="486.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost variance: " />
-            <Label fx:id="earnedValueLabel" layoutX="240.0" layoutY="156.0" text="Label" />
-            <Label fx:id="ScheduleVarianceLabel" layoutX="350.0" layoutY="156.0" text="Label" />
-            <Label fx:id="costVarianceLabel" layoutX="486.0" layoutY="156.0" text="Label" />
-            <Label fx:id="budgetLabel" layoutX="340.0" layoutY="66.0" text="Label" />
-            <Button fx:id="dashboard" layoutX="45.0" layoutY="151.0" mnemonicParsing="false" onAction="#getDashboard" text="Dashboard" />
-            <Button fx:id="saveProjectBtn" layoutX="41.0" layoutY="255.0" mnemonicParsing="false" onAction="#saveProject" text="Save Project" />
-         </children>
-      </AnchorPane>
-      <ToolBar prefHeight="53.0" prefWidth="600.0">
-        <items>
-            <Region prefHeight="39.0" prefWidth="523.0" />
-          <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backBtnClicked" text="Back" />
-        </items>
-      </ToolBar>
    </children>
-</VBox>
+</AnchorPane>

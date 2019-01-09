@@ -36,7 +36,7 @@ public class StartScreenController implements Initializable {
         loader.setLocation((getClass().getResource("/CreateNewProject.fxml")));
         Parent projectOverview = loader.load();
 
-        Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+        Scene projectOverviewScene = new Scene(projectOverview, 1080,700);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(projectOverviewScene);
         window.show();
@@ -59,7 +59,7 @@ public class StartScreenController implements Initializable {
         loader.setLocation((getClass().getResource("/ProjectOverview.fxml")));
         Parent projectOverview = loader.load();
 
-        Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+        Scene projectOverviewScene = new Scene(projectOverview, 1080,700);
         ProjectOverviewController controller = loader.getController();
 
         controller.initData(project);

@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
+<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
    <children>
       <VBox layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="513.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -33,40 +33,57 @@
                   </Menu>
                </menus>
             </MenuBar>
-            <TabPane prefHeight="420.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane prefHeight="712.0" prefWidth="1080.0" tabClosingPolicy="UNAVAILABLE">
                <tabs>
                   <Tab text="Budget">
                      <content>
-                        <AnchorPane prefHeight="277.0" prefWidth="600.0">
+                        <AnchorPane prefHeight="604.0" prefWidth="1100.0">
                            <children>
-                              <Label layoutX="101.0" layoutY="162.0" text="Enter budget:" />
-                              <TextField fx:id="budgetTextfield" layoutX="200.0" layoutY="157.0" />
-                              <Button fx:id="enterBtn" layoutX="411.0" layoutY="157.0" mnemonicParsing="false" onAction="#enterBtnClicked" text="Confirm" />
+                              <Label layoutX="364.0" layoutY="440.0" text="Edit Budget:" />
+                              <TextField fx:id="budgetTextfield" layoutX="457.0" layoutY="435.0" />
+                              <Button fx:id="enterBtn" layoutX="677.0" layoutY="435.0" mnemonicParsing="false" onAction="#enterBtnClicked" text="Confirm" />
+                              <Label layoutX="404.0" layoutY="120.0" text="-Current Budget-">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="budgetLabel" layoutX="499.0" layoutY="193.0" text="Label">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </content>
                   </Tab>
                   <Tab text="Risk">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="800.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="381.0" prefWidth="758.0">
                            <children>
-                              <TableView fx:id="table" layoutX="6.0" layoutY="5.0" minHeight="220.0" minWidth="800.0" prefHeight="318.0" prefWidth="800.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="table" layoutX="6.0" layoutY="5.0" minHeight="220.0" minWidth="739.0" prefHeight="466.0" prefWidth="1100.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <columns>
-                                    <TableColumn fx:id="riskColumn" prefWidth="423.0" text="Risk" />
-                                    <TableColumn fx:id="impactColumn" prefWidth="132.0" text="Impact" />
-                                    <TableColumn fx:id="probColumn" prefWidth="179.0" text="Probability" />
+                                    <TableColumn fx:id="riskColumn" prefWidth="471.0" text="Risk" />
+                                    <TableColumn fx:id="impactColumn" prefWidth="262.0" text="Impact" />
+                                    <TableColumn fx:id="probColumn" prefWidth="363.0" text="Probability" />
                                  </columns>
                               </TableView>
-                              <HBox alignment="BOTTOM_RIGHT" layoutX="20.0" layoutY="321.0" prefHeight="51.0" prefWidth="776.0" spacing="5.0">
+                              <HBox alignment="BOTTOM_RIGHT" layoutY="506.0" prefHeight="71.0" prefWidth="1100.0" spacing="5.0">
                                  <children>
-                                    <TextField fx:id="riskInput" prefHeight="31.0" prefWidth="345.0" promptText="Risk" />
-                                    <TextField fx:id="impactInput" prefHeight="31.0" prefWidth="143.0" promptText="Impact (1-10)" />
-                                    <TextField fx:id="probInput" prefHeight="31.0" prefWidth="140.0" promptText="Probability (1-10)" />
+                                    <TextField fx:id="riskInput" prefHeight="31.0" prefWidth="438.0" promptText="Risk" />
+                                    <TextField fx:id="impactInput" prefHeight="31.0" prefWidth="256.0" promptText="Impact (1-10)" />
+                                    <TextField fx:id="probInput" prefHeight="31.0" prefWidth="220.0" promptText="Probability (1-10)">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </TextField>
                                     <Button fx:id="addRiskBtn" mnemonicParsing="false" onAction="#addRiskBtnClicked" text="Add" />
-                                    <Button fx:id="deleteRiskBtn" mnemonicParsing="false" onAction="#deleteRiskBtnClicked" text="Delete" />
+                                    <Button fx:id="deleteRiskBtn" mnemonicParsing="false" onAction="#deleteRiskBtnClicked" prefHeight="31.0" prefWidth="66.0" text="Delete" />
                                  </children>
                                  <padding>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                  </padding>
                                  <opaqueInsets>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -80,36 +97,36 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <AnchorPane prefHeight="381.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <AnchorPane prefHeight="578.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Text layoutX="22.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member/members responsible: " />
-                                    <Text layoutX="22.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Week:" />
+                                    <Text layoutX="19.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member/members responsible: " />
+                                    <Text layoutX="16.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Week:" />
                                     <Text layoutX="22.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the following information about the task: " />
-                                    <Text layoutX="25.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Week:" />
-                                    <Text layoutX="60.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost: " />
-                                    <TextField fx:id="cost" layoutX="110.0" layoutY="259.0" />
-                                    <Text layoutX="50.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
-                                    <Button fx:id="confirmBtn" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#confirmTask" prefHeight="31.0" prefWidth="150.0" text="Add Task" />
-                                    <RadioButton fx:id="completeRadioBtn" layoutX="110.0" layoutY="300.0" mnemonicParsing="false" text="Completed" />
-                                    <RadioButton fx:id="notCompleteRadioBtn" layoutX="223.0" layoutY="300.0" mnemonicParsing="false" text="Not Completed" />
-                                    <TextField fx:id="endWeekInput" layoutX="110.0" layoutY="219.0" />
-                                    <TextField fx:id="startWeekInput" layoutX="110.0" layoutY="175.0">
+                                    <Text layoutX="19.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Week:" />
+                                    <Text layoutX="19.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost: " />
+                                    <TextField fx:id="cost" layoutX="126.0" layoutY="402.0" />
+                                    <Text layoutX="22.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
+                                    <Button fx:id="confirmBtn" layoutX="16.0" layoutY="527.0" mnemonicParsing="false" onAction="#confirmTask" prefHeight="31.0" prefWidth="354.0" text="Add Task" />
+                                    <RadioButton fx:id="completeRadioBtn" layoutX="93.0" layoutY="468.0" mnemonicParsing="false" text="Completed" />
+                                    <RadioButton fx:id="notCompleteRadioBtn" layoutX="220.0" layoutY="468.0" mnemonicParsing="false" text="In progress" />
+                                    <TextField fx:id="endWeekInput" layoutX="126.0" layoutY="335.0" />
+                                    <TextField fx:id="startWeekInput" layoutX="126.0" layoutY="264.0">
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>
                                     </TextField>
-                                    <TableView fx:id="taskTable" layoutX="405.0" prefHeight="310.0" prefWidth="397.0">
+                                    <TableView fx:id="taskTable" layoutX="405.0" prefHeight="515.0" prefWidth="679.0">
                                       <columns>
                                         <TableColumn fx:id="taskColumn" prefWidth="191.0" text="Task" />
                                         <TableColumn fx:id="startWeekColumn" prefWidth="95.0" text="Start Week" />
                                           <TableColumn fx:id="endWeekColumn" prefWidth="107.0" text="End week" />
                                       </columns>
                                     </TableView>
-                                    <Button fx:id="deleteTaskBtn" layoutX="699.0" layoutY="313.0" mnemonicParsing="false" onAction="#deleteTask" text="Delete Task" />
-                                    <Label layoutX="23.0" layoutY="135.0" text="Task name:" />
-                                    <TextField fx:id="taskNameInput" layoutX="110.0" layoutY="130.0" />
-                                    <ChoiceBox fx:id="memberChoice" layoutX="233.0" layoutY="57.0" prefWidth="150.0" />
-                                    <Button layoutX="412.0" layoutY="313.0" mnemonicParsing="false" onAction="#detailsBtnClicked" prefHeight="12.0" prefWidth="270.0" text="View Details/Add extra member" />
+                                    <Button fx:id="deleteTaskBtn" layoutX="917.0" layoutY="527.0" mnemonicParsing="false" onAction="#deleteTask" prefHeight="31.0" prefWidth="153.0" text="Delete Task" />
+                                    <Label layoutX="19.0" layoutY="194.0" text="Task name:" />
+                                    <TextField fx:id="taskNameInput" layoutX="126.0" layoutY="189.0" />
+                                    <ChoiceBox fx:id="memberChoice" layoutX="16.0" layoutY="118.0" prefHeight="31.0" prefWidth="353.0" />
+                                    <Button layoutX="428.0" layoutY="527.0" mnemonicParsing="false" onAction="#detailsBtnClicked" prefHeight="31.0" prefWidth="447.0" text="View Details/Add extra member" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -125,9 +142,9 @@
             </TabPane>
             <VBox alignment="BOTTOM_RIGHT" prefHeight="40.0" prefWidth="800.0">
                <children>
-                  <HBox alignment="BOTTOM_RIGHT" prefHeight="112.0" prefWidth="800.0">
+                  <HBox alignment="BOTTOM_RIGHT">
                      <children>
-                        <Button fx:id="backBtn" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#backBtnClicked" text="Back to Overview" />
+                        <Button fx:id="backBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#backBtnClicked" prefHeight="31.0" prefWidth="159.0" text="Back to Overview" />
                      </children>
                      <opaqueInsets>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

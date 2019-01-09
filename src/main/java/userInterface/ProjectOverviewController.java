@@ -59,7 +59,6 @@ public class ProjectOverviewController implements Initializable{
     public void initData(Project project){
         this.project = project;
         this.goBack = new Navigation();
-        budgetLabel.setText(Double.toString(project.getBudget()));
 
     }
 
@@ -70,7 +69,7 @@ public class ProjectOverviewController implements Initializable{
         loader.setLocation((getClass().getResource("/optionMenu.fxml")));
         Parent optionMenu = loader.load();
 
-        Scene optionMenuScene = new Scene(optionMenu, 800,500);
+        Scene optionMenuScene = new Scene(optionMenu, 1080,700);
         OptionClassController controller = loader.getController();
 
         controller.initData(project);
@@ -97,7 +96,7 @@ public class ProjectOverviewController implements Initializable{
         loader.setLocation((getClass().getResource("/StartScreen.fxml")));
         Parent startScreen = loader.load();
 
-        Scene startScreenScene = new Scene(startScreen, 800,500);
+        Scene startScreenScene = new Scene(startScreen, 1080,700);
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(startScreenScene);
@@ -149,7 +148,7 @@ public class ProjectOverviewController implements Initializable{
         loader.setLocation((getClass().getResource("/ScheduleView.fxml")));
         Parent scheduleView = loader.load();
 
-        Scene scheduleScene = new Scene(scheduleView, 800,500);
+        Scene scheduleScene = new Scene(scheduleView, 1080,700);
         scheduleScene.getStylesheets().add("/ganttChart.css");
         ScheduleController controller = loader.getController();
 
@@ -166,7 +165,7 @@ public class ProjectOverviewController implements Initializable{
         loader.setLocation((getClass().getResource("/ShowMembers.fxml")));
         Parent addMember = loader.load();
 
-        Scene addMemberScene = new Scene(addMember, 800,500);
+        Scene addMemberScene = new Scene(addMember, 1080,700);
         AddMemberController controller = loader.getController();
 
         controller.initData(project);
