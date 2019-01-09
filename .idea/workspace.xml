@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamProgramming/optionMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamProgramming/optionMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/CreateNewProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/CreateNewProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/Navigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/Navigation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/OptionClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/OptionClassController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/StartScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/StartScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ProjectOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ProjectOverview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Risk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Risk.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ScheduleView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ScheduleView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ShowMembers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ShowMembers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/StartScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/StartScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/TaskOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TaskOverview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/optionMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/optionMenu.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -110,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Plots.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="37" column="55" lean-forward="true" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+            <state relative-caret-position="284">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -289,7 +272,7 @@
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="180" />
     <option name="y" value="50" />
     <option name="width" value="1750" />
@@ -383,7 +366,7 @@
     <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547024349946" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547024652156" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../LearningGUI" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -547,16 +530,15 @@
       <workItem from="1546812593241" duration="588000" />
       <workItem from="1546813226148" duration="5414000" />
       <workItem from="1546819065644" duration="9228000" />
-      <workItem from="1546938634558" duration="8851000" />
+      <workItem from="1546938634558" duration="9035000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169717000" />
+    <option name="totallyTimeSpent" value="169901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21946308" />
       <window_info id="Structure" order="1" weight="0.24971624" />
@@ -567,7 +549,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840466" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32152975" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32152975" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -978,8 +960,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Plots.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="37" column="55" lean-forward="true" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+        <state relative-caret-position="284">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
