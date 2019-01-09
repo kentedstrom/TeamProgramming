@@ -63,7 +63,7 @@
                </padding>
             </TextField>
             <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addMember" text="Add" />
-            <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteMember" text="Delete" />
+            <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteMember" text="Remove" />
             <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backBtnClicked" text="Go back" />
          </children>
          <opaqueInsets>
