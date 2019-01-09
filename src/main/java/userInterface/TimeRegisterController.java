@@ -51,7 +51,7 @@ public class TimeRegisterController implements Initializable {
     private PieChart memberTimePie;
 
     @FXML
-    private StackedBarChart memberTimeBar;
+    private BarChart<Number,String> memberTimeBar;
 
     @FXML
     private CategoryAxis timeBarXAxis;
@@ -94,31 +94,27 @@ public class TimeRegisterController implements Initializable {
         timeBarXAxis.setLabel("Member");
         timeBarYAxis.setLabel("Time");
 
-        XYChart.Series seriesHidden = new XYChart.Series();
-        XYChart.Series series5 = new XYChart.Series();
+        XYChart.Series<Number,String> series5 = new XYChart.Series<>();
 
         // retrieve calculated time spent
         HashMap<String,Double> timeSpentByMember = getData.TimeSpentOnProjectByMember(project.getMembers());
 
         series5.getData().add(new XYChart.Data("Total",timeSpentByMember.get("Total")));
-        // hidden layer and stacked bar chart because the style css file says (bc of the gantt chart) that the first bar is hidden
-        // since a normal bar chart has only one bar, that would be the hidden one
-        seriesHidden.getData().add(new XYChart.Data("Total",0));
 
         for (String key: timeSpentByMember.keySet()) {
             // not counting the total number in the PieChart
             if(!key.equals("Total")) {
                 pieChartData.add(new PieChart.Data(key, timeSpentByMember.get(key)));
                 series5.getData().add(new XYChart.Data(key,timeSpentByMember.get(key)));
-                seriesHidden.getData().add(new XYChart.Data(key,0));
             }
         }
 
         // add data to pieChart
         memberTimePie.setData(pieChartData);
+        memberTimePie.setLabelsVisible(false);
 
         // plot the bar chart
-        memberTimeBar.getData().addAll(seriesHidden,series5);
+        memberTimeBar.getData().addAll(series5);
     }
 
 
@@ -135,10 +131,33 @@ public class TimeRegisterController implements Initializable {
         member.addTimeToTask(taskID,Double.parseDouble(timeSpent));
 
         // log the info on the textArea
-        String toLog = member.getName() + " spent " + timeSpent + " week(s) on " + task.getName() + "\n";
+        String toLog = member.getName() + " spent " + member.getTimeSpentPerTask(taskID) + " week(s) on " + task.getName() + "\n";
         logField.appendText(toLog);
 
-        addMemberTimeCharts();
+        // update pieChart
+        for (PieChart.Data data : memberTimePie.getData()) {
+            if(data.getName().equals(member.getName())){
+                data.setPieValue(Double.valueOf(member.getTimeSpentPerTask(taskID)));
+            }
+        }
+
+        // update barPlot
+        memberTimeBar.getData().clear();
+
+        XYChart.Series<Number,String> series5 = new XYChart.Series<>();
+
+        // retrieve calculated time spent
+        HashMap<String,Double> timeSpentByMember = getData.TimeSpentOnProjectByMember(project.getMembers());
+
+        series5.getData().add(new XYChart.Data("Total",timeSpentByMember.get("Total")));
+
+        for (String key: timeSpentByMember.keySet()) {
+            // not counting the total number in the PieChart
+            if(!key.equals("Total")) {
+                series5.getData().add(new XYChart.Data(key,timeSpentByMember.get(key)));
+            }
+        }
+        memberTimeBar.getData().addAll(series5);
 
         timeInput.clear();
 

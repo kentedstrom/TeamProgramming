@@ -83,7 +83,7 @@ public class TaskOverviewController implements Initializable {
         pieChartData.add(new PieChart.Data("unfinished",taskCompleteness[1]));
 
         taskStatus.setData(pieChartData);
-
+        taskStatus.setLabelsVisible(false);
 
     }
 
@@ -99,7 +99,7 @@ public class TaskOverviewController implements Initializable {
         pieChartData.add(new PieChart.Data("available",this.project.getBudget() - budgetAvailability[0]));
 
         budgetStatus.setData(pieChartData);
-
+        budgetStatus.setLabelsVisible(false);
 
     }
 
