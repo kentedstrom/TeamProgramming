@@ -82,7 +82,7 @@ public class ProjectOverviewController implements Initializable{
 
     @FXML
     void backBtnClicked(ActionEvent event) throws Exception {
-        
+
 
         boolean save = ConfirmBox.save();
 

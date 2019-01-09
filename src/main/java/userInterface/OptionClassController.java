@@ -8,9 +8,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -239,6 +241,26 @@ public class OptionClassController implements Initializable {
         this.cost.clear();
         this.completeRadioBtn.setSelected(false);
         this.notCompleteRadioBtn.setSelected(false);
+
+    }
+    @FXML
+    void detailsBtnClicked(ActionEvent event) throws Exception{
+
+        Task taskSelected;
+        taskSelected = taskTable.getSelectionModel().getSelectedItem();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/detailsView.fxml")));
+        Parent detailsView = loader.load();
+
+        Scene detailsViewScene = new Scene(detailsView, 500, 300);
+        DetailsViewController controller = loader.getController();
+
+        controller.initData(taskSelected, project);
+        Stage window = new Stage();
+        window.setScene(detailsViewScene);
+        window.showAndWait();
+
 
     }
     @FXML
