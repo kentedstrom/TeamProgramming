@@ -6,6 +6,7 @@ import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Project {
     private String name;
@@ -71,8 +72,8 @@ public class Project {
     public int getCurrentWeek(){
         return currentWeek;
     }
-    public void setCurrentWeek(int week){
-        currentWeek = week;
+    public void setCurrentWeek(){
+        currentWeek = calculateCurrentWeek();
     }
 
     public void createTask(int taskID,String name, int startWeek, int endWeek, double cost, double budget, boolean completed) {
@@ -193,7 +194,23 @@ public class Project {
         return date.get(weekFields.weekOfWeekBasedYear());
     }
 
-
+//returns the percentage of work done
+ /* test code please ignore
+    public double percentageWorkDone(Project project){
+        int currentWeek =calculateCurrentWeek();
+        double tasksLate =0;
+        double tasks = 0;
+        for (Task task:project.getTasks()){
+            if (task.getEndWeek() < currentWeek && !task.isCompleted()){
+                tasksLate++;
+            }
+            else {
+                tasks++;
+            }
+        }
+        return  tasksLate / tasks;
+    }
+    */
     // Create new task and member ID -----------------------------------------------
 
 

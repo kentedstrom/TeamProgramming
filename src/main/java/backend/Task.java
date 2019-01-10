@@ -195,10 +195,14 @@ public class Task {
         return false;
     }
     //takes a project and gets its current week and compares if its larger than the end week and then returns the difference
-    public int amIBehind(Project project){
+    public String amIBehind(Project project){
         if (project.getCurrentWeek() > getEndWeek()){
-            return project.getCurrentWeek() - getEndWeek();
+            if (getEndWeek()== 52 && getStartWeek()== 50 && project.calculateCurrentWeek() < 50) {
+                return ("Late");
+            }
+
+            return (" Late by" + (project.getCurrentWeek() - getEndWeek());
         }
-        else return 0;
+        else return "Not late";
     }
 }

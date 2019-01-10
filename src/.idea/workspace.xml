@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f568fe22-9ab8-4d8b-bcfe-b6f1532f517f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/java/backend/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/backend/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/CreateNewProject.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/PlotsStartPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/ProjectOverview.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/Risk.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/ScheduleView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/ShowMembers.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/StartScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/TaskOverview.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/Calculations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/Factory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/IO/JSONReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/Member.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/Project.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/Risk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/RiskMatrix.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/backend/Task.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/detailsView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/ganttChart.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/optionMenu.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/AddMemberController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/CreateNewProject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/DetailsViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/Navigation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/OptionClassController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/PlotStartPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/ProjectOverviewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/RiskController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/ScheduleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/StartScreenController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/userInterface/TaskOverviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/backend/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/backend/Task.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,12 +32,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="24" />
+          <entry key="java" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="24" />
+          <entry key="JAVA" value="144" />
         </counts>
       </usages-collector>
     </session>
@@ -85,8 +52,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/java/backend/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            <state relative-caret-position="136">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/java/backend/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-646">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="429">
+              <caret line="208" selection-start-line="208" selection-end-line="208" />
             </state>
           </provider>
         </entry>
@@ -137,6 +107,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/main/java/backend/Task.java" />
         <option value="$PROJECT_DIR$/main/java/backend/Project.java" />
       </list>
     </option>
@@ -276,15 +247,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/java/backend/Task.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="429">
+          <caret line="208" selection-start-line="208" selection-end-line="208" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/java/backend/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        <state relative-caret-position="136">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
