@@ -1,34 +1,45 @@
 package backend;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 
 public class Task {
 
+    private ArrayList<Integer> memberIDs;
     private ArrayList<String> memberNames;
+    private int ID;
     private String name;
     private int startWeek;
     private int endWeek;
     private double cost;
+    private double budget;
     private boolean isCompleted;
     private String status;
 
     public Task(){
+        this.ID = 0;
+        this.memberIDs = new ArrayList<>();
         this.memberNames = new ArrayList<>();
         this.startWeek = 0;
         this.endWeek = 0;
         this.cost = 0;
+        this.budget = 0;
         this.isCompleted = false;
         this.status = "In progress";
     }
 
 
-    public Task(String name, int startWeek, int endWeek, double cost, boolean isCompleted) {
+    public Task(int ID,String name, int startWeek, int endWeek, double cost, double budget, boolean isCompleted) {
+        this.ID = ID;
+        this.name = name;
+        this.memberIDs = new ArrayList<>();
         this.memberNames = new ArrayList<>();
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;
+        this.budget = budget;
         this.isCompleted = isCompleted;
-        this.name = name;
         if (isCompleted){
             this.status = "Completed";
         }
@@ -39,14 +50,18 @@ public class Task {
 
 
     // task has only the name of the memberNames not the memberNames themselves, otherwise infinite recursion
-    public Task(String memberName,String name, int startWeek, int endWeek, double cost, boolean isCompleted){
+    public Task(int ID,String name, int memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean isCompleted){
+        this.ID = ID;
+        this.name = name;
+        this.memberIDs = new ArrayList<>();
+        memberIDs.add(memberID);
         this.memberNames = new ArrayList<>();
         this.memberNames.add(memberName);
         this.startWeek = startWeek;
         this.endWeek = endWeek;
         this.cost = cost;
+        this.budget = budget;
         this.isCompleted = isCompleted;
-        this.name = name;
         if (isCompleted){
             this.status = "Completed";
         }
@@ -55,11 +70,30 @@ public class Task {
         }
 
     }
-    public void addMember(String memberName){
+
+    public void addMember(int memberID, String memberName){
         this.memberNames.add(memberName);
+        this.memberIDs.add(memberID);
     }
-    public void removeMember(String memberName){
+    public void removeMember(int memberID, String memberName){
         this.memberNames.remove(memberName);
+        this.memberIDs.remove(memberID);
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getStartWeek() {
@@ -77,12 +111,21 @@ public class Task {
     public void setEndWeek(int endWeek) {
         this.endWeek = endWeek;
     }
+
     public double getCost() {
         return cost;
     }
 
     public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+
+    public void setBudget(double budget) {
+        this.budget = budget;
     }
 
     public boolean isCompleted() {
@@ -99,13 +142,6 @@ public class Task {
         }
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     public String toString(){
         return this.name;
     }
@@ -113,8 +149,50 @@ public class Task {
         return this.status;
     }
 
-    public ArrayList<String> getListOfMemberNames(){
-        return this.memberNames;
+    @JsonIgnore
+    public String getListOfMemberNames(){
+        int counter = 0;
+        String allNames = "";
+        for (String name: this.memberNames) {
+            allNames += name;
+            if(counter<this.memberNames.size()){
+                allNames += ", ";
+            }
+            counter += 1;
+        }
+        return allNames;
+    }
+
+    public ArrayList<Integer> getMemberIDs() {
+        return memberIDs;
+    }
+
+    public ArrayList<String> getMemberNames() {
+        return memberNames;
+    }
+
+    @JsonIgnore
+    public ArrayList<Integer> getListOfMemberIDs(){
+        return this.memberIDs;
+    }
+
+
+    public boolean compare(Integer taskID){
+        if(this.ID ==taskID){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Task){
+            Task otherTask  = (Task) obj;
+            if(otherTask.getID() == this.ID){
+                return true;
+            }
+        }
+        return false;
     }
     //takes a project and gets its current week and compares if its larger than the end week and then returns the difference
     public int amIBehind(Project project){

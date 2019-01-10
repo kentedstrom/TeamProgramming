@@ -29,7 +29,7 @@ public class DetailsViewController implements Initializable {
     private Label startWeekLabel;
 
     @FXML
-    private Label costLabel;
+    private Label budgetLabel;
 
     @FXML
     private Button changeStatusBtn;
@@ -66,23 +66,17 @@ public class DetailsViewController implements Initializable {
         statusLabel.setText(task.getStatus());
     }
 
-
-    // I am not sure it is important, but I am afraid we will shoot ourselves in the foot letting having tasks without people
-
     @FXML
     void addMember(ActionEvent event) {
 
         Member memberToAdd = addMemberMenu.getSelectionModel().getSelectedItem();
-        task.addMember(memberToAdd.getName());
-        memberToAdd.addTask(this.task);
+        task.addMember(memberToAdd.getID(),memberToAdd.getName());
+        memberToAdd.addTask(this.task.getID());
 
         ObservableList<Member> currentMembers = FXCollections.observableArrayList();
-        for (String memberName : task.getListOfMemberNames()) {
-            for (Member member: project.getMembers()) {
-                if (member.getName().equals(memberName)){
-                    currentMembers.add(member);
-                }
-            }
+        for (int memberID : task.getListOfMemberIDs()) {
+            Member member = project.searchMember(memberID);
+            currentMembers.add(member);
         }
         memberTable.setItems(currentMembers);
 
@@ -92,7 +86,7 @@ public class DetailsViewController implements Initializable {
     void removeBtnClicked(ActionEvent event){
         Member memberToRemove;
         memberToRemove = memberTable.getSelectionModel().getSelectedItem();
-        task.removeMember(memberToRemove.getName());
+        task.removeMember(memberToRemove.getID(),memberToRemove.getName());
 
         memberToRemove.removeTask(this.task);
 
@@ -100,7 +94,7 @@ public class DetailsViewController implements Initializable {
         allMembers = memberTable.getItems();
         memberSelected = memberTable.getSelectionModel().getSelectedItems();
 
-        task.getListOfMemberNames().remove(memberTable.getSelectionModel().getSelectedItem());
+        task.getListOfMemberIDs().remove(memberTable.getSelectionModel().getSelectedItem());
 
         memberSelected.forEach(allMembers::remove);
 
@@ -119,7 +113,7 @@ public class DetailsViewController implements Initializable {
             taskLabel.setText(task.getName());
             startWeekLabel.setText(String.valueOf(task.getStartWeek()));
             endWeekLabel.setText(String.valueOf(task.getEndWeek()));
-            costLabel.setText(String.valueOf(task.getCost()));
+            budgetLabel.setText(String.valueOf(task.getBudget()));
             statusLabel.setText(task.getStatus());
 
             ToggleGroup group = new ToggleGroup();
@@ -132,12 +126,9 @@ public class DetailsViewController implements Initializable {
 
             ObservableList<Member> currentMembers = FXCollections.observableArrayList();
 
-            for (String memberName : task.getListOfMemberNames()) {
-                for (Member member: project.getMembers()) {
-                    if (member.getName().equals(memberName)){
-                        currentMembers.add(member);
-                    }
-                }
+            for (int memberID : task.getListOfMemberIDs()) {
+                Member member = project.searchMember(memberID);
+                currentMembers.add(member);
             }
 
 

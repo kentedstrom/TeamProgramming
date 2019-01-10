@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
+<<<<<<< HEAD:out/production/TeamProgramming/ShowMembers.fxml
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.AddMemberController">
+=======
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.AddMemberController">
+>>>>>>> taskRealTiming:target/classes/ShowMembers.fxml
    <children>
       <MenuBar>
         <menus>
@@ -37,6 +45,7 @@
       </TableView>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="43.0" prefWidth="600.0" spacing="5.0">
          <children>
+<<<<<<< HEAD:out/production/TeamProgramming/ShowMembers.fxml
             <Button fx:id="timeSpentBtn" mnemonicParsing="false" onAction="#showTimeSpent" prefHeight="31.0" prefWidth="220.0" text="Show time spent/work done" />
             <TextField fx:id="IDInput" prefHeight="31.0" prefWidth="56.0" promptText="ID">
                <opaqueInsets>
@@ -46,6 +55,8 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </TextField>
+=======
+>>>>>>> taskRealTiming:target/classes/ShowMembers.fxml
             <TextField fx:id="nameInput" prefHeight="31.0" prefWidth="170.0" promptText="Name">
                <opaqueInsets>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

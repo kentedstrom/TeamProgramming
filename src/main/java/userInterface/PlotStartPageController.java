@@ -4,6 +4,7 @@ import backend.Calculations;
 import backend.Project;
 import backend.Task;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -80,19 +81,6 @@ public class PlotStartPageController implements Initializable {
     private NumberAxis workloiadYAxis;
 
 
-    @FXML
-    private PieChart memberTimePie;
-
-    @FXML
-    private StackedBarChart memberTimeBar;
-
-    @FXML
-    private CategoryAxis timeBarXAxis;
-
-    @FXML
-    private NumberAxis timeBarYAxis;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -120,13 +108,11 @@ public class PlotStartPageController implements Initializable {
         // set up Total Workload Chart
         addWorkloadAreaChart();
 
-
-        // set up member time charts
-        addMemberTimeCharts();
-
     }
 
     private void addTableData(){
+
+
         taskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         memberColumn.setCellValueFactory(new PropertyValueFactory<>("listOfMemberNames"));
@@ -179,41 +165,6 @@ public class PlotStartPageController implements Initializable {
         totalWorkload.getData().addAll(series3);
     }
 
-    private void addMemberTimeCharts(){
-        // set up time spent by member on the project Pie Chart...
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-
-        // ... and at the same time plot the time spent by member on a BarChart
-
-        timeBarXAxis.setLabel("Member");
-        timeBarYAxis.setLabel("Time");
-
-        XYChart.Series seriesHidden = new XYChart.Series();
-        XYChart.Series series5 = new XYChart.Series();
-
-        // retrieve calculated time spent
-        HashMap<String,Double> timeSpentByMember = getData.TimeSpentOnProjectByMember(project.getMembers());
-
-        series5.getData().add(new XYChart.Data("Total",timeSpentByMember.get("Total")));
-        // hidden layer and stacked bar chart because the style css file says (bc of the gantt chart) that the first bar is hidden
-        // since a normal bar chart has only one bar, that would be the hidden one
-        seriesHidden.getData().add(new XYChart.Data("Total",0));
-
-        for (String key: timeSpentByMember.keySet()) {
-            // not counting the total number in the PieChart
-            if(!key.equals("Total")) {
-                pieChartData.add(new PieChart.Data(key, timeSpentByMember.get(key)));
-                series5.getData().add(new XYChart.Data(key,timeSpentByMember.get(key)));
-                seriesHidden.getData().add(new XYChart.Data(key,0));
-            }
-        }
-
-        // add data to pieChart
-        memberTimePie.setData(pieChartData);
-
-        // plot the bar chart
-        memberTimeBar.getData().addAll(seriesHidden,series5);
-    }
 
     @FXML
     void backBtnClicked(ActionEvent event) throws IOException {

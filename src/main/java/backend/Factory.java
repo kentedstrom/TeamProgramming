@@ -7,22 +7,21 @@ public class Factory {
 
     }
 
-    public Member createMember(String name, String Id, double salary){
-        return new Member(name, Id, salary);
+    public Member createMember(String name, int memberID, double salary){
+        return new Member(name, memberID, salary);
     }
 
-    public Task createTask(String memberName,String name, int startWeek, int endWeek, double cost, Boolean completed){
-        return new Task(memberName,name, startWeek, endWeek, cost, completed);
+    public Task createTask(int taskID,String name, int memberID, String memberName, int startWeek, int endWeek, double cost, double budget, Boolean completed){
+        return new Task(taskID,name, memberID,memberName, startWeek, endWeek, cost, budget, completed);
     }
 
     public Task createTask(){
-
-        return new Task("", -1, -1, -1, false);
+        return new Task();
     }
 
-    public Task createTask(String name, int startWeek, int endWeek, double cost, boolean completed){
+    public Task createTask(int ID, String name, int startWeek, int endWeek, double cost, double budget, boolean completed){
 
-        return new Task(name, startWeek, endWeek, cost, completed);
+        return new Task(ID, name, startWeek, endWeek, cost, budget, completed);
     }
 
     public Risk createRisk(String name, double probability, double impact){

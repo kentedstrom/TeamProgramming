@@ -38,6 +38,9 @@ public class OptionClassController implements Initializable {
     private TextField cost;
 
     @FXML
+    private TextField budget;
+
+    @FXML
     private RadioButton completeRadioBtn;
 
     @FXML
@@ -182,6 +185,7 @@ public class OptionClassController implements Initializable {
             currentRisks.add(risk);
         }
         table.setItems(currentRisks);
+
         riskInput.clear();
         probInput.clear();
         impactInput.clear();
@@ -209,9 +213,12 @@ public class OptionClassController implements Initializable {
 
         Member memberToAdd = memberChoice.getSelectionModel().getSelectedItem();
 
+        // increase the task ID with one
+        int taskID = project.getHighestTaskID() + 1;
         int startWeek = Integer.parseInt(this.startWeekInput.getText());
         int endWeek = Integer.parseInt(this.endWeekInput.getText());
         double cost = Double.parseDouble(this.cost.getText());
+        double budget = Double.parseDouble(this.budget.getText());
         String taskName = taskNameInput.getText();
         boolean completed;
 
@@ -227,10 +234,10 @@ public class OptionClassController implements Initializable {
         }
 
         if (memberToAdd == null) {
-            project.createTask(taskName, startWeek, endWeek, cost, completed);
+            project.createTask(taskID,taskName, startWeek, endWeek, cost, budget, completed);
 
         }else{
-            project.createTask(memberToAdd.getName(), taskName, startWeek, endWeek, cost, completed);
+            project.createTask(taskID, taskName, memberToAdd.getID(), memberToAdd.getName(), startWeek, endWeek, cost, budget, completed);
         }
         ObservableList<Task> currentTasks = FXCollections.observableArrayList();
 
@@ -244,10 +251,12 @@ public class OptionClassController implements Initializable {
         this.startWeekInput.clear();
         this.endWeekInput.clear();
         this.cost.clear();
+        this.budget.clear();
         this.completeRadioBtn.setSelected(false);
         this.notCompleteRadioBtn.setSelected(false);
 
     }
+
     @FXML
     void detailsBtnClicked(ActionEvent event) throws Exception{
 
