@@ -54,7 +54,7 @@ public class Task {
         this.ID = ID;
         this.name = name;
         this.memberIDs = new ArrayList<>();
-        memberIDs.add(memberID);
+        this.memberIDs.add(memberID);
         this.memberNames = new ArrayList<>();
         this.memberNames.add(memberName);
         this.startWeek = startWeek;
