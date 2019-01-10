@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f568fe22-9ab8-4d8b-bcfe-b6f1532f517f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main/java/backend/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/backend/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/backend/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/backend/Task.java" afterDir="false" />
-    </list>
+    <list default="true" id="f568fe22-9ab8-4d8b-bcfe-b6f1532f517f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/java/backend/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="-731">
               <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -73,11 +70,6 @@
               <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/java/backend/RiskMatrix.java">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -254,7 +246,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/java/backend/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="-731">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
