@@ -75,6 +75,7 @@ public class AddMemberController implements Initializable {
 
         table.setItems(currentMembers);
 
+        IDInput.clear();
         nameInput.clear();
         salaryInput.clear();
 

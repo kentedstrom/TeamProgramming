@@ -4,6 +4,7 @@ import backend.Controller;
 import backend.Project;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,10 +15,13 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CreateNewProject {
+public class CreateNewProject implements Initializable {
 
     private Project project;
+    Navigation goBack;
 
 
     @FXML
@@ -31,6 +35,18 @@ public class CreateNewProject {
 
     @FXML
     private Button backToStart;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+    public void initData(Project project){
+        this.project = project;
+        this.goBack = new Navigation();
+
+    }
+
 
     @FXML
     void backToStart(ActionEvent event) throws IOException{
