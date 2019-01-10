@@ -1,10 +1,12 @@
 package backend;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import java.time.LocalDate;
+import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Project {
     private String name;
@@ -185,6 +187,12 @@ public class Project {
     public void setBudget(double budget) {
         this.budget = budget;
     }
+    //returns currentweek
+    public int calculateCurrentWeek (){
+        LocalDate date = LocalDate.now();
+        WeekFields weekFields = WeekFields.of(Locale.getDefault());
+        return date.get(weekFields.weekOfWeekBasedYear());
+    }
 
 
     // Create new task and member ID -----------------------------------------------
@@ -200,5 +208,6 @@ public class Project {
         }
         return maxTaskID;
     }
+
 
 }
