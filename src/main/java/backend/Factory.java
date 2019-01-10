@@ -7,11 +7,11 @@ public class Factory {
 
     }
 
-    public Member createMember(String name, int memberID, double salary){
+    public Member createMember(String name, String memberID, double salary){
         return new Member(name, memberID, salary);
     }
 
-    public Task createTask(int taskID,String name, int memberID, String memberName, int startWeek, int endWeek, double cost, double budget, Boolean completed){
+    public Task createTask(int taskID,String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, Boolean completed){
         return new Task(taskID,name, memberID,memberName, startWeek, endWeek, cost, budget, completed);
     }
 

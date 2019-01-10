@@ -74,7 +74,7 @@ public class DetailsViewController implements Initializable {
         memberToAdd.addTask(this.task.getID());
 
         ObservableList<Member> currentMembers = FXCollections.observableArrayList();
-        for (int memberID : task.getListOfMemberIDs()) {
+        for (String memberID : task.getListOfMemberIDs()) {
             Member member = project.searchMember(memberID);
             currentMembers.add(member);
         }
@@ -88,7 +88,7 @@ public class DetailsViewController implements Initializable {
         memberToRemove = memberTable.getSelectionModel().getSelectedItem();
         task.removeMember(memberToRemove.getID(),memberToRemove.getName());
 
-        memberToRemove.removeTask(this.task);
+        memberToRemove.removeTask(this.task.getID());
 
         ObservableList<Member> memberSelected, allMembers;
         allMembers = memberTable.getItems();
@@ -126,7 +126,7 @@ public class DetailsViewController implements Initializable {
 
             ObservableList<Member> currentMembers = FXCollections.observableArrayList();
 
-            for (int memberID : task.getListOfMemberIDs()) {
+            for (String memberID : task.getListOfMemberIDs()) {
                 Member member = project.searchMember(memberID);
                 currentMembers.add(member);
             }

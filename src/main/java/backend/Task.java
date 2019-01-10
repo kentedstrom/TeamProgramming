@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Task {
 
-    private ArrayList<Integer> memberIDs;
+    private ArrayList<String> memberIDs;
     private ArrayList<String> memberNames;
     private int ID;
     private String name;
@@ -50,7 +50,7 @@ public class Task {
 
 
     // task has only the name of the memberNames not the memberNames themselves, otherwise infinite recursion
-    public Task(int ID,String name, int memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean isCompleted){
+    public Task(int ID,String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean isCompleted){
         this.ID = ID;
         this.name = name;
         this.memberIDs = new ArrayList<>();
@@ -71,11 +71,11 @@ public class Task {
 
     }
 
-    public void addMember(int memberID, String memberName){
+    public void addMember(String memberID, String memberName){
         this.memberNames.add(memberName);
         this.memberIDs.add(memberID);
     }
-    public void removeMember(int memberID, String memberName){
+    public void removeMember(String memberID, String memberName){
         this.memberNames.remove(memberName);
         this.memberIDs.remove(memberID);
     }
@@ -163,7 +163,7 @@ public class Task {
         return allNames;
     }
 
-    public ArrayList<Integer> getMemberIDs() {
+    public ArrayList<String> getMemberIDs() {
         return memberIDs;
     }
 
@@ -172,7 +172,7 @@ public class Task {
     }
 
     @JsonIgnore
-    public ArrayList<Integer> getListOfMemberIDs(){
+    public ArrayList<String> getListOfMemberIDs(){
         return this.memberIDs;
     }
 

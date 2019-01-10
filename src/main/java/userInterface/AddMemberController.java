@@ -34,6 +34,9 @@ public class AddMemberController implements Initializable {
     private Button backBtn;
 
     @FXML
+    private TextField IDInput;
+
+    @FXML
     private TextField salaryInput;
 
     @FXML
@@ -61,7 +64,7 @@ public class AddMemberController implements Initializable {
 
         String memberName = nameInput.getText();
         // create member ID
-        int memberID = project.getHighestMemberID() + 1;
+        String memberID = IDInput.getText();
         double memberSalary = Double.parseDouble(salaryInput.getText());
         project.createMember(memberName, memberID, memberSalary);
 
@@ -102,13 +105,13 @@ public class AddMemberController implements Initializable {
             String tasksCompleted = " ";
             String tasksInProgress = " ";
 
-            for (Task task : memberToShow.getTasks()) {
+            for (Integer taskID : memberToShow.getTasks()) {
+                Task task = project.searchTask(taskID);
                 if (task.isCompleted()) {
                     tasksCompleted += " " + task.getName() + ",";
                 } else if (!task.isCompleted()) {
                     tasksInProgress += " " + task.getName() + ",";
                 }
-
             }
 
             tasksCompleted = tasksCompleted.substring(0, tasksCompleted.length() -1) + "";

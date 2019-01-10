@@ -41,7 +41,6 @@ public class Project {
 
     // Create and Remove methods ------------------------------------------
 
-<<<<<<< HEAD
     public void createMember(String name, String Id, double salary) {
         for(Member member : members){
             if(Id.equals(member.getID())){
@@ -49,10 +48,6 @@ public class Project {
             }
         }
         members.add(this.factory.createMember(name, Id, salary));
-=======
-    public void createMember(String name, int ID, double salary) {
-        members.add(this.factory.createMember(name, ID, salary));
->>>>>>> taskRealTiming
     }
 
     // when a member is removed, remove their name from all tasks they were involved in
@@ -83,7 +78,7 @@ public class Project {
         tasks.add(factory.createTask(taskID,name, startWeek, endWeek, cost,budget, completed));
     }
 
-    public void createTask(int taskID , String name, int memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean completed) {
+    public void createTask(int taskID , String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean completed) {
         Task newTask = factory.createTask(taskID, name, memberID, memberName, startWeek, endWeek, cost, budget, completed);
         tasks.add(newTask);
         // the section below could be rewritten with search through member ID
@@ -100,8 +95,8 @@ public class Project {
 
     public void removeTask(Task taskToRemove) {
         // find the people who had this task
-        ArrayList<Integer> membersToAdjust = taskToRemove.getListOfMemberIDs();
-        for (int memberToRemoveID: membersToAdjust) {
+        ArrayList<String> membersToAdjust = taskToRemove.getListOfMemberIDs();
+        for (String memberToRemoveID: membersToAdjust) {
             for (Member member: members) {
                 if(member.compare(memberToRemoveID)){
                     // remove the taskID from the people who were involved
@@ -132,7 +127,7 @@ public class Project {
         return null;
     }
 
-    public Member searchMember(int memberID){
+    public Member searchMember(String memberID){
         for (Member member:members) {
             if(member.compare(memberID)){
                 return member;
@@ -204,18 +199,6 @@ public class Project {
             }
         }
         return maxTaskID;
-    }
-
-
-    @JsonIgnore
-    public int getHighestMemberID(){
-        int maxMemberID = 0;
-        for (Member member: members) {
-            if(member.getID() > maxMemberID){
-                maxMemberID = member.getID();
-            }
-        }
-        return maxMemberID;
     }
 
 }

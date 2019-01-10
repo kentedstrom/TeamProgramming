@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Member {
     private String name;
-    private int ID;
+    private String ID;
     private double salary;
     private ArrayList<Integer> taskIDs;
     private Calendar calendar;
@@ -16,7 +16,7 @@ public class Member {
     private HashMap<Integer,Double> timeSpentPerTask;
 
     public Member(){
-        this.ID = 0;
+        this.ID = "0";
         this.name = "";
         this.salary = 0.0;
         this.taskIDs = new ArrayList<>();
@@ -24,7 +24,7 @@ public class Member {
         this.calendar = new GregorianCalendar();
     }
 
-    public Member (String name, int ID, double salary){
+    public Member (String name, String ID, double salary){
     this.name = name;
     this.ID = ID;
     this.salary = salary;
@@ -33,8 +33,8 @@ public class Member {
     this.calendar = new GregorianCalendar();
     }
 
-    public boolean compare(int ID) {
-        if (this.ID == ID) {
+    public boolean compare(String ID) {
+        if (this.ID.equals(ID)) {
             return true;
         }
         return false;
@@ -109,11 +109,11 @@ public class Member {
     public void setName(String name) {
         this.name = name;
     }
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
     public double getSalary() {
