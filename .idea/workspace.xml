@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
-=======
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecttest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Projecttest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/TimeRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TimeRegister.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/userInterface/TaskOverviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/userInterface/TaskOverviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/userInterface/TimeRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/userInterface/TimeRegisterController.class" afterDir="false" />
-    </list>
->>>>>>> taskRealTiming
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -79,8 +67,6 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-<<<<<<< HEAD
-=======
   <component name="FUSProjectUsageTrigger">
     <session id="-399928611">
       <usages-collector id="statistics.file.extensions.open">
@@ -131,13 +117,11 @@
       </usages-collector>
     </session>
   </component>
->>>>>>> taskRealTiming
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -203,13 +187,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="38" column="72" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
-=======
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="840">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
->>>>>>> taskRealTiming
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -218,31 +200,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/AddMemberController.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state relative-caret-position="-2170">
               <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="96" column="54" selection-start-line="96" selection-start-column="54" selection-end-line="96" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> taskRealTiming
-=======
-            <state relative-caret-position="306">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Navigation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="867">
@@ -250,12 +216,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/AddMemberController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="119" column="49" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
->>>>>>> taskRealTiming
             </state>
           </provider>
         </entry>
@@ -263,16 +223,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state relative-caret-position="204">
               <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-=======
-            <state relative-caret-position="405">
-              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> taskRealTiming
             </state>
           </provider>
         </entry>
@@ -316,12 +268,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Member.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/backbone/Controller.java" />
-=======
->>>>>>> taskRealTiming
         <option value="$PROJECT_DIR$/src/main/java/screens/StartScreenController.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/AddTaskController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
@@ -340,47 +289,22 @@
         <option value="$PROJECT_DIR$/src/main/java/backend/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/escapeHatch.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/RiskScatterPlot.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/Plots.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/TaskOverview.fxml" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/Plots.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/ScheduleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Factory.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Project.java" />
-=======
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/StartScreenController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/Plots.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/ScheduleController.java" />
->>>>>>> taskRealTiming
         <option value="$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java" />
         <option value="$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/timeBarChart.css" />
         <option value="$PROJECT_DIR$/src/main/resources/ganttChart.css" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/backend/Calculations.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java" />
-=======
->>>>>>> taskRealTiming
-        <option value="$PROJECT_DIR$/src/main/resources/Risks.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/RiskFixed.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/Risk2.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/Risk.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/RiskController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/detailsView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Calculations.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Factory.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/DetailsViewController.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/AddMemberController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/ConfirmBox.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/CreateNewProject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/StartScreenController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/Navigation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/OptionClassController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java" />
-=======
         <option value="$PROJECT_DIR$/src/main/resources/TimeRegister.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Task.java" />
@@ -393,7 +317,6 @@
         <option value="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java" />
->>>>>>> taskRealTiming
       </list>
     </option>
   </component>
@@ -405,23 +328,12 @@
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-<<<<<<< HEAD
-<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="7">
-=======
-  <component name="ProjectFrameBounds" extendedState="6">
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
-    <option name="x" value="180" />
-    <option name="y" value="50" />
-    <option name="width" value="1750" />
-    <option name="height" value="970" />
-=======
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1313" />
     <option name="y" value="25" />
     <option name="width" value="1247" />
     <option name="height" value="1415" />
->>>>>>> taskRealTiming
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -511,15 +423,7 @@
     <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
-<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547024652156" />
-=======
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547052555905" />
->>>>>>> taskRealTiming
-=======
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547054185314" />
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../LearningGUI" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -678,52 +582,28 @@
       <workItem from="1546459802795" duration="3652000" />
       <workItem from="1546504901113" duration="16085000" />
       <workItem from="1546592946210" duration="2026000" />
-<<<<<<< HEAD
       <workItem from="1546810995677" duration="24000" />
       <workItem from="1546811058524" duration="790000" />
       <workItem from="1546812593241" duration="588000" />
       <workItem from="1546813226148" duration="5414000" />
       <workItem from="1546819065644" duration="9228000" />
       <workItem from="1546938634558" duration="9035000" />
-<<<<<<< HEAD
-=======
-      <workItem from="1546693313527" duration="12629000" />
-      <workItem from="1546852868600" duration="17172000" />
-      <workItem from="1546886136475" duration="9094000" />
-      <workItem from="1546938638112" duration="2180000" />
-      <workItem from="1547030738783" duration="4816000" />
-      <workItem from="1547047855535" duration="4694000" />
->>>>>>> taskRealTiming
-=======
-      <workItem from="1547024613862" duration="422000" />
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
     <option name="totallyTimeSpent" value="169901000" />
-=======
-    <option name="totallyTimeSpent" value="170323000" />
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21946308" />
-=======
     <option name="totallyTimeSpent" value="192162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17082141" />
->>>>>>> taskRealTiming
-=======
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22281879" />
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
       <window_info id="Structure" order="1" weight="0.24971624" />
       <window_info id="Favorites" order="2" weight="0.3291714" />
       <window_info id="Designer" order="3" />
@@ -732,13 +612,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840466" />
-<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.32152975" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-=======
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3229572" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
->>>>>>> taskRealTiming
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -818,7 +693,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/addRisk.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/AddRiskController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/AddTaskController.java" />
@@ -828,54 +702,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/CreateNewProject.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
-=======
-    <entry file="file://$PROJECT_DIR$/Projecttest.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/IO/JSONReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ScheduleView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/timeBarChart.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Risks.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/RiskFixed.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Risk2.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Risk.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="65" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ganttChart.css">
->>>>>>> taskRealTiming
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
-<<<<<<< HEAD
-=======
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-        </state>
-      </provider>
->>>>>>> taskRealTiming
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Plots.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskScatterPlot.java" />
@@ -894,7 +725,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/Plots.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -918,50 +748,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#195#204#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Calculations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="47" column="67" lean-forward="true" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/ScheduleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-446">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="165" column="46" lean-forward="true" selection-start-line="165" selection-start-column="46" selection-end-line="165" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2468#2469#0" expanded="true" />
-            <element signature="e#2495#2496#0" expanded="true" />
-            <element signature="e#2535#2536#0" expanded="true" />
-            <element signature="e#2567#2568#0" expanded="true" />
-            <element signature="e#4043#4044#0" expanded="true" />
-            <element signature="e#4092#4093#0" expanded="true" />
-            <element signature="e#4126#4127#0" expanded="true" />
-            <element signature="e#3706#3707#0" expanded="true" />
-            <element signature="e#3745#3746#0" expanded="true" />
->>>>>>> taskRealTiming
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/backend/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1030,75 +820,10 @@
           <folding>
             <element signature="e#346#347#0" expanded="true" />
             <element signature="e#373#374#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/DetailsViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="84" column="9" lean-forward="true" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/Button.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.base.jar!/javafx/event/Event.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/optionMenu.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="97" column="52" lean-forward="true" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="221" column="38" selection-start-line="221" selection-start-column="38" selection-end-line="221" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="84" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.fxml.jar!/javafx/fxml/FXMLLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="1311" selection-start-line="1311" selection-end-line="1311" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/OptionClassController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1001">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
-          <folding>
-            <element signature="imports" expanded="true" />
->>>>>>> taskRealTiming
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/backend/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -1184,111 +909,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-702">
           <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
-=======
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/cell/PropertyValueFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/TableColumn.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="229" selection-start-line="229" selection-end-line="229" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.graphics.jar!/javafx/scene/Scene.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="4435" selection-start-line="4435" selection-end-line="4435" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.graphics.jar!/javafx/scene/Parent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="847" selection-start-line="847" selection-end-line="847" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/skin/VirtualFlow.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.graphics.jar!/javafx/scene/Node.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="3990" selection-start-line="3990" selection-end-line="3990" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/Control.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/TableRow.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/skin/TableRowSkin.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/skin/TableRowSkinBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/IndexedCell.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/control/TableCell.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="253" selection-start-line="253" selection-end-line="253" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/TimeSpentTable.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
->>>>>>> taskRealTiming
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/CreateNewProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1343,15 +969,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Navigation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
@@ -1390,26 +1007,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
->>>>>>> taskRealTiming
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib/javafx.controls.jar!/javafx/scene/chart/XYChart.class">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="102">
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskScatterPlot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/OptionClassController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4607">
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
           <caret line="294" column="66" selection-start-line="294" selection-start-column="66" selection-end-line="294" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1436,32 +1034,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Navigation.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="1757">
           <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-=======
-        <state relative-caret-position="248">
-          <caret line="253" selection-start-line="253" selection-end-line="253" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
->>>>>>> taskRealTiming
-=======
-        <state relative-caret-position="867">
-          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskScatterPlot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -1470,9 +1050,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskController.java">
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Main.java">
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
@@ -1482,9 +1059,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Plots.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
-<<<<<<< HEAD
           <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-=======
     <entry file="file://$PROJECT_DIR$/src/main/resources/TimeRegister.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1500,10 +1075,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
->>>>>>> taskRealTiming
-=======
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
->>>>>>> 765639b4d156b347d34b181bbcc93f2bf41b78ed
         </state>
       </provider>
     </entry>
