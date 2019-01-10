@@ -118,31 +118,6 @@ public class ProjectOverviewController implements Initializable{
 
         goBack.toPlotStartPage(event,project);
 
-/*
-        stage.setTitle("Scatter Chart Sample");
-        final NumberAxis xAxis = new NumberAxis(0, 10, 1);
-        final NumberAxis yAxis = new NumberAxis(0, 10, 1);
-        final ScatterChart<Number, Number> sc = new
-                ScatterChart<Number, Number>(xAxis, yAxis);
-        xAxis.setLabel("Impact");
-        yAxis.setLabel("Probability");
-        sc.setTitle("Risk Assessment");
-
-        //ArrayList<XYChart.Series> allSeries = new ArrayList<>();
-
-        Scene scene  = new Scene(sc,500,450);
-
-        for (Risk risk : project.getRisks()) {
-            XYChart.Series series = new XYChart.Series();
-            series.setName(risk.getName());
-            series.getData().add(new XYChart.Data(risk.getImpact(), risk.getProbability()));
-            sc.getData().add(series);
-            //allSeries.add(series);
-        }
-
-        stage.setScene(scene);
-        stage.show();
-*/
     }
 
     @FXML
@@ -195,10 +170,6 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     void saveProject(ActionEvent event)throws IOException{
 
-        /*ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writeValue(new File("C:\\Users\\tobbe\\JSON files\\Projecttest.JSON"), project);
-        */
-        // it saves to your TeamProgramming folder
         Controller.saveProject(project, "Projecttest.json");
 
     }
