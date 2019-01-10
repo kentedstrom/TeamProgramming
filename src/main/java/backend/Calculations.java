@@ -16,15 +16,21 @@ public class Calculations {
         this.tasks = tasks;
     }
 
-    // calculate task overlap for AreaChart
-    public int[] calculateWorkLoadPerWeek(){
-        // store the end of the gantt chart, that is the end of the last task
+    private int endOfTasks(){
+        // store the end of the last task
         int endOfTasks = 0;
         for (Task task: this.tasks) {
             if(task.getEndWeek() > endOfTasks){
                 endOfTasks = task.getEndWeek();
             }
         }
+        return endOfTasks;
+    }
+
+    // calculate task overlap for AreaChart
+    public int[] calculateWorkLoadPerWeek(){
+
+        int endOfTasks = endOfTasks();
         // loop though each week and count the number of tasks running
         int[] tasksRunningPerWeek = new int[endOfTasks+2];
 
@@ -36,6 +42,26 @@ public class Calculations {
             }
         }
         return tasksRunningPerWeek;
+    }
+
+    // calculate budget per week
+    public double[] calculateBudgetPerWeek(){
+
+        int endOfTasks = endOfTasks();
+
+        // store the budget for task per week
+        double[] taskBudgetPerWeek = new double[endOfTasks+2];
+
+        for (Task task: this.tasks) {
+            for (int i = 0; i < endOfTasks+2; i++) {
+                if(task.getStartWeek()<=i && task.getEndWeek()>=i){
+                    taskBudgetPerWeek[i] += task.getBudget();
+                }
+            }
+        }
+
+        return taskBudgetPerWeek;
+
     }
 
     // calculate the total time of the tasks done so far and how much each person added to it

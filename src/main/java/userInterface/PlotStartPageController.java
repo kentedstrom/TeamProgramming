@@ -80,6 +80,15 @@ public class PlotStartPageController implements Initializable {
     @FXML
     private NumberAxis workloiadYAxis;
 
+    @FXML
+    private AreaChart costDistribution;
+
+    @FXML
+    private CategoryAxis costLoadXAxis;
+
+    @FXML
+    private NumberAxis costLoadYAxis;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -101,12 +110,13 @@ public class PlotStartPageController implements Initializable {
         addTableData();
 
         // set up Gantt Chart
-
         addGanttChart();
-
 
         // set up Total Workload Chart
         addWorkloadAreaChart();
+
+        //set cost area chart
+        addCostDistributionAreaChart();
 
     }
 
@@ -163,6 +173,23 @@ public class PlotStartPageController implements Initializable {
 
         // plot workload per week area chart
         totalWorkload.getData().addAll(series3);
+    }
+
+    private void addCostDistributionAreaChart(){
+        costLoadXAxis.setLabel("Cost");
+        costLoadYAxis.setLabel("Week");
+
+        // new series for this chart
+        XYChart.Series budgetSeries = new XYChart.Series();
+
+        double[] budgetPerWeek = getData.calculateBudgetPerWeek();
+        for (int i = 0; i < budgetPerWeek.length; i++) {
+            System.out.println("The budget is " + budgetPerWeek[i] + " on week"+ i);
+            budgetSeries.getData().add(new XYChart.Data("week"+i,budgetPerWeek[i]));
+        }
+
+        costDistribution.getData().setAll(budgetSeries);
+
     }
 
 

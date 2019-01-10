@@ -134,6 +134,36 @@ public class TimeRegisterController implements Initializable {
         String toLog = member.getName() + " spent " + member.getTimeSpentPerTask(taskID) + " week(s) on " + task.getName() + "\n";
         logField.appendText(toLog);
 
+        updatePlots(member,taskID);
+
+        timeInput.clear();
+
+
+    }
+
+    @FXML
+    void deleteTime(ActionEvent event) {
+        Task task = taskChoice.getSelectionModel().getSelectedItem();
+        Integer taskID = task.getID();
+        Member member = memberChoice.getSelectionModel().getSelectedItem();
+        String timeSpent = timeInput.getText();
+
+        // remove the time from the member's task
+        member.removeTimeFromTask(taskID,Double.parseDouble(timeSpent));
+
+        // log to the textArea
+        String toLog = timeSpent + " week(s) were removed from " + member.getName() + "'s " + task.getName() + ".\nThe time " + member.getName() + " spent on " + task.getName() + " so far is " + String.valueOf(member.getTimeSpentPerTask(taskID)) + " week(s). \n";
+        logField.appendText(toLog);
+
+        updatePlots(member,taskID);
+
+        timeInput.clear();
+
+    }
+
+    public void updatePlots(Member member, Integer taskID){
+
+
         // update pieChart
         for (PieChart.Data data : memberTimePie.getData()) {
             if(data.getName().equals(member.getName())){
@@ -158,29 +188,6 @@ public class TimeRegisterController implements Initializable {
             }
         }
         memberTimeBar.getData().addAll(series5);
-
-        timeInput.clear();
-
-
-    }
-
-    @FXML
-    void deleteTime(ActionEvent event) {
-        Task task = taskChoice.getSelectionModel().getSelectedItem();
-        Integer taskID = task.getID();
-        Member member = memberChoice.getSelectionModel().getSelectedItem();
-        String timeSpent = timeInput.getText();
-
-        // remove the time from the member's task
-        member.removeTimeFromTask(taskID,Double.parseDouble(timeSpent));
-
-        // log to the textArea
-        String toLog = timeSpent + " week(s) were removed from " + member.getName() + "'s " + task.getName() + ".\nThe time " + member.getName() + " spent on " + task.getName() + " so far is " + String.valueOf(member.getTimeSpentPerTask(taskID)) + " week(s). \n";
-        logField.appendText(toLog);
-
-        addMemberTimeCharts();
-
-        timeInput.clear();
 
     }
 

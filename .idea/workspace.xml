@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dbc5663-231f-4412-a988-7a5b600bf845" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projecttest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Projecttest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Risk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Risk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/RiskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/RiskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ProjectOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ProjectOverview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/TaskOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TaskOverview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/TimeRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TimeRegister.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Calculations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Calculations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PlotsStartPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PlotsStartPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/userInterface/PlotStartPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/userInterface/PlotStartPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/userInterface/TimeRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/userInterface/TimeRegisterController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,42 +23,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/StartScreenController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/CreateNewProject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/AddMemberController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/OptionClassController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1547">
@@ -65,30 +31,54 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/backend/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            <state relative-caret-position="-178">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
+              <folding>
+                <element signature="e#2281#2282#0" expanded="true" />
+                <element signature="e#2315#2316#0" expanded="true" />
+                <element signature="e#2357#2358#0" expanded="true" />
+                <element signature="e#2391#2392#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ProjectOverview.fxml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            <state relative-caret-position="515">
+              <caret line="93" column="58" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="58" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="95" column="51" lean-forward="true" selection-start-line="95" selection-start-column="51" selection-end-line="95" selection-end-column="51" />
+            <state relative-caret-position="1410">
+              <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="664">
+              <caret line="184" column="66" lean-forward="true" selection-start-line="184" selection-start-column="66" selection-end-line="184" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/backend/Calculations.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -96,17 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1605">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/backend/Risk.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+            <state relative-caret-position="17">
+              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
             </state>
           </provider>
         </entry>
@@ -132,8 +113,11 @@
         <option value="$PROJECT_DIR$/src/main/java/userInterface/AddMemberController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/optionMenu.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Risk.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userInterface/RiskController.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userInterface/RiskController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/Calculations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" />
       </list>
     </option>
   </component>
@@ -214,7 +198,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547134152562" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547138278953" />
     <property name="last_opened_file_path" value="$USER_HOME$/Programs/scenebuilder-10.0.0.deb" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -315,17 +299,18 @@
       <workItem from="1547125620182" duration="30000" />
       <workItem from="1547125789353" duration="36000" />
       <workItem from="1547126354477" duration="365000" />
-      <workItem from="1547126807916" duration="3664000" />
+      <workItem from="1547126807916" duration="6864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7737000" />
+    <option name="totallyTimeSpent" value="10937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.136085" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.136085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -334,7 +319,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3281493" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3281493" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -343,7 +328,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.30943102" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.30870917" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -377,19 +362,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Projecttest.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#2281#2282#0" expanded="true" />
-            <element signature="e#2315#2316#0" expanded="true" />
-            <element signature="e#2357#2358#0" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/backend/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -463,24 +435,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="95" column="51" lean-forward="true" selection-start-line="95" selection-start-column="51" selection-end-line="95" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1605">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/OptionClassController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1547">
           <caret line="319" column="40" lean-forward="true" selection-start-line="319" selection-start-column="40" selection-end-line="319" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-178">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#2281#2282#0" expanded="true" />
+            <element signature="e#2315#2316#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2391#2392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ganttChart.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/RiskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -492,10 +480,32 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/ProjectOverviewController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/TimeRegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/PlotsStartPage.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="93" column="58" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="58" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/Calculations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="184" column="66" lean-forward="true" selection-start-line="184" selection-start-column="66" selection-end-line="184" selection-end-column="66" />
         </state>
       </provider>
     </entry>

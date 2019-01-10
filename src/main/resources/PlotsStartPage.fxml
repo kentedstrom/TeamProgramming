@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -21,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.PlotStartPageController">
+<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.PlotStartPageController">
    <children>
-      <VBox prefHeight="688.0" prefWidth="159.0">
+      <VBox prefHeight="700.0" prefWidth="159.0">
          <children>
             <Label prefHeight="30.0" prefWidth="159.0" text="  Dashboard" textAlignment="CENTER">
                <font>
@@ -62,9 +56,9 @@
             </Button>
          </children>
       </VBox>
-      <ScrollPane layoutX="160.0" layoutY="-2.0" prefHeight="706.0" prefWidth="921.0">
+      <ScrollPane layoutX="160.0" layoutY="-2.0" prefHeight="700.0" prefWidth="921.0">
          <content>
-            <VBox prefHeight="1020.0" prefWidth="903.0">
+            <VBox prefHeight="1300.0" prefWidth="903.0">
                <children>
                   <TableView fx:id="taskTable" prefHeight="329.0" prefWidth="903.0">
                     <columns>
@@ -93,6 +87,15 @@
                     <yAxis>
                       <NumberAxis fx:id="workloiadYAxis" side="LEFT" />
                     </yAxis>
+                  </AreaChart>
+                  <TextField alignment="TOP_CENTER" text="Budget per Week" />
+                  <AreaChart fx:id="costDistribution" prefHeight="386.0" prefWidth="620.0">
+                     <xAxis>
+                        <CategoryAxis fx:id="costLoadXAxis" prefWidth="382.0" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="costLoadYAxis" side="LEFT" />
+                     </yAxis>
                   </AreaChart>
                </children>
             </VBox>
