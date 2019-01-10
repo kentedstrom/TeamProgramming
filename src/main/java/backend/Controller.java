@@ -10,8 +10,8 @@ public class Controller {
     private static ArrayList<Project> projects = new ArrayList<Project>();
     private static JSONReader JSONwr = new JSONReader();
 
-    public static Project createNewProject(String name, double budget){
-        Project newProject = new Project(name,budget);
+    public static Project createNewProject(String name, double budget, int startWeek){
+        Project newProject = new Project(name,budget,startWeek);
         projects.add(newProject);
         return newProject;
     }

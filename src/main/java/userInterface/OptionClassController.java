@@ -215,8 +215,11 @@ public class OptionClassController implements Initializable {
 
         // increase the task ID with one
         int taskID = project.getHighestTaskID() + 1;
-        int startWeek = Integer.parseInt(this.startWeekInput.getText());
-        int endWeek = Integer.parseInt(this.endWeekInput.getText());
+
+        // adjust the task week to project week
+        int startWeek = project.adjustWeek(Integer.parseInt(this.startWeekInput.getText()));
+        int endWeek = project.adjustWeek(Integer.parseInt(this.endWeekInput.getText()));
+
         double cost = Double.parseDouble(this.cost.getText());
         double budget = Double.parseDouble(this.budget.getText());
         String taskName = taskNameInput.getText();

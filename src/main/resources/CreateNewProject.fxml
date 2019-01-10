@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.CreateNewProject">
+<AnchorPane prefHeight="596.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.CreateNewProject">
    <children>
       <TextField fx:id="typeProjectName" layoutX="200.0" layoutY="137.0" prefHeight="26.0" prefWidth="253.0" />
       <TextField fx:id="typeProjectBudget" layoutX="200.0" layoutY="231.0" prefHeight="26.0" prefWidth="253.0" />
@@ -25,15 +25,21 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Button fx:id="createProject" layoutX="358.0" layoutY="312.0" mnemonicParsing="false" onAction="#createProject" text="Create">
+      <Button fx:id="createProject" layoutX="362.0" layoutY="410.0" mnemonicParsing="false" onAction="#createProject" text="Create">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="backToStart" layoutX="193.0" layoutY="312.0" mnemonicParsing="false" onAction="#backToStart" text="Back">
+      <Button fx:id="backToStart" layoutX="197.0" layoutY="410.0" mnemonicParsing="false" onAction="#backToStart" text="Back">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
+      <TextField fx:id="typeStartWeek" layoutX="200.0" layoutY="320.0" prefHeight="26.0" prefWidth="253.0" />
+      <Label layoutX="63.0" layoutY="321.0" prefHeight="25.0" prefWidth="132.0" text="Start week:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

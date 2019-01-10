@@ -31,6 +31,9 @@ public class CreateNewProject implements Initializable {
     private TextField typeProjectBudget;
 
     @FXML
+    private TextField typeStartWeek;
+
+    @FXML
     private Button createProject;
 
     @FXML
@@ -66,8 +69,9 @@ public class CreateNewProject implements Initializable {
 
         String name = typeProjectName.getText();
         double budget = Double.parseDouble(typeProjectBudget.getText());
+        int startWeek = Integer.parseInt(typeStartWeek.getText());
        // create a new project with name and budget through controller class
-        this.project = Controller.createNewProject(name,budget);
+        this.project = Controller.createNewProject(name,budget,startWeek);
 
         ////////change window to ProjectOverview and passes a project object to the ProjectOverviewController//////
         FXMLLoader loader = new FXMLLoader();

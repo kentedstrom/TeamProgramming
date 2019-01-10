@@ -2,18 +2,18 @@ package backend;
 
 import backend.Task;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class Calculations {
 
     private ArrayList<Task> tasks;
+    private Calendar calendar;
 
     public Calculations(){}
 
     public Calculations(ArrayList<Task> tasks){
         this.tasks = tasks;
+        this.calendar = new GregorianCalendar();
     }
 
     private int endOfTasks(){
@@ -44,25 +44,64 @@ public class Calculations {
         return tasksRunningPerWeek;
     }
 
-    // calculate budget per week
-    public double[] calculateBudgetPerWeek(){
+    // calculate cost per week
+    public double[] calculateCostPerWeek(ArrayList<Member> members){
 
         int endOfTasks = endOfTasks();
 
-        // store the budget for task per week
-        double[] taskBudgetPerWeek = new double[endOfTasks+2];
+        // store the cost for task per week
+        double[] taskCostPerWeek = new double[endOfTasks+2];
 
         for (Task task: this.tasks) {
             for (int i = 0; i < endOfTasks+2; i++) {
                 if(task.getStartWeek()<=i && task.getEndWeek()>=i){
-                    taskBudgetPerWeek[i] += task.getBudget();
+                    // adding task's cost
+                    taskCostPerWeek[i] += task.getCost();
+                    for (Member member: members) {
+                        // adding time spent by member * member's salary
+                        taskCostPerWeek[i] += member.getTimeSpentPerTask(task.getID())*member.getSalary();
+                    }
+                }
+            }
+        }
+        return taskCostPerWeek;
+    }
+
+    // calculate cumulative planned value
+    public double[] calculatePlannedValue(ArrayList<Member> members){
+        int endOfTasks = endOfTasks();
+
+        // store the budget for task per week
+        double[] taskBudgetPerWeek = new double[endOfTasks];
+
+        for (Task task: this.tasks) {
+            for (int i = 0; i < endOfTasks; i++) {
+                if(task.getStartWeek()<=i && task.getEndWeek()>=i){
+                    // adding task's budget cumulatively
+                    for (int j = i; j < endOfTasks; j++) {
+                        taskBudgetPerWeek[j] += task.getBudget();
+                    }
                 }
             }
         }
 
         return taskBudgetPerWeek;
-
     }
+
+    // calculate cumulative actual value
+    public double[] calculateActualValue(ArrayList<Member> members){
+        // get cost per week
+        double[] costPerWeek = calculateCostPerWeek(members);
+        double[] cumulativeCost = new double[costPerWeek.length];
+        // cumulate it
+        for (int i = 0; i < costPerWeek.length; i++) {
+            for (int j = i; j < costPerWeek.length; j++) {
+                cumulativeCost[j] += costPerWeek[i];
+            }
+        }
+        return  cumulativeCost;
+    }
+
 
     // calculate the total time of the tasks done so far and how much each person added to it
     public HashMap<String,Double> TimeSpentOnProjectByMember(ArrayList<Member> members){
@@ -130,29 +169,41 @@ public class Calculations {
         return taskCompleteness;
     }
 
-    public double[] BudgetStatus(){
+    // calculates the money spent on completed and incomplete tasks
+    public double[] BudgetStatus(ArrayList<Member> members){
         double[] budgetStatus = new double[2];
         for (Task task: tasks) {
             if(task.isCompleted()){
-                budgetStatus[0] += task.getBudget();
+                budgetStatus[0] += task.getCost();
+                for (Member member: members) {
+                    budgetStatus[0] += member.getTimeSpentPerTask(task.getID());
+                }
             }else{
                 budgetStatus[1] += task.getBudget();
+                for (Member member: members) {
+                    budgetStatus[1] += member.getTimeSpentPerTask(task.getID());
+                }
             }
         }
         return budgetStatus;
     }
 
 
-    // make use of the budgetstatus function and calculates the cost of work done - cost of work scheduled
-    public double ScheduleVariance(){
-        double[] costs = BudgetStatus();
-        return costs[0]-costs[1];
+    // calculates the cost of work done - cost of work scheduled
+    public double ScheduleVariance(double EarnedValue, double PlannedValue){
+        // if task on time, do nothing, if it took longer than do sg
+        return EarnedValue - PlannedValue;
+    }
+
+    //calculate cost variance
+    public double CostVariance(double EarnedValue, double ActualCost){
+        return EarnedValue - ActualCost;
     }
 
 
     public double earnedValueCalc(double budget){
-        int numOfTasks = 0;
-        int completedTasks = 0;
+        double numOfTasks = 0.0;
+        double completedTasks = 0.0;
         double percentageWorkDone;
         for (Task task : tasks){
             if (task.isCompleted()){
@@ -165,20 +216,9 @@ public class Calculations {
             percentageWorkDone = completedTasks / numOfTasks;
         }
         catch (ArithmeticException exception){
-            // where is it expected to be written?
-            System.out.println("Error: no registered tasks");
              percentageWorkDone = 0;
         }
-        try {
-            return percentageWorkDone * budget;
-
-        }
-        catch(ArithmeticException exception) {
-            // sout to where?
-            System.out.println("Error: no work was done or the project does not have a budget");
-
-        }
-        return 0;
+        return percentageWorkDone * budget;
     }
 
     public ArrayList<Task> getTasks() {

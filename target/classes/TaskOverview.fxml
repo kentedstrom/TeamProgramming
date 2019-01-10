@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -67,26 +68,26 @@
                      <children>
                         <AnchorPane prefHeight="259.0" prefWidth="519.0">
                            <children>
-                              <LineChart fx:id="TimeStatus" layoutY="-1.0" prefHeight="317.0" prefWidth="893.0" title="Schedule Variance">
+                              <LineChart fx:id="TimeAndCostStatus" layoutY="-1.0" prefHeight="317.0" prefWidth="893.0" title="Project Status">
                                 <xAxis>
-                                  <CategoryAxis side="BOTTOM" />
+                                  <CategoryAxis fx:id="time" side="BOTTOM" />
                                 </xAxis>
                                 <yAxis>
-                                  <NumberAxis side="LEFT" />
+                                  <NumberAxis fx:id="money" side="LEFT" />
                                 </yAxis>
                               </LineChart>
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="272.0" prefWidth="519.0">
                            <children>
-                              <LineChart fx:id="CostStatus" layoutY="-1.0" prefHeight="323.0" prefWidth="896.0" title="Cost Variance">
-                                 <xAxis>
-                                    <CategoryAxis side="BOTTOM" />
-                                 </xAxis>
-                                 <yAxis>
-                                    <NumberAxis side="LEFT" />
-                                 </yAxis>
-                              </LineChart>
+                              <BarChart fx:id="CVSV">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </BarChart>
                            </children>
                         </AnchorPane>
                      </children>

@@ -182,10 +182,10 @@ public class PlotStartPageController implements Initializable {
         // new series for this chart
         XYChart.Series budgetSeries = new XYChart.Series();
 
-        double[] budgetPerWeek = getData.calculateBudgetPerWeek();
-        for (int i = 0; i < budgetPerWeek.length; i++) {
-            System.out.println("The budget is " + budgetPerWeek[i] + " on week"+ i);
-            budgetSeries.getData().add(new XYChart.Data("week"+i,budgetPerWeek[i]));
+        double[] costPerWeek = getData.calculateCostPerWeek(project.getMembers());
+        for (int i = 0; i < costPerWeek.length; i++) {
+            System.out.println("The budget is " + costPerWeek[i] + " on week"+ i);
+            budgetSeries.getData().add(new XYChart.Data("week"+i,costPerWeek[i]));
         }
 
         costDistribution.getData().setAll(budgetSeries);

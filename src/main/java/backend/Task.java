@@ -3,6 +3,8 @@ package backend;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Task {
 
@@ -54,7 +56,7 @@ public class Task {
         this.ID = ID;
         this.name = name;
         this.memberIDs = new ArrayList<>();
-        memberIDs.add(memberID);
+        this.memberIDs.add(memberID);
         this.memberNames = new ArrayList<>();
         this.memberNames.add(memberName);
         this.startWeek = startWeek;
@@ -194,6 +196,7 @@ public class Task {
         }
         return false;
     }
+    /*
     //takes a project and gets its current week and compares if its larger than the end week and then returns the difference
     public int amIBehind(Project project){
         if (project.getCurrentWeek() > getEndWeek()){
@@ -201,4 +204,5 @@ public class Task {
         }
         else return 0;
     }
+    */
 }

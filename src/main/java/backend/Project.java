@@ -15,7 +15,9 @@ public class Project {
     private Factory factory;
     private double budget;
     private Calendar calendar;
-    protected static int currentWeek;
+    private int startWeek;
+    public static final int WEEKNUMBER = 52;
+
 
     public Project() {
         this.name = "";
@@ -26,9 +28,10 @@ public class Project {
         this.schedule = new Calculations(tasks);
         this.factory = new Factory();
         this.calendar = new GregorianCalendar();
+        this.startWeek = 0;
     }
 
-    public Project(String name, double budget) {
+    public Project(String name, double budget, int startWeek) {
         this.budget = budget;
         this.name = name;
         this.members = new ArrayList<>();
@@ -37,7 +40,20 @@ public class Project {
         this.schedule = new Calculations(tasks);
         this.factory = new Factory();
         this.calendar = new GregorianCalendar();
+        this.startWeek = startWeek;
     }
+
+    // Convert real weeks to project weeks -------------------------------
+    public int adjustWeek(int realWeekNumber){
+        // assuming project not longer than a year, if current week is bigger than start week, it is just the difference
+        if(realWeekNumber >= this.startWeek){
+            return realWeekNumber - this.startWeek;
+        }else{
+            // otherwise the difference is calculated
+            return WEEKNUMBER - this.startWeek + realWeekNumber;
+        }
+    }
+
 
     // Create and Remove methods ------------------------------------------
 
@@ -67,11 +83,11 @@ public class Project {
             }
         }
     }
-    public int getCurrentWeek(){
-        return currentWeek;
+    public int getStartWeek(){
+        return startWeek;
     }
-    public void setCurrentWeek(int week){
-        currentWeek = week;
+    public void setStartWeek(int week){
+        startWeek = week;
     }
 
     public void createTask(int taskID,String name, int startWeek, int endWeek, double cost, double budget, boolean completed) {
