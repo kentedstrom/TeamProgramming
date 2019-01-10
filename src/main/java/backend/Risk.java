@@ -1,6 +1,7 @@
 package backend;
 
-public class Risk {
+
+public class Risk implements Comparable<Risk> {
     private String name;
     private double probability;
     private double impact;
@@ -37,4 +38,17 @@ public class Risk {
     public void setImpact(double impact) {
         this.impact = impact;
     }
+
+    // ------------- comparing by impact ----------
+    @Override
+    public int compareTo(Risk otherRisk){
+        if(this.impact > otherRisk.getImpact()){
+            return 1;
+        }else if(this.impact == otherRisk.getImpact()){
+            return 0;
+        }else{
+            return -1;
+        }
+    }
+
 }

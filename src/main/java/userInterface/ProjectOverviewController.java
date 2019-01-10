@@ -50,7 +50,7 @@ public class ProjectOverviewController implements Initializable{
     @FXML
     private Button optionsBtn;
     @FXML
-    private Button timeSpentReg;
+    private Button timeRegister;
     @FXML
     private Button backBtn;
     @FXML
@@ -118,6 +118,21 @@ public class ProjectOverviewController implements Initializable{
 
         goBack.toPlotStartPage(event,project);
 
+    }
+
+    @FXML
+    void timeRegisterClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((getClass().getResource("/TimeRegister.fxml")));
+        Parent regTime = loader.load();
+
+        Scene regTimeScene = new Scene(regTime, 1080,700);
+        TimeRegisterController controller = loader.getController();
+
+        controller.initData(project);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(regTimeScene);
+        window.show();
     }
 
     @FXML

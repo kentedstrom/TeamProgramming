@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
+<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
    <children>
       <VBox layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="513.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -102,17 +102,17 @@
                               <AnchorPane prefHeight="578.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Text layoutX="19.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member/members responsible: " />
-                                    <Text layoutX="16.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Week:" />
+                                    <Text layoutX="19.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Week:" />
                                     <Text layoutX="22.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the following information about the task: " />
-                                    <Text layoutX="19.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Week:" />
-                                    <Text layoutX="19.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget: " />
-                                    <TextField fx:id="budget" layoutX="126.0" layoutY="402.0" />
+                                    <Text layoutX="22.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Week:" />
+                                    <Text layoutX="37.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget: " />
+                                    <TextField fx:id="budget" layoutX="130.0" layoutY="228.0" />
                                     <Text layoutX="22.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
                                     <Button fx:id="confirmBtn" layoutX="16.0" layoutY="527.0" mnemonicParsing="false" onAction="#confirmTask" prefHeight="31.0" prefWidth="354.0" text="Add Task" />
                                     <RadioButton fx:id="completeRadioBtn" layoutX="93.0" layoutY="468.0" mnemonicParsing="false" text="Completed" />
                                     <RadioButton fx:id="notCompleteRadioBtn" layoutX="220.0" layoutY="468.0" mnemonicParsing="false" text="In progress" />
-                                    <TextField fx:id="endWeekInput" layoutX="126.0" layoutY="335.0" />
-                                    <TextField fx:id="startWeekInput" layoutX="126.0" layoutY="264.0">
+                                    <TextField fx:id="endWeekInput" layoutX="129.0" layoutY="339.0" />
+                                    <TextField fx:id="startWeekInput" layoutX="129.0" layoutY="283.0">
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>
@@ -125,11 +125,11 @@
                                       </columns>
                                     </TableView>
                                     <Button fx:id="deleteTaskBtn" layoutX="917.0" layoutY="527.0" mnemonicParsing="false" onAction="#deleteTask" prefHeight="31.0" prefWidth="153.0" text="Delete Task" />
-                                    <Label layoutX="19.0" layoutY="194.0" text="Task name:" />
-                                    <TextField fx:id="taskNameInput" layoutX="126.0" layoutY="189.0" />
+                                    <Label layoutX="19.0" layoutY="177.0" text="Task name:" />
+                                    <TextField fx:id="taskNameInput" layoutX="130.0" layoutY="172.0" />
                                     <ChoiceBox fx:id="memberChoice" layoutX="16.0" layoutY="118.0" prefHeight="31.0" prefWidth="353.0" />
-                                     <Text layoutX="21.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direct Cost:" />
-                                     <TextField fx:id="cost" layoutX="110.0" layoutY="256.0" />
+                                     <Text layoutX="22.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direct Cost:" />
+                                     <TextField fx:id="cost" layoutX="129.0" layoutY="392.0" />
                                     <Button layoutX="428.0" layoutY="527.0" mnemonicParsing="false" onAction="#detailsBtnClicked" prefHeight="31.0" prefWidth="447.0" text="View Details/Add extra member" />
                                  </children>
                                  <opaqueInsets>

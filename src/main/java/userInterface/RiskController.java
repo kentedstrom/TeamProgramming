@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class RiskController implements Initializable {
 
@@ -75,7 +75,10 @@ public class RiskController implements Initializable {
         scatterX.setLabel("Probability");
         scatterY.setLabel("Impact");
 
-        for (Risk risk : project.getRisks()) {
+        ArrayList<Risk> risks = project.getRisks();
+        Collections.sort(risks);
+
+        for (Risk risk : risks) {
             XYChart.Series series = new XYChart.Series();
             series.setName(risk.getName());
             series.getData().add(new XYChart.Data(String.valueOf(risk.getImpact()), risk.getProbability()));
@@ -90,7 +93,10 @@ public class RiskController implements Initializable {
 
         XYChart.Series series = new XYChart.Series();
 
-        for (Risk risk: project.getRisks()) {
+        ArrayList<Risk> risks = project.getRisks();
+        Collections.sort(risks);
+
+        for (Risk risk: risks) {
             series.getData().add(new XYChart.Data(risk.getName(),risk.getProbability()*risk.getImpact()));
         }
         riskBar.getData().addAll(series);

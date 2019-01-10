@@ -15,18 +15,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="609.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.TimeRegisterController">
+<AnchorPane prefHeight="697.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.TimeRegisterController">
    <children>
-      <ScrollPane prefHeight="500.0" prefWidth="800.0">
+      <ScrollPane prefHeight="697.0" prefWidth="1080.0">
          <content>
-            <VBox prefHeight="609.0" prefWidth="781.0">
+            <VBox prefHeight="692.0" prefWidth="1070.0">
                <children>
                   <TextField alignment="TOP_CENTER" prefHeight="30.0" prefWidth="630.0" text="Time Spent on Project by Member">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <HBox prefHeight="245.0" prefWidth="681.0">
+                  <HBox prefHeight="302.0" prefWidth="1070.0">
                      <children>
                         <PieChart fx:id="memberTimePie" />
                         <BarChart fx:id="memberTimeBar">
@@ -39,17 +39,17 @@
                         </BarChart>
                      </children>
                   </HBox>
-                  <AnchorPane prefHeight="329.0" prefWidth="630.0">
+                  <AnchorPane prefHeight="357.0" prefWidth="1070.0">
                      <children>
-                        <Button fx:id="addBtn" layoutX="544.0" layoutY="44.0" mnemonicParsing="false" onAction="#addTime" text="Add" />
-                        <Button fx:id="deleteBtn" layoutX="617.0" layoutY="44.0" mnemonicParsing="false" onAction="#deleteTime" text="Remove" />
-                        <ChoiceBox fx:id="taskChoice" layoutX="92.0" layoutY="44.0" prefHeight="26.0" prefWidth="119.0" />
-                        <Label layoutX="104.0" layoutY="25.0" prefHeight="16.0" prefWidth="111.0" text="Choose Task" />
-                        <ChoiceBox fx:id="memberChoice" layoutX="241.0" layoutY="44.0" prefHeight="26.0" prefWidth="119.0" />
-                        <Label layoutX="249.0" layoutY="25.0" prefHeight="16.0" prefWidth="111.0" text="Choose Member" />
-                        <TextField fx:id="timeInput" layoutX="374.0" layoutY="44.0" prefHeight="26.0" prefWidth="142.0" promptText="time spent (week)" />
-                        <TextArea fx:id="logField" layoutX="32.0" layoutY="85.0" prefHeight="194.0" prefWidth="699.0" />
-                        <Button fx:id="backBtn" layoutX="681.0" layoutY="289.0" mnemonicParsing="false" onAction="#backBtnPushed" text="Back" />
+                        <Button fx:id="addBtn" layoutX="741.0" layoutY="44.0" mnemonicParsing="false" onAction="#addTime" text="Add" />
+                        <Button fx:id="deleteBtn" layoutX="824.0" layoutY="44.0" mnemonicParsing="false" onAction="#deleteTime" text="Remove" />
+                        <ChoiceBox fx:id="taskChoice" layoutX="173.0" layoutY="41.0" prefHeight="26.0" prefWidth="119.0" />
+                        <Label layoutX="185.0" layoutY="22.0" prefHeight="16.0" prefWidth="111.0" text="Choose Task" />
+                        <ChoiceBox fx:id="memberChoice" layoutX="371.0" layoutY="41.0" prefHeight="26.0" prefWidth="119.0" />
+                        <Label layoutX="379.0" layoutY="22.0" prefHeight="16.0" prefWidth="111.0" text="Choose Member" />
+                        <TextField fx:id="timeInput" layoutX="558.0" layoutY="44.0" prefHeight="26.0" prefWidth="142.0" promptText="time spent (week)" />
+                        <TextArea fx:id="logField" layoutX="32.0" layoutY="85.0" prefHeight="246.0" prefWidth="864.0" />
+                        <Button fx:id="backBtn" layoutX="942.0" layoutY="317.0" mnemonicParsing="false" onAction="#backBtnPushed" text="Back" />
                      </children>
                   </AnchorPane>
                </children>
