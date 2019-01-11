@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -78,18 +77,14 @@
                               </LineChart>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="272.0" prefWidth="519.0">
-                           <children>
-                              <BarChart fx:id="CVSV">
-                                <xAxis>
-                                  <CategoryAxis side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis side="LEFT" />
-                                </yAxis>
-                              </BarChart>
-                           </children>
-                        </AnchorPane>
+                        <LineChart fx:id="SVCV" prefHeight="317.0" prefWidth="893.0" title="Cost and Schedule Variances">
+                           <xAxis>
+                              <CategoryAxis fx:id="time1" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="money1" side="LEFT" />
+                           </yAxis>
+                        </LineChart>
                      </children>
                   </VBox>
                </children>

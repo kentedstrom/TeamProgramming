@@ -11,10 +11,8 @@ public class Project {
     private ArrayList<Member> members;
     private ArrayList<Task> tasks;
     private ArrayList<Risk> risks;
-    private Calculations schedule;
     private Factory factory;
     private double budget;
-    private Calendar calendar;
     private int startWeek;
     public static final int WEEKNUMBER = 52;
 
@@ -25,9 +23,7 @@ public class Project {
         this.members = new ArrayList<>();
         this.tasks = new ArrayList<>();
         this.risks = new ArrayList<>();
-        this.schedule = new Calculations(tasks);
         this.factory = new Factory();
-        this.calendar = new GregorianCalendar();
         this.startWeek = 0;
     }
 
@@ -37,9 +33,7 @@ public class Project {
         this.members = new ArrayList<>();
         this.tasks = new ArrayList<>();
         this.risks = new ArrayList<>();
-        this.schedule = new Calculations(tasks);
         this.factory = new Factory();
-        this.calendar = new GregorianCalendar();
         this.startWeek = startWeek;
     }
 
@@ -184,14 +178,6 @@ public class Project {
 
     public void setRisks(ArrayList<Risk> risks) {
         this.risks = risks;
-    }
-
-    public Calculations getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(Calculations schedule) {
-        this.schedule = schedule;
     }
 
     public double getBudget() {

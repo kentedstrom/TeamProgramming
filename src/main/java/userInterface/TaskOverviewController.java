@@ -160,6 +160,8 @@ public class TaskOverviewController implements Initializable {
 
     }
 
+    // integrate with EV and AC and PV
+    // add for more time points
     public void plotSVCVChart(double EarnedValue, double ActualCost, double PlannedValue){
 
         // add schedule variance for one time point

@@ -57,7 +57,7 @@ public class CreateNewProject implements Initializable {
         loader.setLocation(getClass().getResource("/StartScreen.fxml"));
         Parent projectOverview = loader.load();
 
-        Scene projectOverviewScene = new Scene(projectOverview, 800,500);
+        Scene projectOverviewScene = new Scene(projectOverview, 1080,800);
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(projectOverviewScene);
