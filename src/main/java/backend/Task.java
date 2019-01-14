@@ -16,6 +16,7 @@ public class Task {
     private double budget;
     private boolean isCompleted;
     private String status;
+    private int weekOfCompletion;
 
     public Task(){
         this.ID = 0;
@@ -27,6 +28,7 @@ public class Task {
         this.budget = 0;
         this.isCompleted = false;
         this.status = "In progress";
+        weekOfCompletion = 0;
     }
 
 
@@ -78,6 +80,13 @@ public class Task {
     public void removeMember(String memberID, String memberName){
         this.memberNames.remove(memberName);
         this.memberIDs.remove(memberID);
+    }
+    public int getWeekOfCompletion(){
+        return weekOfCompletion;
+    }
+
+    public void setWeekOfCompletion(int weekOfCompletion) {
+        this.weekOfCompletion = weekOfCompletion;
     }
 
     public int getID() {
@@ -201,7 +210,7 @@ public class Task {
                 return ("Late");
             }
 
-            return (" Late by" + (project.getCurrentWeek() - getEndWeek());
+            return (" Late by" + (project.getCurrentWeek() - getEndWeek()));
         }
         else return "Not late";
     }

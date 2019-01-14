@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.PlotStartPageController">
+   <children>
+      <VBox prefHeight="700.0" prefWidth="159.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="159.0" text="  Dashboard" textAlignment="CENTER">
+               <font>
+                  <Font name="Chandas" size="20.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="159.0">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="schedule" mnemonicParsing="false" onAction="#showSchedule" prefHeight="56.0" prefWidth="159.0" text="Schedule">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="taskOverview" mnemonicParsing="false" onAction="#showTaskOV" prefHeight="56.0" prefWidth="159.0" text="Task Overview">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="risks" mnemonicParsing="false" onAction="#showRisks" prefHeight="56.0" prefWidth="159.0" text="Risks">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="159.0">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#backBtnClicked" prefHeight="56.0" prefWidth="159.0" text="Back">
+               <font>
+                  <Font name="Chandas" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <ScrollPane layoutX="160.0" layoutY="-2.0" prefHeight="700.0" prefWidth="921.0">
+         <content>
+            <VBox prefHeight="1300.0" prefWidth="903.0">
+               <children>
+                  <TableView fx:id="taskTable" prefHeight="329.0" prefWidth="903.0">
+                    <columns>
+                      <TableColumn fx:id="taskColumn" prefWidth="292.0" text="Task" />
+                        <TableColumn fx:id="memberColumn" prefWidth="290.0" text="Members" />
+                      <TableColumn fx:id="statusColumn" prefWidth="320.0" text="Status" />
+                    </columns>
+                  </TableView>
+                  <TextField alignment="TOP_CENTER" text="Gantt Chart" />
+                  <StackedBarChart fx:id="ganttChart" prefWidth="541.0">
+                      <xAxis>
+                          <NumberAxis autoRanging="true" lowerBound="0.0" side="TOP" fx:id="xAxis">
+                              <opaqueInsets>
+                                  <Insets />
+                              </opaqueInsets></NumberAxis>
+                      </xAxis>
+                      <yAxis>
+                          <CategoryAxis fx:id="yAxis" side="LEFT" />
+                      </yAxis>
+                  </StackedBarChart>
+                  <TextField alignment="TOP_CENTER" text="Total Workload per Week" />
+                  <AreaChart fx:id="totalWorkload" prefHeight="386.0" prefWidth="620.0">
+                    <xAxis>
+                      <CategoryAxis fx:id="workloadXAxis" prefWidth="382.0" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="workloiadYAxis" side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+                  <TextField alignment="TOP_CENTER" text="Budget per Week" />
+                  <AreaChart fx:id="costDistribution" prefHeight="386.0" prefWidth="620.0">
+                     <xAxis>
+                        <CategoryAxis fx:id="costLoadXAxis" prefWidth="382.0" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="costLoadYAxis" side="LEFT" />
+                     </yAxis>
+                  </AreaChart>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
