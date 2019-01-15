@@ -18,6 +18,7 @@ public class Task {
     private double budget;
     private boolean isCompleted;
     private String status;
+    private int weekOfCompletion;
 
     public Task(){
         this.ID = 0;
@@ -29,6 +30,7 @@ public class Task {
         this.budget = 0;
         this.isCompleted = false;
         this.status = "In progress";
+        weekOfCompletion = 0;
     }
 
 
@@ -134,14 +136,23 @@ public class Task {
         return isCompleted;
     }
 
-    public void setCompleted(boolean completed) {
+    public void setCompleted(boolean completed, int currentWeek) {
         isCompleted = completed;
         if (completed){
             this.status = "Completed";
+            setWeekOfCompletion(currentWeek);
         }
         else{
             this.status = "In progress";
         }
+    }
+
+    public int getWeekOfCompletion(){
+        return weekOfCompletion;
+    }
+
+    public void setWeekOfCompletion(int weekOfCompletion) {
+        this.weekOfCompletion = weekOfCompletion;
     }
 
     public String toString(){

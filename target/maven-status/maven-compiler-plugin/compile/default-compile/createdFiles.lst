@@ -6,7 +6,6 @@ backend/Member.class
 userInterface/TimeRegisterController.class
 userInterface/Main.class
 userInterface/DetailsViewController.class
-backend/RiskMatrix.class
 userInterface/RiskController.class
 userInterface/CreateNewProject.class
 backend/Factory.class

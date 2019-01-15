@@ -12,12 +12,16 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 public class DetailsViewController implements Initializable {
 
     private Project project;
     private Task task;
+    private Calendar calendar = new GregorianCalendar();
+
 
     @FXML
     private TableView<Member> memberTable;
@@ -58,10 +62,10 @@ public class DetailsViewController implements Initializable {
     @FXML
     void changeStatus(ActionEvent event) {
         if (completedBtn.isSelected()){
-            this.task.setCompleted(true);
+            this.task.setCompleted(true, project.adjustWeek(calendar.WEEK_OF_YEAR));
         }
         if (inProgressBtn.isSelected()){
-            this.task.setCompleted(false);
+            this.task.setCompleted(false,  project.adjustWeek(calendar.WEEK_OF_YEAR));
         }
         statusLabel.setText(task.getStatus());
     }
