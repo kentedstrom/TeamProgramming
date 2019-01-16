@@ -160,8 +160,8 @@ public class PlotStartPageController implements Initializable {
     }
 
     private void addWorkloadAreaChart(){
-        workloadXAxis.setLabel("Task");
-        workloiadYAxis.setLabel("Week");
+        workloadXAxis.setLabel("Week");
+        workloiadYAxis.setLabel("Task");
 
         // new series for AreaChart
         XYChart.Series series3 = new XYChart.Series();
@@ -176,8 +176,8 @@ public class PlotStartPageController implements Initializable {
     }
 
     private void addCostDistributionAreaChart(){
-        costLoadXAxis.setLabel("Cost");
-        costLoadYAxis.setLabel("Week");
+        costLoadXAxis.setLabel("Week");
+        costLoadYAxis.setLabel("Cost");
 
         // new series for this chart
         XYChart.Series budgetSeries = new XYChart.Series();

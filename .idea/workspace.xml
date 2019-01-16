@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="498aa40e-632e-4631-ac10-6f5dc24650d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecttest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Projecttest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Calculations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Calculations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/AddMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/AddMemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -114,20 +108,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="179" column="36" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="137" column="69" lean-forward="true" selection-start-line="137" selection-start-column="69" selection-end-line="137" selection-end-column="69" />
+            <state relative-caret-position="540">
+              <caret line="182" column="83" lean-forward="true" selection-start-line="182" selection-start-column="83" selection-end-line="182" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -172,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/main/java/backend/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Calculations.java" />
         <option value="$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java" />
       </list>
     </option>
   </component>
@@ -305,12 +300,12 @@
       <updated>1547476001464</updated>
       <workItem from="1547476005808" duration="893000" />
       <workItem from="1547544799818" duration="3631000" />
-      <workItem from="1547630949969" duration="5539000" />
+      <workItem from="1547630949969" duration="6125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10063000" />
+    <option name="totallyTimeSpent" value="10649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
@@ -379,13 +374,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -503,8 +491,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/TaskOverviewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="137" column="69" lean-forward="true" selection-start-line="137" selection-start-column="69" selection-end-line="137" selection-end-column="69" />
+        <state relative-caret-position="540">
+          <caret line="182" column="83" lean-forward="true" selection-start-line="182" selection-start-column="83" selection-end-line="182" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userInterface/PlotStartPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="179" column="36" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
         </state>
       </provider>
     </entry>

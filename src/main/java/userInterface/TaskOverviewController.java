@@ -160,27 +160,33 @@ public class TaskOverviewController implements Initializable {
 
         TimeAndCostStatus.getData().setAll(PVseries,AVseries,EVseries);
 
+        // add SVCV chart
+        plotSVCVChart(EV,AV,PV);
 
 
     }
 
     // integrate with EV and AC and PV
     // add for more time points
-    public void plotSVCVChart(double EarnedValue, double ActualCost, double PlannedValue){
+    public void plotSVCVChart(double[] EarnedValues, double[] ActualCosts, double[] PlannedValues){
 
-        // add schedule variance for one time point
-        double SV = getData.ScheduleVariance(EarnedValue,PlannedValue);
 
         XYChart.Series SVseries = new XYChart.Series();
         SVseries.setName("Schedule Variance");
-        SVseries.getData().add(new XYChart.Data( "week" + String.valueOf(project.adjustWeek(calendar.WEEK_OF_YEAR)),SV));
 
-
-        // add cost variance for one time point
-        double CV = getData.CostVariance(EarnedValue,ActualCost);
         XYChart.Series CVseries = new XYChart.Series();
         CVseries.setName("Cost Variance");
-        CVseries.getData().add(new XYChart.Data( "week" + String.valueOf(project.adjustWeek(calendar.WEEK_OF_YEAR)),CV));
+
+
+        for (int i = 0; i < project.adjustWeek(calendar.WEEK_OF_YEAR); i++) {
+            // calculate schedule variance for each week
+            double SV = getData.ScheduleVariance(EarnedValues[i],PlannedValues[i]);
+            SVseries.getData().add(new XYChart.Data( "week" + i,SV));
+            // add cost variance for each week
+            double CV = getData.CostVariance(EarnedValues[i],ActualCosts[i]);
+            CVseries.getData().add(new XYChart.Data( "week" + i,CV));
+        }
+
 
         SVCV.getData().addAll(SVseries,CVseries);
 
