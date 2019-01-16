@@ -158,7 +158,7 @@ public class Calculations {
     public double[] TaskCompletion(){
         double[] taskCompleteness = new double[2];
         for (Task task: tasks) {
-            if(task.isCompleted()){
+            if(task.getCompleted()){
                 // if task IS completed it is stored in the first index of the array
                 taskCompleteness[0] += 1;
             }else{
@@ -173,7 +173,7 @@ public class Calculations {
     public double[] BudgetStatus(ArrayList<Member> members){
         double[] budgetStatus = new double[2];
         for (Task task: tasks) {
-            if(task.isCompleted()){
+            if(task.getCompleted()){
                 budgetStatus[0] += task.getCost();
                 for (Member member: members) {
                     budgetStatus[0] += member.getTimeSpentPerTask(task.getID());
@@ -201,24 +201,32 @@ public class Calculations {
     }
 
 
-    public double earnedValueCalc(double budget){
-        double numOfTasks = 0.0;
-        double completedTasks = 0.0;
-        double percentageWorkDone;
-        for (Task task : tasks){
-            if (task.isCompleted()){
-                completedTasks++;
+    public double[] earnedValueCalc(double budget){
+        // total number of tasks is set
+        double numOfTasks = tasks.size();
+        int endWeek = endOfTasks();
+        double[] percentageWorkDone = new double[endWeek+2];
+        double[] earnedValuePerWeek = new double[endWeek+2];
+        // for each week in the so far planned project period...
+        for (int week = 0; week < endWeek; week++) {
+            // reset number of completed task for each week
+            double completedTasks = 0.0;
+            //... checks if a task has been completed so far...
+            for (Task task : tasks){
+                if (task.getWeekOfCompletion() <= week){
+                    completedTasks++;
+                }
             }
-            numOfTasks++;
-
+            // ... and calculates percentage of work done in that week
+            if(numOfTasks>0){
+                percentageWorkDone[week] = completedTasks / numOfTasks;
+            }else{
+                percentageWorkDone[week] = 0;
+            }
+            // Earned value = percentage work done times budget
+            earnedValuePerWeek[week] =  percentageWorkDone[week] * budget;
         }
-        try {
-            percentageWorkDone = completedTasks / numOfTasks;
-        }
-        catch (ArithmeticException exception){
-             percentageWorkDone = 0;
-        }
-        return percentageWorkDone * budget;
+        return earnedValuePerWeek;
     }
 
     public ArrayList<Task> getTasks() {

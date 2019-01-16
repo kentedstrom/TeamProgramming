@@ -11,17 +11,17 @@ public class Factory {
         return new Member(name, memberID, salary);
     }
 
-    public Task createTask(int taskID,String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, Boolean completed){
-        return new Task(taskID,name, memberID,memberName, startWeek, endWeek, cost, budget, completed);
+    public Task createTask(int taskID,String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, Boolean completed, int weekNow){
+        return new Task(taskID,name, memberID,memberName, startWeek, endWeek, cost, budget, completed,weekNow);
     }
 
     public Task createTask(){
         return new Task();
     }
 
-    public Task createTask(int ID, String name, int startWeek, int endWeek, double cost, double budget, boolean completed){
+    public Task createTask(int ID, String name, int startWeek, int endWeek, double cost, double budget, boolean completed, int weekNow){
 
-        return new Task(ID, name, startWeek, endWeek, cost, budget, completed);
+        return new Task(ID, name, startWeek, endWeek, cost, budget, completed,weekNow);
     }
 
     public Risk createRisk(String name, double probability, double impact){

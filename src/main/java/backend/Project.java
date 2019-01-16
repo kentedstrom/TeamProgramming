@@ -3,6 +3,8 @@ package backend;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class Project {
@@ -14,6 +16,7 @@ public class Project {
     private double budget;
     private int startWeek;
     public static final int WEEKNUMBER = 52;
+    public Calendar calendar = new GregorianCalendar();
 
 
     public Project() {
@@ -84,11 +87,13 @@ public class Project {
     }
 
     public void createTask(int taskID,String name, int startWeek, int endWeek, double cost, double budget, boolean completed) {
-        tasks.add(factory.createTask(taskID,name, startWeek, endWeek, cost,budget, completed));
+        int weekNow = adjustWeek(calendar.WEEK_OF_YEAR);
+        tasks.add(factory.createTask(taskID,name, startWeek, endWeek, cost,budget, completed,weekNow));
     }
 
     public void createTask(int taskID , String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean completed) {
-        Task newTask = factory.createTask(taskID, name, memberID, memberName, startWeek, endWeek, cost, budget, completed);
+        int weekNow = adjustWeek(calendar.WEEK_OF_YEAR);
+        Task newTask = factory.createTask(taskID, name, memberID, memberName, startWeek, endWeek, cost, budget, completed, weekNow);
         tasks.add(newTask);
         // the section below could be rewritten with search through member ID
         for (Member member: this.members) {

@@ -143,7 +143,8 @@ public class TaskOverviewController implements Initializable {
         AVseries.setName("Actual Cost");
 
         double[] AV = getData.calculateActualValue(project.getMembers());
-        for (int i = 0; i < AV.length; i++) {
+        // add actual cost until this week
+        for (int i = 0; i < project.adjustWeek(calendar.WEEK_OF_YEAR); i++) {
             AVseries.getData().add(new XYChart.Data("week"+i,AV[i]));
         }
 
@@ -151,8 +152,11 @@ public class TaskOverviewController implements Initializable {
         XYChart.Series EVseries = new XYChart.Series();
         EVseries.setName("Earned Value");
 
-        double EV = getData.earnedValueCalc(project.getBudget());
-        EVseries.getData().add(new XYChart.Data( "week" + String.valueOf(project.adjustWeek(calendar.WEEK_OF_YEAR)),EV));
+        double[] EV = getData.earnedValueCalc(project.getBudget());
+        // add earned value until this week
+        for (int weeks = 0; weeks < project.adjustWeek(calendar.WEEK_OF_YEAR); weeks++) {
+            EVseries.getData().add(new XYChart.Data( "week" + weeks,EV[weeks]));
+        }
 
         TimeAndCostStatus.getData().setAll(PVseries,AVseries,EVseries);
 

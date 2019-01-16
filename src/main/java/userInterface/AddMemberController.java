@@ -108,9 +108,9 @@ public class AddMemberController implements Initializable {
 
             for (Integer taskID : memberToShow.getTasks()) {
                 Task task = project.searchTask(taskID);
-                if (task.isCompleted()) {
+                if (task.getCompleted()) {
                     tasksCompleted += " " + task.getName() + ",";
-                } else if (!task.isCompleted()) {
+                } else if (!task.getCompleted()) {
                     tasksInProgress += " " + task.getName() + ",";
                 }
             }

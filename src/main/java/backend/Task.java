@@ -16,9 +16,10 @@ public class Task {
     private int endWeek;
     private double cost;
     private double budget;
-    private boolean isCompleted;
+    private boolean completed;
     private String status;
     private int weekOfCompletion;
+    private static int BIG_NUMBER = 100;
 
     public Task(){
         this.ID = 0;
@@ -28,13 +29,13 @@ public class Task {
         this.endWeek = 0;
         this.cost = 0;
         this.budget = 0;
-        this.isCompleted = false;
+        this.completed = false;
         this.status = "In progress";
-        weekOfCompletion = 0;
+        this.weekOfCompletion = 0;
     }
 
 
-    public Task(int ID,String name, int startWeek, int endWeek, double cost, double budget, boolean isCompleted) {
+    public Task(int ID,String name, int startWeek, int endWeek, double cost, double budget, boolean isCompleted, int weekNow) {
         this.ID = ID;
         this.name = name;
         this.memberIDs = new ArrayList<>();
@@ -43,9 +44,10 @@ public class Task {
         this.endWeek = endWeek;
         this.cost = cost;
         this.budget = budget;
-        this.isCompleted = isCompleted;
+        this.completed = isCompleted;
         if (isCompleted){
             this.status = "Completed";
+            this.weekOfCompletion = weekNow;
         }
         else{
             this.status = "In progress";
@@ -54,7 +56,7 @@ public class Task {
 
 
     // task has only the name of the memberNames not the memberNames themselves, otherwise infinite recursion
-    public Task(int ID,String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean isCompleted){
+    public Task(int ID,String name, String memberID, String memberName, int startWeek, int endWeek, double cost, double budget, boolean isCompleted, int weekNow){
         this.ID = ID;
         this.name = name;
         this.memberIDs = new ArrayList<>();
@@ -65,9 +67,10 @@ public class Task {
         this.endWeek = endWeek;
         this.cost = cost;
         this.budget = budget;
-        this.isCompleted = isCompleted;
+        this.completed = isCompleted;
         if (isCompleted){
             this.status = "Completed";
+            this.weekOfCompletion = weekNow;
         }
         else{
             this.status = "In progress";
@@ -132,18 +135,24 @@ public class Task {
         this.budget = budget;
     }
 
-    public boolean isCompleted() {
-        return isCompleted;
+    public boolean getCompleted() {
+        return completed;
     }
 
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    @JsonIgnore
     public void setCompleted(boolean completed, int currentWeek) {
-        isCompleted = completed;
+        this.completed = completed;
         if (completed){
             this.status = "Completed";
             setWeekOfCompletion(currentWeek);
         }
         else{
             this.status = "In progress";
+            setWeekOfCompletion(BIG_NUMBER);
         }
     }
 
@@ -160,6 +169,10 @@ public class Task {
     }
     public String getStatus(){
         return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @JsonIgnore
