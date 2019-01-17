@@ -176,12 +176,12 @@ public class Calculations {
             if(task.getCompleted()){
                 budgetStatus[0] += task.getCost();
                 for (Member member: members) {
-                    budgetStatus[0] += member.getTimeSpentPerTask(task.getID());
+                    budgetStatus[0] += member.getTimeSpentPerTask(task.getID())*member.getSalary();
                 }
             }else{
                 budgetStatus[1] += task.getBudget();
                 for (Member member: members) {
-                    budgetStatus[1] += member.getTimeSpentPerTask(task.getID());
+                    budgetStatus[1] += member.getTimeSpentPerTask(task.getID())*member.getSalary();
                 }
             }
         }

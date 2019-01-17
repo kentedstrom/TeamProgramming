@@ -163,7 +163,7 @@ public class PlotStartPageController implements Initializable {
         workloadXAxis.setLabel("Week");
         workloiadYAxis.setLabel("Task");
 
-        // new series for AreaChart
+        // new series for AreaChartgetTimeSpentPerTask
         XYChart.Series series3 = new XYChart.Series();
 
         int[] workLoadPerWeek = getData.calculateWorkLoadPerWeek();

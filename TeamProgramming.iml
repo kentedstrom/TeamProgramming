@@ -21,6 +21,22 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:linux:11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:linux:11" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <NATIVE>
+          <root url="file://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib" />
+        </NATIVE>
+        <SOURCES>
+          <root url="file://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib" />
+        </SOURCES>
+        <jarDirectory url="file://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/Programs/javafx-sdk-11.0.1/lib" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
