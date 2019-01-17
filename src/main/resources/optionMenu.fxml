@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -18,7 +23,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
+<AnchorPane minHeight="700.0" minWidth="1080.0" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.OptionClassController">
    <children>
       <VBox layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="513.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -47,13 +52,17 @@
                      <content>
                         <AnchorPane prefHeight="604.0" prefWidth="1100.0">
                            <children>
-                              <Label layoutX="364.0" layoutY="440.0" text="Edit Budget:" />
+                              <Label layoutX="352.0" layoutY="440.0" text="Edit Budget:" />
                               <TextField fx:id="budgetTextfield" layoutX="457.0" layoutY="435.0" />
-                              <Button fx:id="enterBtn" layoutX="677.0" layoutY="435.0" mnemonicParsing="false" onAction="#enterBtnClicked" text="Confirm" />
+                              <Button fx:id="enterBtn" layoutX="655.0" layoutY="435.0" mnemonicParsing="false" onAction="#enterBtnClicked" text="Confirm" />
                               <Label layoutX="404.0" layoutY="120.0" text="-Current Budget-">
-                              </Label>
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font></Label>
                               <Label fx:id="budgetLabel" layoutX="499.0" layoutY="193.0" text="Label">
-                              </Label>
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font></Label>
                            </children>
                         </AnchorPane>
                      </content>
@@ -69,7 +78,7 @@
                                     <TableColumn fx:id="probColumn" prefWidth="363.0" text="Probability" />
                                  </columns>
                               </TableView>
-                              <HBox alignment="BOTTOM_RIGHT" layoutY="506.0" prefHeight="71.0" prefWidth="1100.0" spacing="5.0">
+                              <HBox alignment="BOTTOM_RIGHT" layoutY="506.0" prefHeight="71.0" prefWidth="1094.0" spacing="5.0">
                                  <children>
                                     <TextField fx:id="riskInput" prefHeight="31.0" prefWidth="438.0" promptText="Risk" />
                                     <TextField fx:id="impactInput" prefHeight="31.0" prefWidth="256.0" promptText="Impact (1-10)" />
@@ -82,7 +91,7 @@
                                        </HBox.margin>
                                     </TextField>
                                     <Button fx:id="addRiskBtn" mnemonicParsing="false" onAction="#addRiskBtnClicked" text="Add" />
-                                    <Button fx:id="deleteRiskBtn" mnemonicParsing="false" onAction="#deleteRiskBtnClicked" prefHeight="31.0" prefWidth="66.0" text="Delete" />
+                                    <Button fx:id="deleteRiskBtn" mnemonicParsing="false" onAction="#deleteRiskBtnClicked" text="Delete" />
                                  </children>
                                  <padding>
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -119,9 +128,9 @@
                                     </TextField>
                                     <TableView fx:id="taskTable" layoutX="405.0" prefHeight="515.0" prefWidth="679.0">
                                       <columns>
-                                        <TableColumn fx:id="taskColumn" prefWidth="191.0" text="Task" />
-                                        <TableColumn fx:id="startWeekColumn" prefWidth="95.0" text="Start Week" />
-                                          <TableColumn fx:id="endWeekColumn" prefWidth="107.0" text="End week" />
+                                        <TableColumn fx:id="taskColumn" prefWidth="393.0" text="Task" />
+                                        <TableColumn fx:id="startWeekColumn" prefWidth="130.0" text="Start Week" />
+                                          <TableColumn fx:id="endWeekColumn" prefWidth="154.0" text="End week" />
                                       </columns>
                                     </TableView>
                                     <Button fx:id="deleteTaskBtn" layoutX="917.0" layoutY="527.0" mnemonicParsing="false" onAction="#deleteTask" prefHeight="31.0" prefWidth="153.0" text="Delete Task" />
